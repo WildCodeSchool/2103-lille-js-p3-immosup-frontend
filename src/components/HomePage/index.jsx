@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import './style.scss';
+import SHomePage from './style';
 
 export default function HomePage() {
   return (
-    <div className="HomePage">
+    <SHomePage>
       <Link to="tenant/dashboard">Espace étudiants et jeunes dîplomés</Link>
       <Link to="landlord/dashboard">Espace déposeurs d&apos;annonces</Link>
-    </div>
+    </SHomePage>
   );
 }

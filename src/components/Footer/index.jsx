@@ -1,9 +1,9 @@
-import './style.scss';
+import SFooter from './style';
 
 export default function Footer() {
   return (
-    <footer>
+    <SFooter>
       <p>footer</p>
-    </footer>
+    </SFooter>
   );
 }

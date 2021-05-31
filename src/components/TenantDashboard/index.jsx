@@ -1,9 +1,9 @@
-import './style.scss';
+import STenantDashboard from './style';
 
 export default function TenantDashboard() {
   return (
-    <div className="TenantDashboard">
+    <STenantDashboard>
       <p>TenantDashboard</p>
-    </div>
+    </STenantDashboard>
   );
 }
