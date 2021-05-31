@@ -7,7 +7,6 @@ import Footer from './components/Footer';
 export default function App() {
   return (
     <div className="App">
-      <p>App</p>
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/tenant/dashboard" component={TenantDashboard} />
