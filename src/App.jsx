@@ -1,6 +1,6 @@
 import { Switch, Route } from 'react-router-dom';
 import HomePage from './components/HomePage';
-import TenantDashboard from './components/TenantDashboard';
+import TenantDashboard from './components/Tenant/TenantDashboard';
 import LandlordDashboard from './components/LandlordDashboard';
 import Footer from './components/Footer';
 import GlobalStyle from './GlobalStyle';
