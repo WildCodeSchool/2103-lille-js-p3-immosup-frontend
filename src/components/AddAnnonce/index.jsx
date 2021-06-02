@@ -73,7 +73,7 @@ function AddAnnonce() {
     evt.preventDefault();
     const dataToSend = {
       district: inputDistrict,
-      adress: inputAdress,
+      address: inputAdress,
       city: inputCity,
       furnished: inputFurnished,
       rent: inputRent,
@@ -85,8 +85,9 @@ function AddAnnonce() {
       energyClass: inputEnergyClass,
       rooms: inputRooms,
       describe: inputDescribe,
+      idUser: 1,
     };
-    axios.post('http://localhost:5050/addannonce', dataToSend);
+    axios.post('http://localhost:5050/annonce', dataToSend);
   };
 
   return (
