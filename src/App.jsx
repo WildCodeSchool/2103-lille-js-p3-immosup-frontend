@@ -11,6 +11,7 @@ import LandlordDashboard from './components/LandlordDashboard';
 import Footer from './components/Footer';
 import GlobalStyle from './GlobalStyle';
 import SApp from './SApp';
+import './reset.css';
 
 export default function App() {
   return (
