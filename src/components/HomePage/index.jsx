@@ -1,14 +1,38 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import SHomePage from './style';
 
 export default function HomePage() {
+  const [currImg, setCurrImg] = useState(Math.floor(Math.random() * 3) + 1);
+
+  const changeImg = () => {
+    if (currImg < 3) {
+      setCurrImg(currImg + 1);
+    } else {
+      setCurrImg(1);
+    }
+  };
+
+  useEffect(() => {
+    const interval = setInterval(changeImg, 8000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  });
+
   return (
-    <SHomePage>
+    <SHomePage carousel={currImg}>
       <header>
         <div className="logo-container">
-          <img src="/img/logo/logoFull-1.png" className="logo" alt="logo" />
+          <img
+            loading="lazy"
+            src="/img/logo/logoFull-1.png"
+            className="logo"
+            alt="logo"
+          />
         </div>
-        <div className="carousel">
+        <div className={`carousel img-${currImg}`}>
           <Link to="tenant/dashboard" className="link-dashboard tenant">
             Espace étudiants et jeunes dîplomés
           </Link>
@@ -17,8 +41,8 @@ export default function HomePage() {
           </Link>
         </div>
       </header>
-      <div className="descriptions">
-        <section className="description first">
+      <div className="infos">
+        <section className="info first">
           <h1 className="title">IMMO’SUP c’est quoi ?</h1>
           <article className="body">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -30,7 +54,7 @@ export default function HomePage() {
             culpa qui officia deserunt mollit anim id est laborum.
           </article>
         </section>
-        <section className="description second">
+        <section className="info second">
           <h1 className="title">IMMO’SUP c’est quoi ?</h1>
           <article className="body">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
