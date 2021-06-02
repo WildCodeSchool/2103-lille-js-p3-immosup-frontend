@@ -5,6 +5,7 @@ import LandlordDashboard from './components/LandlordDashboard';
 import Footer from './components/Footer';
 import GlobalStyle from './GlobalStyle';
 import SApp from './SApp';
+import AddAnnonce from './components/AddAnnonce';
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Route exact path="/" component={HomePage} />
         <Route path="/tenant/dashboard" component={TenantDashboard} />
         <Route path="/landlord/dashboard" component={LandlordDashboard} />
+        <Route path="/addannonce" component={AddAnnonce} />
       </Switch>
       <Footer />
     </SApp>
