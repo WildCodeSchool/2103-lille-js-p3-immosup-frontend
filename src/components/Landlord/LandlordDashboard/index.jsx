@@ -62,14 +62,16 @@ export default function LandlordDashboard() {
           </div>
         </div>
 
-        <Link to="/landlord/dashboard/contact">
-          {' '}
-          <div className="contact"> Mes contact </div>
-        </Link>
+        <div className="buttons">
+          <Link to="/landlord/dashboard/contact">
+            {' '}
+            <div className="contact"> Mes contact </div>
+          </Link>
 
-        <Link to="/landlord/dashboard/buycredits">
-          <div className="buyCredits">Acheter des crédits </div>
-        </Link>
+          <Link to="/landlord/dashboard/buycredits">
+            <div className="buyCredits">Acheter des crédits </div>
+          </Link>
+        </div>
       </div>
     </SLandlordDashboard>
   );

@@ -6,7 +6,7 @@ const SLandlordDashboard = styled.div`
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0px 100px 0px 100px;
   h2 {
-    font-size: 88px;
+    font-size: 70px;
     margin-top: 40px;
     margin-bottom: 65px;
     margin-left: 80px;
@@ -31,18 +31,18 @@ const SLandlordDashboard = styled.div`
   }
   .user h3 {
     letter-spacing: normal;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 700;
     margin-left: 20px;
   }
   .user img {
-    width: 250px;
+    width: 150px;
   }
 
   .profil {
     font-weight: 700;
     line-height: 29.3px;
-    font-size: 30px;
+    font-size: 25px;
     color: black;
     border: 1px solid #e8e8e8;
     border-radius: 20px;
@@ -51,7 +51,7 @@ const SLandlordDashboard = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 370px;
+    width: 300px;
     height: 17vh;
   }
   .disconnected {
@@ -59,8 +59,8 @@ const SLandlordDashboard = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 95px;
-    width: 182px;
-    height: 182px;
+    width: 100px;
+    height: 100px;
     border: 1px solid #e8e8e8;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
   }
@@ -70,7 +70,7 @@ const SLandlordDashboard = styled.div`
   .navigation {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
   }
   .announcement {
@@ -103,7 +103,7 @@ const SLandlordDashboard = styled.div`
   }
 
   .housing {
-    height: 146%;
+    height: 300px;
     display: flex;
     align-content: space-around;
     justify-content: center;
@@ -117,13 +117,12 @@ const SLandlordDashboard = styled.div`
     width: 48%;
   }
   .housing p {
-    font-size: 15px;
+    font-size: 12px;
     line-height: 17px;
     font-weight: 600;
   }
   .housingDescription {
-    margin: 15px;
-    width: inherit;
+    padding: 7px;
   }
   h5 {
     letter-spacing: normal;
@@ -132,7 +131,7 @@ const SLandlordDashboard = styled.div`
     margin-left: 20px;
   }
   .bloc2 {
-    height: 146%;
+    height: 300px;
     width: 40%;
     display: flex;
     flex-direction: row;
@@ -159,6 +158,11 @@ const SLandlordDashboard = styled.div`
 
   .housingPlus p {
     margin-bottom: 20px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
   }
 
   .contact {
@@ -190,6 +194,7 @@ const SLandlordDashboard = styled.div`
     align-items: center;
     width: 325px;
     height: 23vh;
+    margin-top: 20px;
   }
   .profil:hover {
     box-shadow: -2px -2px 5px white, 2px 2px 5px grey;
