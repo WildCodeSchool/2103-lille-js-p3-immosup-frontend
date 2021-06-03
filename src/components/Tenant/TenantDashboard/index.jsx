@@ -6,45 +6,84 @@ export default function TenantDashboard() {
     <STenantDashboard>
       <h2>Tableau de bord</h2>
 
+      {/* personal ================================================= */}
+
       <div className="personal">
         <div className="user">
-          <img
-            src="/Tenant/TenantDashbord/account_circle.png"
-            alt="avatar"
-            className="imgAvatar"
-          />
+          <div className="imgAvatar" />
           <h3 className="h3User">
             Bienvenue
             <br />
-            Nom de l&apos;utilisateur
+            &apos;UserName&apos;
           </h3>
         </div>
 
         <Link to="/tenant/profil" className="buttonProfil">
-          <h3 className="h3Profil">Mon Profile</h3>
+          <h3 className="h3Profil">Mon profile</h3>
         </Link>
 
         <Link to="/tenant/criteria" className="buttonCriteria">
-          <h3 className="h3Criteria">Mes Critères</h3>
+          <h3 className="h3Criteria">Mes critères</h3>
         </Link>
 
         <Link to="/" className="buttonDisconnected">
           <img
-            src="/Tenant/TenantDashbord/logout_black_48dp.svg"
+            src="/Tenant/TenantDashbord/logout.svg"
             alt="Disconnected"
+            title="Déconnexion"
             className="imgDisconnected"
           />
         </Link>
       </div>
 
-      <div>
-        <Link to="/tenant/match">Mes Matchs</Link>
-        <Link to="/tenant/roommate-hunt">Roommate hunt</Link>
+      {/* flatsharing ================================================= */}
+
+      <div className="flatsharing">
+        <div className="myMatch">
+          <Link to="/tenant/match">
+            <h3 className="h3Match">Mes matchs</h3>
+          </Link>
+          <div className="galleryMatch">
+            <div className="profilMatch" />
+            <div className="profilMatch" />
+            <div className="profilMatch" />
+            <div className="profilMatch" />
+            <div className="profilMatch" />
+          </div>
+        </div>
+        <Link to="/tenant/roommate-hunt">
+          <img
+            src="/Tenant/TenantDashbord/heart_48dp.svg"
+            alt="Roommate hunt"
+            title="Chasse aux colocs"
+            className="imgHunt"
+          />
+        </Link>
       </div>
 
-      <div>
-        <Link to="/tenant/announcements-save">Announcements save</Link>
-        <Link to="/tenant/housing-search">Housing search</Link>
+      {/* announcements ================================================= */}
+
+      <div className="announcements">
+        <div className="housing">
+          <Link to="/tenant/announcements-save">
+            <h3 className="h3Announcements">Mes annonces sauvegardées</h3>
+          </Link>
+          <div className="galleryAnnouncements">
+            <div className="profilAnnouncements" />
+            <div className="profilAnnouncements" />
+            <div className="profilAnnouncements" />
+            <div className="profilAnnouncements" />
+            <div className="profilAnnouncements" />
+          </div>
+        </div>
+        <Link to="/tenant/housing-search">
+          <img
+            src="/Tenant/TenantDashbord/search_48dp.svg"
+            alt="Housing search"
+            title="Recherche de logements"
+            className="search"
+          />
+        </Link>
       </div>
     </STenantDashboard>
   );
