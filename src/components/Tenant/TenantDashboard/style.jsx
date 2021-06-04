@@ -31,6 +31,9 @@ const STenantDashboard = styled.div`
     width: ${widthPage};
     margin: auto;
     padding-top: 50px;
+    @media (max-width: 1200px) {
+      width: 90%;
+    }
   }
 
   .personal {
@@ -41,12 +44,22 @@ const STenantDashboard = styled.div`
     margin: auto;
     padding-top: 30px;
     padding-bottom: 30px;
+    @media (max-width: 1200px) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 90%;
+    }
   }
 
   .user {
     display: flex;
     align-items: center;
     font-weight: bold;
+    @media (max-width: 1200px) {
+      width: 100%;
+      margin-bottom: 30px;
+    }
     .h3User {
       font-size: 25px;
       margin-left: 20px;
@@ -66,6 +79,11 @@ const STenantDashboard = styled.div`
     border: ${borderButton};
     box-shadow: ${boxShadow};
     border-radius: 20px;
+    @media (max-width: 1200px) {
+      width: 100%;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
     &:hover {
       box-shadow: ${hoverBoxShadow};
     }
@@ -82,6 +100,11 @@ const STenantDashboard = styled.div`
     box-shadow: ${boxShadow};
     border-radius: 20px;
     margin-right: 30px;
+    @media (max-width: 1200px) {
+      width: 100%;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
     &:hover {
       box-shadow: ${hoverBoxShadow};
     }
@@ -100,6 +123,17 @@ const STenantDashboard = styled.div`
     margin-right: 30px;
     width: 90px;
     height: 90px;
+    @media (max-width: 1200px) {
+      padding: 15px;
+      border-radius: 20px;
+      width: 100%;
+      height: 70px;
+      margin-top: 5px;
+      margin-right: 0px;
+      .imgDisconnected {
+        height: 100%;
+      }
+    }
     &:hover {
       box-shadow: ${hoverBoxShadow};
     }
@@ -114,12 +148,20 @@ const STenantDashboard = styled.div`
     width: ${widthPage};
     margin: auto;
     padding-bottom: 30px;
+    @media (max-width: 1200px) {
+      flex-direction: column;
+      width: 100%;
+      padding-top: 20px;
+    }
 
     .myMatch {
       box-shadow: ${boxShadow};
       border-radius: 20px;
       width: 900px;
       padding: 20px;
+      @media (max-width: 1200px) {
+        width: 90%;
+      }
       .h3Match {
         font-weight: bold;
         font-size: 40px;
@@ -131,11 +173,18 @@ const STenantDashboard = styled.div`
         display: flex;
         justify-content: space-around;
         margin-top: 50px;
+        @media (max-width: 1200px) {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
         .profilMatch {
           background-color: grey;
           width: 150px;
           height: 150px;
           border-radius: 20%;
+          @media (max-width: 1200px) {
+            margin: 15px;
+          }
         }
       }
     }
@@ -145,6 +194,12 @@ const STenantDashboard = styled.div`
       padding: 40px;
       border-radius: 100%;
       width: 150px;
+      height: 150px;
+      @media (max-width: 1200px) {
+        margin-top: 20px;
+        width: 90vw;
+        border-radius: 20px;
+      }
       &:hover {
         box-shadow: ${hoverBoxShadow};
       }
@@ -160,12 +215,20 @@ const STenantDashboard = styled.div`
     width: ${widthPage};
     margin: auto;
     padding-bottom: 50px;
+    @media (max-width: 1200px) {
+      flex-direction: column;
+      width: 100%;
+      padding-top: 30px;
+    }
 
     .housing {
       box-shadow: ${boxShadow};
       border-radius: 20px;
       width: 900px;
       padding: 20px;
+      @media (max-width: 1200px) {
+        width: 90%;
+      }
       .h3Announcements {
         font-weight: bold;
         font-size: 40px;
@@ -177,11 +240,18 @@ const STenantDashboard = styled.div`
         display: flex;
         justify-content: space-around;
         margin-top: 50px;
+        @media (max-width: 1200px) {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
         .profilAnnouncements {
           background-color: grey;
           width: 150px;
           height: 150px;
           border-radius: 20%;
+          @media (max-width: 1200px) {
+            margin: 15px;
+          }
         }
       }
     }
@@ -191,6 +261,12 @@ const STenantDashboard = styled.div`
       padding: 40px;
       border-radius: 100%;
       width: 150px;
+      height: 150px;
+      @media (max-width: 1200px) {
+        margin-top: 20px;
+        width: 90vw;
+        border-radius: 20px;
+      }
       &:hover {
         box-shadow: ${hoverBoxShadow};
       }
