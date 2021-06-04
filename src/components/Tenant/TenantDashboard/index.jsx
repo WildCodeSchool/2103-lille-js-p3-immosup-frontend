@@ -53,7 +53,7 @@ export default function TenantDashboard() {
         </div>
         <Link to="/tenant/roommate-hunt">
           <img
-            src="/Tenant/TenantDashbord/heart_48dp.svg"
+            src="/Tenant/TenantDashbord/heart.svg"
             alt="Roommate hunt"
             title="Chasse aux colocs"
             className="imgHunt"
@@ -78,7 +78,7 @@ export default function TenantDashboard() {
         </div>
         <Link to="/tenant/housing-search">
           <img
-            src="/Tenant/TenantDashbord/search_48dp.svg"
+            src="/Tenant/TenantDashbord/search.svg"
             alt="Housing search"
             title="Recherche de logements"
             className="search"
