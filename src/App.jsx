@@ -2,7 +2,6 @@ import { Switch, Route } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import TenantDashboard from './components/Tenant/TenantDashboard';
 import TenantProfil from './components/Tenant/TenantProfil';
-import TenantCriteria from './components/Tenant/TenantCriteria';
 import TenantMatch from './components/Tenant/TenantMatch';
 import TenantAnnouncementsSave from './components/Tenant/TenantAnnouncementsSave';
 import TenantRoommateHunt from './components/Tenant/TenantRoommateHunt';
@@ -23,7 +22,7 @@ export default function App() {
         <Route path="/tenant/dashboard" component={TenantDashboard} />
         <Route path="/landlord/dashboard" component={LandlordDashboard} />
         <Route path="/tenant/profil" component={TenantProfil} />
-        <Route path="/tenant/criteria" component={TenantCriteria} />
+        <Route path="/tenant/criteria" component={FiltreLogement} />
         <Route path="/tenant/match" component={TenantMatch} />
         <Route
           path="/tenant/announcements-save"
@@ -32,7 +31,6 @@ export default function App() {
         <Route path="/tenant/roommate-hunt" component={TenantRoommateHunt} />
         <Route path="/tenant/housing-search" component={TenantHousingSearch} />
       </Switch>
-      <FiltreLogement />
       <Footer />
     </SApp>
   );
