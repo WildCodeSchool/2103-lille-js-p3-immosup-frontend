@@ -5,8 +5,7 @@ const Infos = ({
   inputSurface,
   inputAnimals,
   inputType,
-  inputEnergyClass,
-  inputGes,
+
   inputRooms,
   setType,
   setSurface,
@@ -22,9 +21,9 @@ const Infos = ({
   const handleChangeSurface = (evt) => {
     setSurface(evt.target.value);
   };
-  const handleChangeRooms = (evt) => {
-    setRooms(evt.target.value);
-  };
+  // const handleChangeRooms = (evt) => {
+  //   setRooms(evt.target.value);
+  // };
 
   const handleChangeFurnished = (evt) => {
     setFurnished(evt.target.value);
@@ -34,36 +33,116 @@ const Infos = ({
     setAnimals(evt.target.value);
   };
 
-  const handleChangeEnergyClass = (evt) => {
-    setEnergyClass(evt.target.value);
-  };
-  const handleChangeGes = (evt) => {
-    setGes(evt.target.value);
+  const seeIfSup = () => {
+    if (inputRooms > 0) {
+      setRooms(inputRooms - 1);
+    } else {
+      setRooms(inputRooms);
+    }
   };
   return (
     <div className="infos">
       <p>Type:</p>
-      <input type="text" value={inputType} onChange={handleChangeType} />
+      <select value={inputType} onChange={handleChangeType}>
+        <option selected value="">
+          {' '}
+        </option>
+
+        <option value="house">Maison</option>
+        <option value="appartement">Appartement</option>
+      </select>
+      <p>{inputType}</p>
       <p>Furnished:</p>
-      <input
-        type="text"
-        value={inputFurnished}
-        onChange={handleChangeFurnished}
-      />
-      <p>Surface:</p>
-      <input type="text" value={inputSurface} onChange={handleChangeSurface} />
-      <p>Rooms:</p>
-      <input type="text" value={inputRooms} onChange={handleChangeRooms} />
+
+      <select value={inputFurnished} onChange={handleChangeFurnished}>
+        <option selected value="">
+          {' '}
+        </option>
+
+        <option value="1">Meublé</option>
+        <option value="0">Non-meublé</option>
+      </select>
+      <div className="surface">
+        <p>Surface:</p>
+        <input
+          type="text"
+          value={inputSurface}
+          onChange={handleChangeSurface}
+        />
+      </div>
+      <div className="rooms">
+        <p>Rooms:</p>
+        <button type="button" onClick={() => seeIfSup()}>
+          -
+        </button>
+        <p>{inputRooms}</p>
+        <button
+          type="button"
+          onClick={() => {
+            setRooms(inputRooms + 1);
+          }}
+        >
+          +
+        </button>
+      </div>
+
       <p>Animals:</p>
-      <input type="text" value={inputAnimals} onChange={handleChangeAnimals} />
+      <select value={inputAnimals} onChange={handleChangeAnimals}>
+        <option selected value="">
+          {' '}
+        </option>
+
+        <option value="1">Oui</option>
+        <option value="0">Non</option>
+      </select>
+
       <p>Energy class:</p>
-      <input
-        type="text"
-        value={inputEnergyClass}
-        onChange={handleChangeEnergyClass}
-      />
+
+      <button type="button" oncClick={() => setEnergyClass('A')}>
+        A
+      </button>
+      <button type="button" oncClick={() => setEnergyClass('B')}>
+        B
+      </button>
+      <button type="button" oncClick={() => setEnergyClass('C')}>
+        C
+      </button>
+      <button type="button" oncClick={() => setEnergyClass('D')}>
+        D
+      </button>
+      <button type="button" oncClick={() => setEnergyClass('E')}>
+        E
+      </button>
+      <button type="button" oncClick={() => setEnergyClass('F')}>
+        F
+      </button>
+      <button type="button" oncClick={() => setEnergyClass('G')}>
+        G
+      </button>
       <p>GES:</p>
-      <input type="text" value={inputGes} onChange={handleChangeGes} />
+      <button type="button" oncClick={() => setGes('A')}>
+        A
+      </button>
+      <button type="button" oncClick={() => setGes('B')}>
+        B
+      </button>
+      <button type="button" oncClick={() => setGes('C')}>
+        C
+      </button>
+      <button type="button" oncClick={() => setGes('D')}>
+        D
+      </button>
+      <button type="button" oncClick={() => setGes('E')}>
+        E
+      </button>
+      <button type="button" oncClick={() => setGes('F')}>
+        F
+      </button>
+      <button type="button" oncClick={() => setGes('G')}>
+        G
+      </button>
+
+      <button type="button">Continuer</button>
     </div>
   );
 };
@@ -71,12 +150,11 @@ const Infos = ({
 export default Infos;
 Infos.propTypes = {
   inputFurnished: PropTypes.string,
-  inputSurface: PropTypes.string,
+  inputSurface: PropTypes.number,
   inputAnimals: PropTypes.string,
   inputType: PropTypes.string,
-  inputEnergyClass: PropTypes.string,
-  inputGes: PropTypes.string,
-  inputRooms: PropTypes.string,
+
+  inputRooms: PropTypes.number,
   setType: PropTypes.func,
   setSurface: PropTypes.func,
   setFurnished: PropTypes.func,
@@ -90,8 +168,7 @@ Infos.defaultProps = {
   inputSurface: '',
   inputAnimals: '',
   inputType: '',
-  inputEnergyClass: '',
-  inputGes: '',
+
   inputRooms: '',
   setType: () => {},
   setSurface: () => {},

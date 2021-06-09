@@ -10,14 +10,14 @@ function AddAnnonce() {
   const [inputCity, setCity] = useState('');
   const [inputFurnished, setFurnished] = useState('');
   const [inputRent, setRent] = useState('');
-  const [inputSurface, setSurface] = useState('');
+  const [inputSurface, setSurface] = useState(0);
   const [inputAnimals, setAnimals] = useState('');
   const [inputTitle, setTitle] = useState('');
   const [inputCategory, setCategory] = useState('');
   const [inputType, setType] = useState('');
   const [inputEnergyClass, setEnergyClass] = useState('');
   const [inputGes, setGes] = useState('');
-  const [inputRooms, setRooms] = useState('');
+  const [inputRooms, setRooms] = useState(0);
   const [inputDescribe, setDescribe] = useState('');
 
   const handleChangeDistrict = (evt) => {
