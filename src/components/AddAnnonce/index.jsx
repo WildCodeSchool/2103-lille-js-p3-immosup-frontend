@@ -3,9 +3,11 @@ import axios from 'axios';
 import Addannoncestyle from './style';
 import Title from './Title';
 import Infos from './Infos';
+import Description from './Description';
+import Rent from './Rent';
 
 function AddAnnonce() {
-  const [inputDistrict, setDistrict] = useState('');
+  // const [inputDistrict, setDistrict] = useState('');
   const [inputAdress, setAdress] = useState('');
   const [inputCity, setCity] = useState('');
   const [inputFurnished, setFurnished] = useState('');
@@ -20,30 +22,14 @@ function AddAnnonce() {
   const [inputRooms, setRooms] = useState(0);
   const [inputDescribe, setDescribe] = useState('');
 
-  const handleChangeDistrict = (evt) => {
-    setDistrict(evt.target.value);
-  };
-
-  const handleChangeAdress = (evt) => {
-    setAdress(evt.target.value);
-  };
-
-  const handleChangeCity = (evt) => {
-    setCity(evt.target.value);
-  };
-
-  const handleChangeRent = (evt) => {
-    setRent(evt.target.value);
-  };
-
-  const handleChangeDescribe = (evt) => {
-    setDescribe(evt.target.value);
-  };
+  // const handleChangeDistrict = (evt) => {
+  //   setDistrict(evt.target.value);
+  // };
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
     const dataToSend = {
-      district: inputDistrict,
+      // district: inputDistrict,
       address: inputAdress,
       city: inputCity,
       furnished: inputFurnished,
@@ -64,51 +50,48 @@ function AddAnnonce() {
 
   return (
     <Addannoncestyle>
-      <Title
-        setCategory={setCategory}
-        setTitle={setTitle}
-        inputTitle={inputTitle}
-        input
-        category={inputCategory}
-      />
-      <Infos
-        inputFurnished={inputFurnished}
-        inputSurface={inputSurface}
-        inputAnimals={inputAnimals}
-        inputType={inputType}
-        inputEnergyClass={inputEnergyClass}
-        inputGes={inputGes}
-        inputRooms={inputRooms}
-        setType={setType}
-        setSurface={setSurface}
-        setFurnished={setFurnished}
-        setRooms={setRooms}
-        setAnimals={setAnimals}
-        setEnergyClass={setEnergyClass}
-        setGes={setGes}
-      />
-
       <form onSubmit={handleSubmit}>
-        <p>District:</p>
+        <Title
+          setCategory={setCategory}
+          setTitle={setTitle}
+          inputTitle={inputTitle}
+          input
+          category={inputCategory}
+        />
+        <Infos
+          inputFurnished={inputFurnished}
+          inputSurface={inputSurface}
+          inputAnimals={inputAnimals}
+          inputType={inputType}
+          inputEnergyClass={inputEnergyClass}
+          inputGes={inputGes}
+          inputRooms={inputRooms}
+          setType={setType}
+          setSurface={setSurface}
+          setFurnished={setFurnished}
+          setRooms={setRooms}
+          setAnimals={setAnimals}
+          setEnergyClass={setEnergyClass}
+          setGes={setGes}
+        />
+
+        {/* <p>District:</p>
         <input
           type="text"
           value={inputDistrict}
           onChange={handleChangeDistrict}
-        />
-        <p>Adress:</p>
-        <input type="text" value={inputAdress} onChange={handleChangeAdress} />
-        <p>City:</p>
-        <input type="text" value={inputCity} onChange={handleChangeCity} />
+        /> */}
 
-        <p>Rent:</p>
-        <input type="text" value={inputRent} onChange={handleChangeRent} />
-
-        <p>Describe:</p>
-        <input
-          type="text"
-          value={inputDescribe}
-          onChange={handleChangeDescribe}
+        <Description
+          setAdress={setAdress}
+          setCity={setCity}
+          setDescribe={setDescribe}
+          inputAdress={inputAdress}
+          inputCity={inputCity}
+          inputDescribe={inputDescribe}
         />
+
+        <Rent setRent={setRent} inputRent={inputRent} />
 
         <input type="submit" value="Send!" />
       </form>
