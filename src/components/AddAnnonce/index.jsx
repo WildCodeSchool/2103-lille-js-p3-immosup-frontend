@@ -2,6 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import Addannoncestyle from './style';
 import Title from './Title';
+import Description from './Description';
 
 function AddAnnonce() {
   const [inputDistrict, setDistrict] = useState('');
@@ -20,14 +21,6 @@ function AddAnnonce() {
 
   const handleChangeDistrict = (evt) => {
     setDistrict(evt.target.value);
-  };
-
-  const handleChangeAdress = (evt) => {
-    setAdress(evt.target.value);
-  };
-
-  const handleChangeCity = (evt) => {
-    setCity(evt.target.value);
   };
 
   const handleChangeFurnished = (evt) => {
@@ -52,10 +45,6 @@ function AddAnnonce() {
 
   const handleChangeEnergyClass = (evt) => {
     setEnergyClass(evt.target.value);
-  };
-
-  const handleChangeDescribe = (evt) => {
-    setDescribe(evt.target.value);
   };
 
   const handleChangeRooms = (evt) => {
@@ -99,10 +88,16 @@ function AddAnnonce() {
           value={inputDistrict}
           onChange={handleChangeDistrict}
         />
-        <p>Adress:</p>
-        <input type="text" value={inputAdress} onChange={handleChangeAdress} />
-        <p>City:</p>
-        <input type="text" value={inputCity} onChange={handleChangeCity} />
+
+        <Description
+          setAdress={setAdress}
+          setCity={setCity}
+          setDescribe={setDescribe}
+          inputAdress={inputAdress}
+          inputCity={inputCity}
+          inputDescribe={inputDescribe}
+        />
+
         <p>Furnished:</p>
         <input
           type="text"
@@ -134,12 +129,6 @@ function AddAnnonce() {
         />
         <p>Rooms:</p>
         <input type="text" value={inputRooms} onChange={handleChangeRooms} />
-        <p>Describe:</p>
-        <input
-          type="text"
-          value={inputDescribe}
-          onChange={handleChangeDescribe}
-        />
 
         <input type="submit" value="Send!" />
       </form>
