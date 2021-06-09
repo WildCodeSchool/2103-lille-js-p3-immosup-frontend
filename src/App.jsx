@@ -7,7 +7,7 @@ import TenantAnnouncementsSave from './components/Tenant/TenantAnnouncementsSave
 import TenantRoommateHunt from './components/Tenant/TenantRoommateHunt';
 import TenantHousingSearch from './components/Tenant/TenantHousingSearch';
 import LandlordDashboard from './components/LandlordDashboard';
-import FiltreLogement from './components/FiltreLogement';
+import TenantCritera from './components/Tenant/TenantCriteria';
 import Footer from './components/Footer';
 import GlobalStyle from './GlobalStyle';
 import SApp from './SApp';
@@ -22,7 +22,7 @@ export default function App() {
         <Route path="/tenant/dashboard" component={TenantDashboard} />
         <Route path="/landlord/dashboard" component={LandlordDashboard} />
         <Route path="/tenant/profil" component={TenantProfil} />
-        <Route path="/tenant/criteria" component={FiltreLogement} />
+        <Route path="/tenant/criteria" component={TenantCritera} />
         <Route path="/tenant/match" component={TenantMatch} />
         <Route
           path="/tenant/announcements-save"

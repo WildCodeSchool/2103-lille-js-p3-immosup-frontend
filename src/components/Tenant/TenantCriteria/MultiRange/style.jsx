@@ -12,7 +12,7 @@ const SMultiRangeSlider = styled.div`
 
   .slider {
     position: relative;
-    width: 200px;
+    width: 30vw;
   }
 
   .sliderTrack,
@@ -29,7 +29,7 @@ const SMultiRangeSlider = styled.div`
   }
 
   .sliderTrack {
-    background-color: #ffffff;
+    background-color: #dcdcdc;
     width: 100%;
     z-index: 1;
   }
@@ -64,7 +64,7 @@ const SMultiRangeSlider = styled.div`
     pointer-events: none;
     position: absolute;
     height: 0;
-    width: 200px;
+    width: 30vw;
     outline: none;
   }
 
