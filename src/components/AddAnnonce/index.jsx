@@ -5,6 +5,7 @@ import Title from './Title';
 import Infos from './Infos';
 import Description from './Description';
 import Rent from './Rent';
+import Pictures from './Pictures';
 
 function AddAnnonce() {
   // const [inputDistrict, setDistrict] = useState('');
@@ -21,6 +22,9 @@ function AddAnnonce() {
   const [inputGes, setGes] = useState('');
   const [inputRooms, setRooms] = useState(0);
   const [inputDescribe, setDescribe] = useState('');
+  const [inputPicture1, setPicture1] = useState('');
+  const [inputPicture2, setPicture2] = useState('');
+  const [inputPicture3, setPicture3] = useState('');
 
   // const handleChangeDistrict = (evt) => {
   //   setDistrict(evt.target.value);
@@ -44,6 +48,9 @@ function AddAnnonce() {
       rooms: inputRooms,
       describe: inputDescribe,
       idUser: 1,
+      Picture1: inputPicture1,
+      Picture2: inputPicture2,
+      Picture3: inputPicture3,
     };
     axios.post('http://localhost:5050/annonce', dataToSend);
   };
@@ -92,6 +99,14 @@ function AddAnnonce() {
         />
 
         <Rent setRent={setRent} inputRent={inputRent} />
+        <Pictures
+          setPicture1={setPicture1}
+          setPicture2={setPicture2}
+          setPicture3={setPicture3}
+          inputPicture1={inputPicture1}
+          inputPicture2={inputPicture2}
+          inputPicture3={inputPicture3}
+        />
 
         <input type="submit" value="Send!" />
       </form>
