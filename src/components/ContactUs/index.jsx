@@ -1,18 +1,5 @@
 import SContactUs from './style';
 
-// export default function ContactUs() {
-//   return (
-//     <SContactUs>
-//       <h2>Formulaire de contact</h2>
-//     </SContactUs>
-//   );
-// }
-
-// export default function ContcatUs() {
-//   const handleSubmit = (event) => {
-//     event.preventDefault();
-//   };
-
 export default function ContactUs() {
   const handleSubmit = (event) => {
     event.preventDefault();
