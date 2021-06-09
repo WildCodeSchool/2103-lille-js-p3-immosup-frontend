@@ -3,6 +3,7 @@ import axios from 'axios';
 import Addannoncestyle from './style';
 import Title from './Title';
 import Description from './Description';
+import Rent from './Rent';
 
 function AddAnnonce() {
   const [inputDistrict, setDistrict] = useState('');
@@ -25,10 +26,6 @@ function AddAnnonce() {
 
   const handleChangeFurnished = (evt) => {
     setFurnished(evt.target.value);
-  };
-
-  const handleChangeRent = (evt) => {
-    setRent(evt.target.value);
   };
 
   const handleChangeSurface = (evt) => {
@@ -104,9 +101,7 @@ function AddAnnonce() {
           value={inputFurnished}
           onChange={handleChangeFurnished}
         />
-        <p>Rent:</p>
-        <input type="text" value={inputRent} onChange={handleChangeRent} />
-        <p>Surface:</p>
+        <Rent setRent={setRent} inputRent={inputRent} />
         <input
           type="text"
           value={inputSurface}
