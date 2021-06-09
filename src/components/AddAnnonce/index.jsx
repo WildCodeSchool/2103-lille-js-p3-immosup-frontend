@@ -2,6 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import Addannoncestyle from './style';
 import Title from './Title';
+import Infos from './Infos';
 
 function AddAnnonce() {
   const [inputDistrict, setDistrict] = useState('');
@@ -15,6 +16,7 @@ function AddAnnonce() {
   const [inputCategory, setCategory] = useState('');
   const [inputType, setType] = useState('');
   const [inputEnergyClass, setEnergyClass] = useState('');
+  const [inputGes, setGes] = useState('');
   const [inputRooms, setRooms] = useState('');
   const [inputDescribe, setDescribe] = useState('');
 
@@ -30,36 +32,12 @@ function AddAnnonce() {
     setCity(evt.target.value);
   };
 
-  const handleChangeFurnished = (evt) => {
-    setFurnished(evt.target.value);
-  };
-
   const handleChangeRent = (evt) => {
     setRent(evt.target.value);
   };
 
-  const handleChangeSurface = (evt) => {
-    setSurface(evt.target.value);
-  };
-
-  const handleChangeAnimals = (evt) => {
-    setAnimals(evt.target.value);
-  };
-
-  const handleChangeType = (evt) => {
-    setType(evt.target.value);
-  };
-
-  const handleChangeEnergyClass = (evt) => {
-    setEnergyClass(evt.target.value);
-  };
-
   const handleChangeDescribe = (evt) => {
     setDescribe(evt.target.value);
-  };
-
-  const handleChangeRooms = (evt) => {
-    setRooms(evt.target.value);
   };
 
   const handleSubmit = (evt) => {
@@ -76,6 +54,7 @@ function AddAnnonce() {
       category: inputCategory,
       type: inputType,
       energyClass: inputEnergyClass,
+      ges: inputGes,
       rooms: inputRooms,
       describe: inputDescribe,
       idUser: 1,
@@ -92,6 +71,23 @@ function AddAnnonce() {
         input
         category={inputCategory}
       />
+      <Infos
+        inputFurnished={inputFurnished}
+        inputSurface={inputSurface}
+        inputAnimals={inputAnimals}
+        inputType={inputType}
+        inputEnergyClass={inputEnergyClass}
+        inputGes={inputGes}
+        inputRooms={inputRooms}
+        setType={setType}
+        setSurface={setSurface}
+        setFurnished={setFurnished}
+        setRooms={setRooms}
+        setAnimals={setAnimals}
+        setEnergyClass={setEnergyClass}
+        setGes={setGes}
+      />
+
       <form onSubmit={handleSubmit}>
         <p>District:</p>
         <input
@@ -103,37 +99,10 @@ function AddAnnonce() {
         <input type="text" value={inputAdress} onChange={handleChangeAdress} />
         <p>City:</p>
         <input type="text" value={inputCity} onChange={handleChangeCity} />
-        <p>Furnished:</p>
-        <input
-          type="text"
-          value={inputFurnished}
-          onChange={handleChangeFurnished}
-        />
+
         <p>Rent:</p>
         <input type="text" value={inputRent} onChange={handleChangeRent} />
-        <p>Surface:</p>
-        <input
-          type="text"
-          value={inputSurface}
-          onChange={handleChangeSurface}
-        />
-        <p>Animals:</p>
-        <input
-          type="text"
-          value={inputAnimals}
-          onChange={handleChangeAnimals}
-        />
 
-        <p>Type:</p>
-        <input type="text" value={inputType} onChange={handleChangeType} />
-        <p>Energy class:</p>
-        <input
-          type="text"
-          value={inputEnergyClass}
-          onChange={handleChangeEnergyClass}
-        />
-        <p>Rooms:</p>
-        <input type="text" value={inputRooms} onChange={handleChangeRooms} />
         <p>Describe:</p>
         <input
           type="text"
