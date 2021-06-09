@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import Addannoncestyle from './style';
+import Title from './Title';
 
 function AddAnnonce() {
   const [inputDistrict, setDistrict] = useState('');
@@ -45,14 +46,6 @@ function AddAnnonce() {
     setAnimals(evt.target.value);
   };
 
-  const handleChangeTitle = (evt) => {
-    setTitle(evt.target.value);
-  };
-
-  const handleChangeCategory = (evt) => {
-    setCategory(evt.target.value);
-  };
-
   const handleChangeType = (evt) => {
     setType(evt.target.value);
   };
@@ -92,6 +85,13 @@ function AddAnnonce() {
 
   return (
     <Addannoncestyle>
+      <Title
+        setCategory={setCategory}
+        setTitle={setTitle}
+        inputTitle={inputTitle}
+        input
+        category={inputCategory}
+      />
       <form onSubmit={handleSubmit}>
         <p>District:</p>
         <input
@@ -123,14 +123,7 @@ function AddAnnonce() {
           value={inputAnimals}
           onChange={handleChangeAnimals}
         />
-        <p>Title:</p>
-        <input type="text" value={inputTitle} onChange={handleChangeTitle} />
-        <p>Category:</p>
-        <input
-          type="text"
-          value={inputCategory}
-          onChange={handleChangeCategory}
-        />
+
         <p>Type:</p>
         <input type="text" value={inputType} onChange={handleChangeType} />
         <p>Energy class:</p>
