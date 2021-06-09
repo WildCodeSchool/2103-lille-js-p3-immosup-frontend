@@ -9,6 +9,9 @@ const SContactUs = styled.div`
   margin-bottom: 30px;
   border-radius: 20px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+  @media (max-width: 700px) {
+    width: 90%;
+  }
 
   .content {
     margin: auto;
@@ -17,6 +20,9 @@ const SContactUs = styled.div`
     h2 {
       font-size: 60px;
       margin-bottom: 20px;
+      @media (max-width: 400px) {
+        font-size: 50px;
+      }
     }
     .contactUs {
       display: flex;

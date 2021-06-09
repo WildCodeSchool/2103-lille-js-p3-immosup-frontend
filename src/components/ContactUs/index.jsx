@@ -12,7 +12,7 @@ export default function ContactUs() {
 
         <form className="contactUs" onSubmit={handleSubmit}>
           <label htmlFor="username">
-            <h3>Nom d&apos;utilisateur/trice</h3>
+            <h3>Utilisateur/trice</h3>
             <input placeholder="Nom" name="firstname" id="field" />
           </label>
 
