@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import axios from 'axios';
 import UserInfos from '../../contexts/UserInfos';
 import SNavBar from './style';
@@ -11,6 +11,10 @@ export default function NavBar() {
       setUserInfos(data);
     });
   };
+
+  useEffect(() => {
+    getUsersInfos();
+  }, []);
 
   return (
     <SNavBar>
@@ -28,7 +32,7 @@ export default function NavBar() {
             }}
           >
             deconnection
-          </button>{' '}
+          </button>
         </>
       )}
     </SNavBar>
