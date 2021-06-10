@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import UserInfos from './contexts/UserInfos';
 import HomePage from './components/HomePage';
 import TenantDashboard from './components/Tenant/TenantDashboard';
 import TenantProfil from './components/Tenant/TenantProfil';
@@ -14,23 +16,30 @@ import SApp from './SApp';
 import './reset.css';
 
 export default function App() {
+  const [userInfos, setUserInfos] = useState(null);
+
   return (
     <SApp>
       <GlobalStyle />
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/tenant/dashboard" component={TenantDashboard} />
-        <Route path="/landlord/dashboard" component={LandlordDashboard} />
-        <Route path="/tenant/profil" component={TenantProfil} />
-        <Route path="/tenant/criteria" component={FiltreLogement} />
-        <Route path="/tenant/match" component={TenantMatch} />
-        <Route
-          path="/tenant/announcements-save"
-          component={TenantAnnouncementsSave}
-        />
-        <Route path="/tenant/roommate-hunt" component={TenantRoommateHunt} />
-        <Route path="/tenant/housing-search" component={TenantHousingSearch} />
-      </Switch>
+      <UserInfos.Provider value={{ userInfos, setUserInfos }}>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/tenant/dashboard" component={TenantDashboard} />
+          <Route path="/landlord/dashboard" component={LandlordDashboard} />
+          <Route path="/tenant/profil" component={TenantProfil} />
+          <Route path="/tenant/criteria" component={FiltreLogement} />
+          <Route path="/tenant/match" component={TenantMatch} />
+          <Route
+            path="/tenant/announcements-save"
+            component={TenantAnnouncementsSave}
+          />
+          <Route path="/tenant/roommate-hunt" component={TenantRoommateHunt} />
+          <Route
+            path="/tenant/housing-search"
+            component={TenantHousingSearch}
+          />
+        </Switch>
+      </UserInfos.Provider>
       <Footer />
     </SApp>
   );
