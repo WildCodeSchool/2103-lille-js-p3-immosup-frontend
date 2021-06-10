@@ -10,6 +10,7 @@ import TenantRoommateHunt from './components/Tenant/TenantRoommateHunt';
 import TenantHousingSearch from './components/Tenant/TenantHousingSearch';
 import LandlordDashboard from './components/LandlordDashboard';
 import FiltreLogement from './components/FiltreLogement';
+import ContactUs from './components/ContactUs';
 import Footer from './components/Footer';
 import GlobalStyle from './GlobalStyle';
 import SApp from './SApp';
@@ -38,6 +39,7 @@ export default function App() {
             path="/tenant/housing-search"
             component={TenantHousingSearch}
           />
+          <Route path="/contact-us" component={ContactUs} />
         </Switch>
       </UserInfos.Provider>
       <Footer />
