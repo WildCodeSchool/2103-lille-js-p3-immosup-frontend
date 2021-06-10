@@ -6,13 +6,14 @@ import Infos from './Infos';
 import Description from './Description';
 import Rent from './Rent';
 import Pictures from './Pictures';
+import Preview from './Preview';
 
 function AddAnnonce() {
   // const [inputDistrict, setDistrict] = useState('');
   const [inputAdress, setAdress] = useState('');
   const [inputCity, setCity] = useState('');
   const [inputFurnished, setFurnished] = useState('');
-  const [inputRent, setRent] = useState('');
+  const [inputRent, setRent] = useState(0);
   const [inputSurface, setSurface] = useState(0);
   const [inputAnimals, setAnimals] = useState('');
   const [inputTitle, setTitle] = useState('');
@@ -103,6 +104,24 @@ function AddAnnonce() {
           setPicture1={setPicture1}
           setPicture2={setPicture2}
           setPicture3={setPicture3}
+          inputPicture1={inputPicture1}
+          inputPicture2={inputPicture2}
+          inputPicture3={inputPicture3}
+        />
+
+        <Preview
+          inputTitle={inputTitle}
+          inputCategory={inputCategory}
+          inputFurnished={inputFurnished}
+          inputSurface={inputSurface}
+          inputRooms={inputRooms}
+          inputAnimals={inputAnimals}
+          inputEnergyClass={inputEnergyClass}
+          inputGes={inputGes}
+          inputAdress={inputAdress}
+          inputCity={inputCity}
+          inputDescribe={inputDescribe}
+          inputRent={inputRent}
           inputPicture1={inputPicture1}
           inputPicture2={inputPicture2}
           inputPicture3={inputPicture3}

@@ -17,9 +17,9 @@ export default Rent;
 
 Rent.propTypes = {
   setRent: PropTypes.func,
-  inputRent: PropTypes.string,
+  inputRent: PropTypes.number,
 };
 Rent.defaultProps = {
-  inputRent: '',
+  inputRent: 0,
   setRent: () => {},
 };
