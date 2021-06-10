@@ -78,10 +78,6 @@ const STenantCriteria = styled.div`
     margin-left: 5vw;
   }
 
-   {
-    /*filter slider  contenant button included*/
-  }
-
   .RangeButton {
     display: flex;
     justify-content: space-around;
