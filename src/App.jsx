@@ -8,6 +8,7 @@ import TenantAnnouncementsSave from './components/Tenant/TenantAnnouncementsSave
 import TenantRoommateHunt from './components/Tenant/TenantRoommateHunt';
 import TenantHousingSearch from './components/Tenant/TenantHousingSearch';
 import LandlordDashboard from './components/LandlordDashboard';
+import ContactUs from './components/ContactUs';
 import Footer from './components/Footer';
 import GlobalStyle from './GlobalStyle';
 import SApp from './SApp';
@@ -30,6 +31,7 @@ export default function App() {
         />
         <Route path="/tenant/roommate-hunt" component={TenantRoommateHunt} />
         <Route path="/tenant/housing-search" component={TenantHousingSearch} />
+        <Route path="/contact-us" component={ContactUs} />
       </Switch>
       <Footer />
     </SApp>
