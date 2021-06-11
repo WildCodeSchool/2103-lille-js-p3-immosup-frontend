@@ -15,6 +15,7 @@ import Footer from './components/Footer';
 import GlobalStyle from './GlobalStyle';
 import SApp from './SApp';
 import './reset.css';
+import AddAnnonce from './components/AddAnnonce';
 
 export default function App() {
   const [userInfos, setUserInfos] = useState(null);
@@ -40,6 +41,7 @@ export default function App() {
           />
           <Route path="/contact-us" component={ContactUs} />
           <Route path="/tenant/criteria" component={TenantCritera} />
+          <Route path="/addannonce" component={AddAnnonce} />
         </Switch>
       </UserInfos.Provider>
       <Footer />
