@@ -1,78 +1,40 @@
 import { useState } from 'react';
 import axios from 'axios';
 import Addannoncestyle from './style';
+import Title from './Title';
+import Infos from './Infos';
+import Description from './Description';
+import Rent from './Rent';
+import Pictures from './Pictures';
+import Preview from './Preview';
 
 function AddAnnonce() {
-  const [inputDistrict, setDistrict] = useState('');
+  // const [inputDistrict, setDistrict] = useState('');
   const [inputAdress, setAdress] = useState('');
   const [inputCity, setCity] = useState('');
   const [inputFurnished, setFurnished] = useState('');
-  const [inputRent, setRent] = useState('');
-  const [inputSurface, setSurface] = useState('');
+  const [inputRent, setRent] = useState(0);
+  const [inputSurface, setSurface] = useState(0);
   const [inputAnimals, setAnimals] = useState('');
   const [inputTitle, setTitle] = useState('');
   const [inputCategory, setCategory] = useState('');
   const [inputType, setType] = useState('');
   const [inputEnergyClass, setEnergyClass] = useState('');
-  const [inputRooms, setRooms] = useState('');
+  const [inputGes, setGes] = useState('');
+  const [inputRooms, setRooms] = useState(0);
   const [inputDescribe, setDescribe] = useState('');
+  const [inputPicture1, setPicture1] = useState('');
+  const [inputPicture2, setPicture2] = useState('');
+  const [inputPicture3, setPicture3] = useState('');
 
-  const handleChangeDistrict = (evt) => {
-    setDistrict(evt.target.value);
-  };
-
-  const handleChangeAdress = (evt) => {
-    setAdress(evt.target.value);
-  };
-
-  const handleChangeCity = (evt) => {
-    setCity(evt.target.value);
-  };
-
-  const handleChangeFurnished = (evt) => {
-    setFurnished(evt.target.value);
-  };
-
-  const handleChangeRent = (evt) => {
-    setRent(evt.target.value);
-  };
-
-  const handleChangeSurface = (evt) => {
-    setSurface(evt.target.value);
-  };
-
-  const handleChangeAnimals = (evt) => {
-    setAnimals(evt.target.value);
-  };
-
-  const handleChangeTitle = (evt) => {
-    setTitle(evt.target.value);
-  };
-
-  const handleChangeCategory = (evt) => {
-    setCategory(evt.target.value);
-  };
-
-  const handleChangeType = (evt) => {
-    setType(evt.target.value);
-  };
-
-  const handleChangeEnergyClass = (evt) => {
-    setEnergyClass(evt.target.value);
-  };
-
-  const handleChangeDescribe = (evt) => {
-    setDescribe(evt.target.value);
-  };
-
-  const handleChangeRooms = (evt) => {
-    setRooms(evt.target.value);
-  };
+  // const handleChangeDistrict = (evt) => {
+  //   setDistrict(evt.target.value);
+  // };
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
     const dataToSend = {
-      district: inputDistrict,
+      // district: inputDistrict,
       address: inputAdress,
       city: inputCity,
       furnished: inputFurnished,
@@ -83,9 +45,13 @@ function AddAnnonce() {
       category: inputCategory,
       type: inputType,
       energyClass: inputEnergyClass,
+      ges: inputGes,
       rooms: inputRooms,
       describe: inputDescribe,
       idUser: 1,
+      Picture1: inputPicture1,
+      Picture2: inputPicture2,
+      Picture3: inputPicture3,
     };
     axios.post('http://localhost:5050/annonce', dataToSend);
   };
@@ -93,59 +59,72 @@ function AddAnnonce() {
   return (
     <Addannoncestyle>
       <form onSubmit={handleSubmit}>
-        <p>District:</p>
+        <Title
+          setCategory={setCategory}
+          setTitle={setTitle}
+          inputTitle={inputTitle}
+          input
+          category={inputCategory}
+        />
+        <Infos
+          inputFurnished={inputFurnished}
+          inputSurface={inputSurface}
+          inputAnimals={inputAnimals}
+          inputType={inputType}
+          inputEnergyClass={inputEnergyClass}
+          inputGes={inputGes}
+          inputRooms={inputRooms}
+          setType={setType}
+          setSurface={setSurface}
+          setFurnished={setFurnished}
+          setRooms={setRooms}
+          setAnimals={setAnimals}
+          setEnergyClass={setEnergyClass}
+          setGes={setGes}
+        />
+
+        {/* <p>District:</p>
         <input
           type="text"
           value={inputDistrict}
           onChange={handleChangeDistrict}
+        /> */}
+
+        <Description
+          setAdress={setAdress}
+          setCity={setCity}
+          setDescribe={setDescribe}
+          inputAdress={inputAdress}
+          inputCity={inputCity}
+          inputDescribe={inputDescribe}
         />
-        <p>Adress:</p>
-        <input type="text" value={inputAdress} onChange={handleChangeAdress} />
-        <p>City:</p>
-        <input type="text" value={inputCity} onChange={handleChangeCity} />
-        <p>Furnished:</p>
-        <input
-          type="text"
-          value={inputFurnished}
-          onChange={handleChangeFurnished}
+
+        <Rent setRent={setRent} inputRent={inputRent} />
+        <Pictures
+          setPicture1={setPicture1}
+          setPicture2={setPicture2}
+          setPicture3={setPicture3}
+          inputPicture1={inputPicture1}
+          inputPicture2={inputPicture2}
+          inputPicture3={inputPicture3}
         />
-        <p>Rent:</p>
-        <input type="text" value={inputRent} onChange={handleChangeRent} />
-        <p>Surface:</p>
-        <input
-          type="text"
-          value={inputSurface}
-          onChange={handleChangeSurface}
-        />
-        <p>Animals:</p>
-        <input
-          type="text"
-          value={inputAnimals}
-          onChange={handleChangeAnimals}
-        />
-        <p>Title:</p>
-        <input type="text" value={inputTitle} onChange={handleChangeTitle} />
-        <p>Category:</p>
-        <input
-          type="text"
-          value={inputCategory}
-          onChange={handleChangeCategory}
-        />
-        <p>Type:</p>
-        <input type="text" value={inputType} onChange={handleChangeType} />
-        <p>Energy class:</p>
-        <input
-          type="text"
-          value={inputEnergyClass}
-          onChange={handleChangeEnergyClass}
-        />
-        <p>Rooms:</p>
-        <input type="text" value={inputRooms} onChange={handleChangeRooms} />
-        <p>Describe:</p>
-        <input
-          type="text"
-          value={inputDescribe}
-          onChange={handleChangeDescribe}
+
+        <Preview
+          inputTitle={inputTitle}
+          inputCategory={inputCategory}
+          inputFurnished={inputFurnished}
+          inputSurface={inputSurface}
+          inputRooms={inputRooms}
+          inputAnimals={inputAnimals}
+          inputEnergyClass={inputEnergyClass}
+          inputGes={inputGes}
+          inputAdress={inputAdress}
+          inputCity={inputCity}
+          inputDescribe={inputDescribe}
+          inputRent={inputRent}
+          inputPicture1={inputPicture1}
+          inputPicture2={inputPicture2}
+          inputPicture3={inputPicture3}
         />
 
         <input type="submit" value="Send!" />
