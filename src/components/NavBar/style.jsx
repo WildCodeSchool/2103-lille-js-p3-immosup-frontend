@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const SNavBar = styled.footer`
+const SNavBar = styled.div`
   position: fixed;
   top: 0;
   display: flex;

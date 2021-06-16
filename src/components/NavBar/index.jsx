@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import SNavBar from './style';
 
-export default function Footer() {
+export default function NavBar() {
   return (
     <SNavBar>
       <Link to="/" className="link immosup">
