@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import STitle from './style';
 
 const Title = ({ setCategory, setTitle, inputTitle, inputCategory }) => {
   const handleChangeTitle = (evt) => {
@@ -9,16 +10,52 @@ const Title = ({ setCategory, setTitle, inputTitle, inputCategory }) => {
   };
 
   return (
-    <>
-      <p>Title:</p>
-      <input type="text" value={inputTitle} onChange={handleChangeTitle} />
-      <p>Category:</p>
-      <input
-        type="text"
-        value={inputCategory}
-        onChange={handleChangeCategory}
-      />
-    </>
+    <STitle>
+      <div className="partContainer">
+        <div className="titleBox">
+          <div className="titleContainer">
+            <h2>Titre de l&apos;annonce :</h2>
+            <input
+              type="text"
+              value={inputTitle}
+              onChange={handleChangeTitle}
+              className="inputTitle"
+            />
+          </div>
+          <div className="categoryContainer">
+            <h2>Catégorie :</h2>
+            <div className="radioContainer">
+              <label htmlFor="radio_1">
+                <input
+                  id="radio_1"
+                  type="radio"
+                  name="place-cat"
+                  value="Location"
+                  onClick={handleChangeCategory}
+                  checked={inputCategory === 'Location'}
+                />
+                Maison
+              </label>
+              <label htmlFor="radio_2">
+                <input
+                  id="radio_2"
+                  type="radio"
+                  name="place-cat"
+                  value="Colocation"
+                  onClick={handleChangeCategory}
+                  checked={inputCategory === 'Colocation'}
+                />
+                Appartement
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" className="continue">
+          Continuer
+        </button>
+      </div>
+    </STitle>
   );
 };
 

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import SRent from './style';
 
 const Rent = ({ setRent, inputRent }) => {
   const handleChangeRent = (evt) => {
@@ -6,10 +7,15 @@ const Rent = ({ setRent, inputRent }) => {
   };
 
   return (
-    <>
-      <p>Rent</p>
-      <input type="text" value={inputRent} onChange={handleChangeRent} />
-    </>
+    <SRent>
+      <div className="partContainer">
+        <h2>Rent</h2>
+        <input type="text" value={inputRent} onChange={handleChangeRent} />
+        <button type="button" className="continue">
+          Continuer
+        </button>
+      </div>
+    </SRent>
   );
 };
 

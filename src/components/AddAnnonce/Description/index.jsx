@@ -1,4 +1,5 @@
 import Proptypes from 'prop-types';
+import SDescription from './style';
 
 const Description = ({
   setAdress,
@@ -19,18 +20,23 @@ const Description = ({
   };
 
   return (
-    <>
-      <p>Adress:</p>
-      <input type="text" value={inputAdress} onChange={handleChangeAdress} />
-      <p>City</p>
-      <input type="text" value={inputCity} onChange={handleChangeCity} />
-      <p>Describe</p>
-      <input
-        type="text"
-        value={inputDescribe}
-        onChange={handleChangeDescribe}
-      />
-    </>
+    <SDescription>
+      <div className="partContainer">
+        <h2>Adress:</h2>
+        <input type="text" value={inputAdress} onChange={handleChangeAdress} />
+        <h2>City</h2>
+        <input type="text" value={inputCity} onChange={handleChangeCity} />
+        <h2>Describe</h2>
+        <input
+          type="text"
+          value={inputDescribe}
+          onChange={handleChangeDescribe}
+        />
+        <button type="button" className="continue">
+          Continuer
+        </button>
+      </div>
+    </SDescription>
   );
 };
 

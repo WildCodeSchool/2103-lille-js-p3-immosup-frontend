@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import SPreview from './style';
 
 const Preview = ({
   inputTitle,
@@ -18,23 +19,25 @@ const Preview = ({
   inputPicture3,
 }) => {
   return (
-    <>
-      <h3>{inputTitle}</h3>
-      <p>{inputCategory}</p>
-      <p>{inputFurnished}</p>
-      <p>{inputSurface}</p>
-      <p>{inputRooms}</p>
-      <p>{inputAnimals}</p>
-      <p>{inputEnergyClass}</p>
-      <p>{inputGes}</p>
-      <p>{inputAdress}</p>
-      <p>{inputCity}</p>
-      <p>{inputDescribe}</p>
-      <p>{inputRent}</p>
-      <img src={inputPicture1} alt="Picture1" />
-      <img src={inputPicture2} alt="Picture2" />
-      <img src={inputPicture3} alt="Picture3" />
-    </>
+    <SPreview>
+      <div className="partContainer">
+        <h3>{inputTitle}</h3>
+        <p>{inputCategory}</p>
+        <p>{inputFurnished}</p>
+        <p>{inputSurface}</p>
+        <p>{inputRooms}</p>
+        <p>{inputAnimals}</p>
+        <p>{inputEnergyClass}</p>
+        <p>{inputGes}</p>
+        <p>{inputAdress}</p>
+        <p>{inputCity}</p>
+        <p>{inputDescribe}</p>
+        <p>{inputRent}</p>
+        <img src={inputPicture1} alt="Picture1" />
+        <img src={inputPicture2} alt="Picture2" />
+        <img src={inputPicture3} alt="Picture3" />
+      </div>
+    </SPreview>
   );
 };
 

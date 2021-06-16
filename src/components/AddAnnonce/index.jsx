@@ -9,7 +9,6 @@ import Pictures from './Pictures';
 import Preview from './Preview';
 
 function AddAnnonce() {
-  // const [inputDistrict, setDistrict] = useState('');
   const [inputAdress, setAdress] = useState('');
   const [inputCity, setCity] = useState('');
   const [inputFurnished, setFurnished] = useState('');
@@ -27,14 +26,9 @@ function AddAnnonce() {
   const [inputPicture2, setPicture2] = useState('');
   const [inputPicture3, setPicture3] = useState('');
 
-  // const handleChangeDistrict = (evt) => {
-  //   setDistrict(evt.target.value);
-  // };
-
   const handleSubmit = (evt) => {
     evt.preventDefault();
     const dataToSend = {
-      // district: inputDistrict,
       address: inputAdress,
       city: inputCity,
       furnished: inputFurnished,
@@ -58,13 +52,13 @@ function AddAnnonce() {
 
   return (
     <Addannoncestyle>
+      <h1>Déposer une annonce</h1>
       <form onSubmit={handleSubmit}>
         <Title
           setCategory={setCategory}
           setTitle={setTitle}
           inputTitle={inputTitle}
-          input
-          category={inputCategory}
+          inputCategory={inputCategory}
         />
         <Infos
           inputFurnished={inputFurnished}
@@ -82,13 +76,6 @@ function AddAnnonce() {
           setEnergyClass={setEnergyClass}
           setGes={setGes}
         />
-
-        {/* <p>District:</p>
-        <input
-          type="text"
-          value={inputDistrict}
-          onChange={handleChangeDistrict}
-        /> */}
 
         <Description
           setAdress={setAdress}
@@ -127,7 +114,7 @@ function AddAnnonce() {
           inputPicture3={inputPicture3}
         />
 
-        <input type="submit" value="Send!" />
+        <input type="submit" value="Send!" className="sendButton" />
       </form>
     </Addannoncestyle>
   );

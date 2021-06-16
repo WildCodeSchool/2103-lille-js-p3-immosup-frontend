@@ -1,90 +1,50 @@
 import styled from 'styled-components';
 
 const Addannoncestyle = styled.div`
-  background-color: #fff;
-  h2 {
-    font: 700 2em 'roboto';
+  h1 {
+    font: 600 2em 'roboto';
+    margin-left: 15vw;
+    margin-top: 40px;
   }
-
-  .infos {
+  h2 {
+    font: 600 1.5em 'roboto';
+    margin: 20px;
+  }
+  .partContainer {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 40px;
+    width: 70vw;
+    background: #ffffff;
     border: 1px solid #e8e8e8;
     box-sizing: border-box;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    width: 80vw;
-    height: 80vh;
-    margin: auto;
     padding: 30px;
   }
 
-  .roomsButton {
-    display: flex;
-
-    h2 {
-      margin: 0 20px;
-      font: 2em 'roboto';
-    }
-  }
-
-  .buttonClassEnergy button {
-    width: 50px;
+  .continue {
+    width: 120px;
     height: 50px;
-    margin: 10px;
-    border-radius: 50%;
+    border-radius: 20px;
+    margin-left: 90%;
+    font: 500 1.1em 'roboto';
     border: none;
-    font-size: 1.2em;
+    background-color: #fff;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+    transition: 0.2s ease-in-out;
   }
-  .buttonGes button {
-    width: 50px;
-    height: 50px;
-    margin: 10px;
-    border-radius: 50%;
-    border: none;
-    font-size: 1.2em;
+  .continue:hover {
+    color: #fff;
+    background: #109fe6;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
   }
 
-  .buttonClassEnergy button:nth-child(1):hover {
-    background-color: #10833b;
-  }
-  .buttonClassEnergy button:nth-child(2):hover {
-    background-color: #62953e;
-  }
-  .buttonClassEnergy button:nth-child(3):hover {
-    background-color: #96b02a;
-  }
-  .buttonClassEnergy button:nth-child(4):hover {
-    background-color: #fddb31;
-  }
-  .buttonClassEnergy button:nth-child(5):hover {
-    background-color: #f9b92b;
-  }
-  .buttonClassEnergy button:nth-child(6):hover {
-    background-color: #ea7f21;
-  }
-  .buttonClassEnergy button:nth-child(7):hover {
-    background-color: #de0a25;
-  }
-
-  .buttonGes button:nth-child(1):hover {
-    background-color: #f6eefd;
-  }
-  .buttonGes button:nth-child(2):hover {
-    background-color: #e1c3f7;
-  }
-  .buttonGes button:nth-child(3):hover {
-    background-color: #d4abf3;
-  }
-  .buttonGes button:nth-child(4):hover {
-    background-color: #ca98f1;
-  }
-  .buttonGes button:nth-child(5):hover {
-    background-color: #b976ec;
-  }
-  .buttonGes button:nth-child(6):hover {
-    background-color: #a654e8;
-  }
-  .buttonGes button:nth-child(7):hover {
-    background-color: #892adc;
+  .sendButton {
+    width: 60px;
+    height: 40px;
+    border-radius: 20px;
   }
 `;
 

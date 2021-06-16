@@ -1,4 +1,5 @@
 import Proptypes from 'prop-types';
+import SPictures from './style';
 
 const Pictures = ({
   setPicture1,
@@ -20,24 +21,29 @@ const Pictures = ({
   };
 
   return (
-    <>
-      <p>Picture:</p>
-      <input
-        type="text"
-        value={inputPicture1}
-        onChange={handleChangePicture1}
-      />
-      <input
-        type="text"
-        value={inputPicture2}
-        onChange={handleChangePicture2}
-      />
-      <input
-        type="text"
-        value={inputPicture3}
-        onChange={handleChangePicture3}
-      />
-    </>
+    <SPictures>
+      <div className="partContainer">
+        <h2>Picture:</h2>
+        <input
+          type="text"
+          value={inputPicture1}
+          onChange={handleChangePicture1}
+        />
+        <input
+          type="text"
+          value={inputPicture2}
+          onChange={handleChangePicture2}
+        />
+        <input
+          type="text"
+          value={inputPicture3}
+          onChange={handleChangePicture3}
+        />
+        <button type="button" className="continue">
+          Continuer
+        </button>
+      </div>
+    </SPictures>
   );
 };
 
