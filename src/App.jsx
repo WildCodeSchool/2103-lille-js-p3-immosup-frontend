@@ -13,7 +13,6 @@ import TenantMatch from './components/Tenant/TenantMatch';
 import TenantAnnouncementsSave from './components/Tenant/TenantAnnouncementsSave';
 import TenantRoommateHunt from './components/Tenant/TenantRoommateHunt';
 import TenantHousingSearch from './components/Tenant/TenantHousingSearch';
-import ContactUs from './components/ContactUs';
 import TenantCriteria from './components/Tenant/TenantCriteria';
 import Footer from './components/Footer';
 import GlobalStyle from './GlobalStyle';
@@ -62,13 +61,17 @@ export default function App() {
             path="/tenant/housing-search"
             component={TenantHousingSearch}
           />
-          <Route path="/contact-us" component={ContactUs} />
+
           <Route
             path="/tenant/housing-search"
             component={TenantHousingSearch}
           />
           <Route path="/tenant/criteria" component={TenantCriteria} />
           <Route path="/addannonce" component={AddAnnonce} />
+          <Route
+            path="/tenant/housing-search"
+            component={TenantHousingSearch}
+          />
         </Switch>
       </UserInfos.Provider>
       <Footer />
