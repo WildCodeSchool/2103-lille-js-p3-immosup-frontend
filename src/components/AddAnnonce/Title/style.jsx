@@ -19,6 +19,7 @@ const STitle = styled.div`
   }
   .titleBox {
     display: flex;
+    justify-content: space-around;
   }
   .titleContainer {
     input {

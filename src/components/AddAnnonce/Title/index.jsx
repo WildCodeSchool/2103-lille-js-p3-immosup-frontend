@@ -51,9 +51,14 @@ const Title = ({ setCategory, setTitle, inputTitle, inputCategory }) => {
           </div>
         </div>
 
-        <button type="button" className="continue">
-          Continuer
-        </button>
+        <div className="navButton">
+          <button type="button" className="return">
+            Précédent
+          </button>
+          <button type="button" className="continue">
+            Continuer
+          </button>
+        </div>
       </div>
     </STitle>
   );

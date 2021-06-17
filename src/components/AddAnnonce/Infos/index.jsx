@@ -6,7 +6,8 @@ const Infos = ({
   inputSurface,
   inputAnimals,
   inputType,
-
+  inputEnergyClass,
+  inputGes,
   inputRooms,
   setType,
   setSurface,
@@ -29,6 +30,13 @@ const Infos = ({
 
   const handleChangeAnimals = (evt) => {
     setAnimals(evt.target.value);
+  };
+
+  const handleChangeEnergyClass = (evt) => {
+    setEnergyClass(evt.target.value);
+  };
+  const handleChangeGes = (evt) => {
+    setGes(evt.target.value);
   };
 
   const seeIfSup = () => {
@@ -136,58 +144,47 @@ const Infos = ({
           </div>
         </div>
 
-        <h2>Classe énergie:</h2>
-        <div className="buttonClassEnergy">
-          <input type="checkbox" onChange={() => setEnergyClass('A')} />
+        <div className="box3">
+          <div className="selectEnergy">
+            <h2>Classe énergie</h2>
+            <select value={inputEnergyClass} onChange={handleChangeEnergyClass}>
+              <option selected value="">
+                {' '}
+              </option>
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+              <option value="D">D</option>
+              <option value="E">E</option>
+              <option value="F">F</option>
+              <option value="G">G</option>
+            </select>
+          </div>
 
-          <button type="button" oncClick={() => setEnergyClass('B')}>
-            B
+          <div className="selectGes">
+            <h2>Gaz à effet de serre</h2>
+            <select value={inputGes} onChange={handleChangeGes}>
+              <option selected value="">
+                {' '}
+              </option>
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+              <option value="D">D</option>
+              <option value="E">E</option>
+              <option value="F">F</option>
+              <option value="G">G</option>
+            </select>
+          </div>
+        </div>
+        <div className="navButton">
+          <button type="button" className="return">
+            Précédent
           </button>
-          <button type="button" oncClick={() => setEnergyClass('C')}>
-            C
-          </button>
-          <button type="button" oncClick={() => setEnergyClass('D')}>
-            D
-          </button>
-          <button type="button" oncClick={() => setEnergyClass('E')}>
-            E
-          </button>
-          <button type="button" oncClick={() => setEnergyClass('F')}>
-            F
-          </button>
-          <button type="button" oncClick={() => setEnergyClass('G')}>
-            G
+          <button type="button" className="continue">
+            Continuer
           </button>
         </div>
-
-        <h2>GES: (Gaz à Effet de Serre)</h2>
-        <div className="buttonGes">
-          <button type="button" oncClick={() => setGes('A')}>
-            A
-          </button>
-          <button type="button" oncClick={() => setGes('B')}>
-            B
-          </button>
-          <button type="button" oncClick={() => setGes('C')}>
-            C
-          </button>
-          <button type="button" oncClick={() => setGes('D')}>
-            D
-          </button>
-          <button type="button" oncClick={() => setGes('E')}>
-            E
-          </button>
-          <button type="button" oncClick={() => setGes('F')}>
-            F
-          </button>
-          <button type="button" oncClick={() => setGes('G')}>
-            G
-          </button>
-        </div>
-
-        <button type="button" className="continue">
-          Continuer
-        </button>
       </div>
     </SInfo>
   );
@@ -199,7 +196,8 @@ Infos.propTypes = {
   inputSurface: PropTypes.number,
   inputAnimals: PropTypes.string,
   inputType: PropTypes.string,
-
+  inputGes: PropTypes.string,
+  inputEnergyClass: PropTypes.string,
   inputRooms: PropTypes.number,
   setType: PropTypes.func,
   setSurface: PropTypes.func,
@@ -214,7 +212,8 @@ Infos.defaultProps = {
   inputSurface: '',
   inputAnimals: '',
   inputType: '',
-
+  inputGes: '',
+  inputEnergyClass: '',
   inputRooms: '',
   setType: () => {},
   setSurface: () => {},

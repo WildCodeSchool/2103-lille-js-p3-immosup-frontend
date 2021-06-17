@@ -22,19 +22,31 @@ const Description = ({
   return (
     <SDescription>
       <div className="partContainer">
-        <h2>Adress:</h2>
-        <input type="text" value={inputAdress} onChange={handleChangeAdress} />
-        <h2>City</h2>
-        <input type="text" value={inputCity} onChange={handleChangeCity} />
-        <h2>Describe</h2>
-        <input
-          type="text"
-          value={inputDescribe}
-          onChange={handleChangeDescribe}
-        />
-        <button type="button" className="continue">
-          Continuer
-        </button>
+        <div className="addressCity">
+          <div className="adress">
+            <h2>Adresse :</h2>
+            <input
+              type="text"
+              value={inputAdress}
+              onChange={handleChangeAdress}
+            />
+          </div>
+          <div className="city">
+            <h2>Ville :</h2>
+            <input type="text" value={inputCity} onChange={handleChangeCity} />
+          </div>
+        </div>
+
+        <h2>Description de l&apos;annonce :</h2>
+        <textarea value={inputDescribe} onChange={handleChangeDescribe} />
+        <div className="navButton">
+          <button type="button" className="return">
+            Précédent
+          </button>
+          <button type="button" className="continue">
+            Continuer
+          </button>
+        </div>
       </div>
     </SDescription>
   );

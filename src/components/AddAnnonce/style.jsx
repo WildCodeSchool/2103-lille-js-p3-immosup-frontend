@@ -12,6 +12,7 @@ const Addannoncestyle = styled.div`
   }
   .partContainer {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     margin: auto;
     margin-top: 40px;
@@ -24,18 +25,25 @@ const Addannoncestyle = styled.div`
     padding: 30px;
   }
 
-  .continue {
+  .navButton {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  .continue,
+  .return {
     width: 120px;
     height: 50px;
     border-radius: 20px;
-    margin-left: 90%;
     font: 500 1.1em 'roboto';
     border: none;
     background-color: #fff;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
     transition: 0.2s ease-in-out;
   }
-  .continue:hover {
+  .continue,
+  .return:hover {
     color: #fff;
     background: #109fe6;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);

@@ -11,9 +11,14 @@ const Rent = ({ setRent, inputRent }) => {
       <div className="partContainer">
         <h2>Rent</h2>
         <input type="text" value={inputRent} onChange={handleChangeRent} />
-        <button type="button" className="continue">
-          Continuer
-        </button>
+        <div className="navButton">
+          <button type="button" className="return">
+            Précédent
+          </button>
+          <button type="button" className="continue">
+            Continuer
+          </button>
+        </div>
       </div>
     </SRent>
   );

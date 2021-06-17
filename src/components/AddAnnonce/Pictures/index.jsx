@@ -39,9 +39,14 @@ const Pictures = ({
           value={inputPicture3}
           onChange={handleChangePicture3}
         />
-        <button type="button" className="continue">
-          Continuer
-        </button>
+        <div className="navButton">
+          <button type="button" className="return">
+            Précédent
+          </button>
+          <button type="button" className="continue">
+            Continuer
+          </button>
+        </div>
       </div>
     </SPictures>
   );
