@@ -3,12 +3,16 @@ import { Switch, Route } from 'react-router-dom';
 import UserInfos from './contexts/UserInfos';
 import HomePage from './components/HomePage';
 import TenantDashboard from './components/Tenant/TenantDashboard';
+import LandlordDashboard from './components/Landlord/LandlordDashboard';
+import LandlordProfil from './components/Landlord/LandlordProfil';
+import LandlordContact from './components/Landlord/LandlordContact';
+import LandlordBuyCredits from './components/Landlord/LandlordBuyCredits';
+import LandlordAnnoucement from './components/Landlord/LandordAnnouncement';
 import TenantProfil from './components/Tenant/TenantProfil';
 import TenantMatch from './components/Tenant/TenantMatch';
 import TenantAnnouncementsSave from './components/Tenant/TenantAnnouncementsSave';
 import TenantRoommateHunt from './components/Tenant/TenantRoommateHunt';
 import TenantHousingSearch from './components/Tenant/TenantHousingSearch';
-import LandlordDashboard from './components/LandlordDashboard';
 import ContactUs from './components/ContactUs';
 import TenantCriteria from './components/Tenant/TenantCriteria';
 import Footer from './components/Footer';
@@ -31,6 +35,24 @@ export default function App() {
           <Route path="/tenant/profil" component={TenantProfil} />
           <Route path="/tenant/match" component={TenantMatch} />
           <Route path="/tenant/criteria" component={TenantCriteria} />
+          <Route
+            exact
+            path="/landlord/dashboard"
+            component={LandlordDashboard}
+          />
+          <Route path="/landlord/dashboard/profil" component={LandlordProfil} />
+          <Route
+            path="/landlord/dashboard/contact"
+            component={LandlordContact}
+          />
+          <Route
+            path="/landlord/dashboard/buycredits"
+            component={LandlordBuyCredits}
+          />
+          <Route
+            path="/landlord/dashboard/annoucement"
+            component={LandlordAnnoucement}
+          />
           <Route
             path="/tenant/announcements-save"
             component={TenantAnnouncementsSave}
