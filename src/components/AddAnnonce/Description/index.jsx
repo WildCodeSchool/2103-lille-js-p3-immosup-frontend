@@ -5,9 +5,11 @@ const Description = ({
   setAdress,
   setCity,
   setDescribe,
+  setRent,
   inputAdress,
   inputCity,
   inputDescribe,
+  inputRent,
 }) => {
   const handleChangeAdress = (evt) => {
     setAdress(evt.target.value);
@@ -17,6 +19,9 @@ const Description = ({
   };
   const handleChangeDescribe = (evt) => {
     setDescribe(evt.target.value);
+  };
+  const handleChangeRent = (evt) => {
+    setRent(evt.target.value);
   };
 
   return (
@@ -34,6 +39,14 @@ const Description = ({
           <div className="city">
             <h2>Ville :</h2>
             <input type="text" value={inputCity} onChange={handleChangeCity} />
+          </div>
+          <div className="rent">
+            <h2>Prix :</h2>
+            <input
+              type="number"
+              value={inputRent}
+              onChange={handleChangeRent}
+            />
           </div>
         </div>
 
@@ -58,9 +71,11 @@ Description.propTypes = {
   setAdress: Proptypes.func,
   setCity: Proptypes.func,
   setDescribe: Proptypes.func,
+  setRent: Proptypes.func,
   inputAdress: Proptypes.string,
   inputCity: Proptypes.string,
   inputDescribe: Proptypes.string,
+  inputRent: Proptypes.number,
 };
 Description.defaultProps = {
   inputAdress: '',
@@ -69,4 +84,6 @@ Description.defaultProps = {
   setAdress: () => {},
   setCity: () => {},
   setDescribe: () => {},
+  inputRent: 0,
+  setRent: () => {},
 };

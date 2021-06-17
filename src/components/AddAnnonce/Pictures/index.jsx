@@ -23,7 +23,7 @@ const Pictures = ({
   return (
     <SPictures>
       <div className="partContainer">
-        <h2>Picture:</h2>
+        <h2>Photos :</h2>
         <input
           type="text"
           value={inputPicture1}

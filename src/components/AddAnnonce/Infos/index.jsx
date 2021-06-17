@@ -78,7 +78,7 @@ const Infos = ({
             </div>
           </div>
           <div className="boxFurnished">
-            <h2>Furnished:</h2>
+            <h2>Fourniture :</h2>
             <select value={inputFurnished} onChange={handleChangeFurnished}>
               <option selected value="">
                 {' '}

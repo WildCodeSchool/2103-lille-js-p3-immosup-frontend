@@ -3,14 +3,17 @@ import styled from 'styled-components';
 const SInfo = styled.div`
   .box1 {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
   }
   .box2 {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
   }
   .box3 {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
   }
@@ -52,7 +55,6 @@ const SInfo = styled.div`
   .rooms,
   .boxAnimals {
     display: flex;
-
     align-items: center;
   }
 

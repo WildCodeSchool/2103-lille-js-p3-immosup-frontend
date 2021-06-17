@@ -6,14 +6,15 @@ const SDescription = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     .adress,
-    .city {
+    .city,
+    .rent {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      width: 50%;
+      width: 30%;
 
       input {
-        width: 50%;
+        width: 40%;
         height: 20px;
       }
     }

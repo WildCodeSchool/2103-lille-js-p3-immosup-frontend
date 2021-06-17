@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 const STitle = styled.div`
   .inputTitle {
-    width: 50%;
     height: 20px;
   }
   .radioContainer {
@@ -22,13 +21,16 @@ const STitle = styled.div`
     justify-content: space-around;
   }
   .titleContainer {
+    display: flex;
+    width: 60%;
     input {
-      width: 100%;
+      width: 50%;
     }
   }
   .titleContainer,
   .categoryContainer {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
   }
 `;

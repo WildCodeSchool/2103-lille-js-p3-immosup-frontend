@@ -4,7 +4,7 @@ import Addannoncestyle from './style';
 import Title from './Title';
 import Infos from './Infos';
 import Description from './Description';
-import Rent from './Rent';
+
 import Pictures from './Pictures';
 import Preview from './Preview';
 
@@ -81,12 +81,13 @@ function AddAnnonce() {
           setAdress={setAdress}
           setCity={setCity}
           setDescribe={setDescribe}
+          setRent={setRent}
           inputAdress={inputAdress}
           inputCity={inputCity}
           inputDescribe={inputDescribe}
+          inputRent={inputRent}
         />
 
-        <Rent setRent={setRent} inputRent={inputRent} />
         <Pictures
           setPicture1={setPicture1}
           setPicture2={setPicture2}

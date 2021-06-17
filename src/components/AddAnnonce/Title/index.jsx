@@ -34,7 +34,7 @@ const Title = ({ setCategory, setTitle, inputTitle, inputCategory }) => {
                   onClick={handleChangeCategory}
                   checked={inputCategory === 'Location'}
                 />
-                Maison
+                Location
               </label>
               <label htmlFor="radio_2">
                 <input
@@ -45,7 +45,7 @@ const Title = ({ setCategory, setTitle, inputTitle, inputCategory }) => {
                   onClick={handleChangeCategory}
                   checked={inputCategory === 'Colocation'}
                 />
-                Appartement
+                Colocation
               </label>
             </div>
           </div>

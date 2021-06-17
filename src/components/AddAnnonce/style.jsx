@@ -42,7 +42,11 @@ const Addannoncestyle = styled.div`
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
     transition: 0.2s ease-in-out;
   }
-  .continue,
+  .continue:hover {
+    color: #fff;
+    background: #109fe6;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  }
   .return:hover {
     color: #fff;
     background: #109fe6;
