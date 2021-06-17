@@ -64,7 +64,6 @@ export default function LandlordDashboard() {
 
         <div className="buttons">
           <Link to="/landlord/dashboard/contact">
-            {' '}
             <div className="contact"> Mes contact </div>
           </Link>
 
