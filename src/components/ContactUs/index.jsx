@@ -1,8 +1,17 @@
+import { useState } from 'react';
+import axios from 'axios';
 import SContactUs from './style';
 
 export default function ContactUs() {
+  const [expeditor, setExpeditor] = useState('');
+  const [body, setBody] = useState('');
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    axios.post('http://localhost:5050/access', {
+      email: expeditor,
+      message: body,
+    });
   };
 
   return (
@@ -18,7 +27,15 @@ export default function ContactUs() {
 
           <label htmlFor="email">
             <h3>Email</h3>
-            <input placeholder="votre@mail.com" name="email" id="field" />
+            <input
+              placeholder="votre@mail.com"
+              name="email"
+              id="field"
+              value={expeditor}
+              onChange={(e) => {
+                setExpeditor(e.target.value);
+              }}
+            />
           </label>
 
           <label htmlFor="message">
@@ -29,6 +46,10 @@ export default function ContactUs() {
               name="textValue"
               id="field"
               placeholder="Votre message"
+              value={body}
+              onChange={(e) => {
+                setBody(e.target.value);
+              }}
             />
           </label>
 
