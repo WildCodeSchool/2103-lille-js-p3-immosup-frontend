@@ -10,7 +10,7 @@ import TenantRoommateHunt from './components/Tenant/TenantRoommateHunt';
 import TenantHousingSearch from './components/Tenant/TenantHousingSearch';
 import LandlordDashboard from './components/LandlordDashboard';
 import ContactUs from './components/ContactUs';
-import TenantCritera from './components/Tenant/TenantCriteria';
+import TenantCriteria from './components/Tenant/TenantCriteria';
 import Footer from './components/Footer';
 import GlobalStyle from './GlobalStyle';
 import SApp from './SApp';
@@ -30,6 +30,7 @@ export default function App() {
           <Route path="/landlord/dashboard" component={LandlordDashboard} />
           <Route path="/tenant/profil" component={TenantProfil} />
           <Route path="/tenant/match" component={TenantMatch} />
+          <Route path="/tenant/criteria" component={TenantCriteria} />
           <Route
             path="/tenant/announcements-save"
             component={TenantAnnouncementsSave}
@@ -40,7 +41,11 @@ export default function App() {
             component={TenantHousingSearch}
           />
           <Route path="/contact-us" component={ContactUs} />
-          <Route path="/tenant/criteria" component={TenantCritera} />
+          <Route
+            path="/tenant/housing-search"
+            component={TenantHousingSearch}
+          />
+          <Route path="/tenant/criteria" component={TenantCriteria} />
           <Route path="/addannonce" component={AddAnnonce} />
         </Switch>
       </UserInfos.Provider>
