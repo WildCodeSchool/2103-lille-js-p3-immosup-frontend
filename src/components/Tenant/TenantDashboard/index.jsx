@@ -1,7 +1,17 @@
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import STenantDashboard from './style';
 
 export default function TenantDashboard() {
+  const [fav, setFav] = useState([]);
+
+  useEffect(() => {
+    axios.get(`http://localhost:5050/api/favorites`).then(({ data }) => {
+      console.log(data);
+      setFav(data);
+    });
+  }, []);
   return (
     <STenantDashboard>
       <h2>Tableau de bord</h2>
@@ -69,11 +79,21 @@ export default function TenantDashboard() {
             <h3 className="h3Announcements">Mes annonces sauvegardées</h3>
           </Link>
           <div className="galleryAnnouncements">
-            <div className="profilAnnouncements" />
-            <div className="profilAnnouncements" />
-            <div className="profilAnnouncements" />
-            <div className="profilAnnouncements" />
-            <div className="profilAnnouncements" />
+            {fav.map((toto) => {
+              return (
+                <div className="profilAnnouncements">
+                  <img src={`${toto.url}`} alt="imgAccomodation" />
+                  <p>
+                    {toto.title}
+                    <br />
+                    {toto.rent}€<br />
+                    {toto.district}
+                    <br />
+                    <br />
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
         <Link to="/tenant/housing-search">

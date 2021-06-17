@@ -245,12 +245,34 @@ const STenantDashboard = styled.div`
           justify-content: center;
         }
         .profilAnnouncements {
-          background-color: grey;
-          width: 150px;
-          height: 150px;
-          border-radius: 20%;
+          position: relative;
+          display: flex;
+          //*background-color: grey;
+          border: solid black 1px;
+
+          width: 400px;
+          height: 300px;
+          border-radius: 5%;
           @media (max-width: 1200px) {
             margin: 15px;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+            margin-top: 0;
+            border: solid black 1px;
+            border-radius: 5%;
+          }
+          p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5rem;
+            color: black;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 15px;
+            border-radius: 5%;
           }
         }
       }
