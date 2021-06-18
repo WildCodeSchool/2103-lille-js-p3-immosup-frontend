@@ -5,6 +5,7 @@ import SContactUs from './style';
 export default function ContactUs() {
   const [expeditor, setExpeditor] = useState('');
   const [body, setBody] = useState('');
+  const [isSent, setIsSent] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -12,6 +13,7 @@ export default function ContactUs() {
       email: expeditor,
       message: body,
     });
+    setIsSent(true);
   };
 
   return (
@@ -53,9 +55,15 @@ export default function ContactUs() {
             />
           </label>
 
-          <button type="submit" className="button">
-            <h4>Envoyé</h4>
-          </button>
+          {isSent ? (
+            <button disabled type="submit" className="buttonSent">
+              Envoyé !
+            </button>
+          ) : (
+            <button type="submit" className="buttonNotSent">
+              Envoyer
+            </button>
+          )}
         </form>
       </div>
     </SContactUs>
