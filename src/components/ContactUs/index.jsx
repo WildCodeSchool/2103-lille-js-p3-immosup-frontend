@@ -19,7 +19,7 @@ export default function ContactUs() {
   return (
     <SContactUs>
       <div className="content">
-        <h2>Formulaire</h2>
+        <h2>Contact</h2>
 
         <form className="contactUs" onSubmit={handleSubmit}>
           <label htmlFor="username">
