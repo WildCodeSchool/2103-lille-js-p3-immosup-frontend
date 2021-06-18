@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { Switch, Route } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import TenantDashboard from './components/Tenant/TenantDashboard';
