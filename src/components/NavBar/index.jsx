@@ -1,3 +1,4 @@
+/* <<<<<<< HEAD
 import { useEffect, useContext } from 'react';
 import axios from 'axios';
 import UserInfos from '../../contexts/UserInfos';
@@ -35,7 +36,8 @@ export default function NavBar() {
           </button>
         </>
       )}
-      {/* import { Link } from 'react-router-dom';
+=======
+{/* import { Link } from 'react-router-dom';
 import SNavBar from './style';
 
 export default function NavBar() {
@@ -49,7 +51,9 @@ export default function NavBar() {
           src="/img/icons/account_circle_black_48dp.svg"
           alt="Tableau de bord"
         />
-      </Link> */}
+      </Link> */
+/* }
+>>>>>>> 8807e65ebe7438bf18689c2229cc39536d3e54b1
     </SNavBar>
   );
-}
+} */

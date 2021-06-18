@@ -15,7 +15,7 @@ import TenantAnnouncementsSave from './components/Tenant/TenantAnnouncementsSave
 import TenantRoommateHunt from './components/Tenant/TenantRoommateHunt';
 import TenantHousingSearch from './components/Tenant/TenantHousingSearch';
 import TenantCriteria from './components/Tenant/TenantCriteria';
-import NavBar from './components/NavBar';
+/* import NavBar from './components/NavBar'; */
 import Footer from './components/Footer';
 import GlobalStyle from './GlobalStyle';
 import SApp from './SApp';
@@ -28,8 +28,7 @@ export default function App() {
   return (
     <div>
       <SApp>
-        <NavBar />
-
+        {/*   <NavBar /> */}
         <GlobalStyle />
         <UserInfos.Provider value={{ userInfos, setUserInfos }}>
           <Switch>
