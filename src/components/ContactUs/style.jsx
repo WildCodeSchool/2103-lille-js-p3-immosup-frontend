@@ -43,7 +43,7 @@ const SContactUs = styled.div`
         height: 100px;
         resize: vertical;
       }
-      .button {
+      .buttonNotSent {
         background-color: #ffffff;
         font-family: Roboto;
         font-weight: bold;
@@ -58,6 +58,19 @@ const SContactUs = styled.div`
         &:hover {
           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
         }
+      }
+      .buttonSent {
+        background-color: #ffffff;
+        font-family: Roboto;
+        font-weight: bold;
+        font-size: 20px;
+        margin: auto;
+        margin-top: 40px;
+        border-radius: 20px;
+        height: 60px;
+        width: 50%;
+        border: none;
+        box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.25);
       }
     }
   }
