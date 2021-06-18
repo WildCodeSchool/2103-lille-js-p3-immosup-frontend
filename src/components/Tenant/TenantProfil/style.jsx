@@ -52,10 +52,6 @@ const SProfil = styled.div`
         resize: none;
         padding: 10px;
       }
-
-      &.age {
-        width: 40px;
-      }
     }
 
     .edit {

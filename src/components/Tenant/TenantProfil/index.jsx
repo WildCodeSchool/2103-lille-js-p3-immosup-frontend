@@ -7,25 +7,11 @@ import SProfil from './style';
 export default function TenantProfil() {
   const { userInfos, setUserInfos } = useContext(UserInfos);
   const [edit, setEdit] = useState(false);
-  const [putName, setPutName] = useState('');
-  const [putFirstname, setPutFirstname] = useState('');
-  const [putAboutMe, setPutAboutMe] = useState('');
-  const [putEmail, setPutEmail] = useState('');
-  const [putPhone, setPutPhone] = useState('');
-  const [putAge, setPutAge] = useState(0);
-  const [putCity, setPutCity] = useState('');
-  const [putHobbies, setPutHobbies] = useState('');
+  const [updateUser, setUpdateUser] = useState({});
 
   const handleEdit = () => {
     if (!edit) {
-      setPutName(userInfos.name);
-      setPutFirstname(userInfos.firstname);
-      setPutAboutMe(userInfos.aboutme);
-      setPutEmail(userInfos.email);
-      setPutPhone(userInfos.telephone);
-      setPutAge(userInfos.age);
-      setPutCity(userInfos.city);
-      setPutHobbies(userInfos.hobbies);
+      setUpdateUser(userInfos);
       setEdit(true);
     } else {
       setEdit(false);
@@ -37,19 +23,22 @@ export default function TenantProfil() {
       .put(`http://localhost:5050/api/users/${userInfos.id}`, body)
       .then(({ data }) => {
         setUserInfos(data);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
 
   const saveInfos = () => {
     putInfos({
-      name: putName,
-      firstname: putFirstname,
-      aboutme: putAboutMe,
-      email: putEmail,
-      telephone: putPhone,
-      age: putAge,
-      city: putCity,
-      hobbies: putHobbies,
+      name: updateUser.name,
+      firstname: updateUser.firstname,
+      aboutme: updateUser.aboutme,
+      email: updateUser.email,
+      telephone: updateUser.telephone,
+      age: updateUser.age ? parseInt(updateUser.age, 10) : 0,
+      city: updateUser.city,
+      hobbies: updateUser.hobbies,
     });
     handleEdit();
   };
@@ -117,9 +106,12 @@ export default function TenantProfil() {
                         type="text"
                         className="textbox name"
                         maxLength="64"
-                        value={putName}
+                        value={updateUser.name}
                         onChange={(e) => {
-                          setPutName(e.target.value);
+                          setUpdateUser({
+                            ...updateUser,
+                            name: e.target.value,
+                          });
                         }}
                       />
                     )}
@@ -133,22 +125,13 @@ export default function TenantProfil() {
                         type="text"
                         className="textbox firstname"
                         maxLength="32"
-                        value={putFirstname}
+                        value={updateUser.firstname}
                         onChange={(e) => {
-                          setPutFirstname(e.target.value);
+                          setUpdateUser({
+                            ...updateUser,
+                            firstname: e.target.value,
+                          });
                         }}
-                      />
-                    )}
-                  </div>
-                  <div>
-                    <h2 className="row">École :</h2>
-                    {!edit ? (
-                      <p className="row">&nbsp;{userInfos.school || ''}</p>
-                    ) : (
-                      <input
-                        type="text"
-                        className="textbox school"
-                        value={userInfos.school || ''}
                       />
                     )}
                   </div>
@@ -164,9 +147,12 @@ export default function TenantProfil() {
                       type="text"
                       className="textbox aboutme"
                       maxLength="256"
-                      value={putAboutMe}
+                      value={updateUser.aboutme}
                       onChange={(e) => {
-                        setPutAboutMe(e.target.value);
+                        setUpdateUser({
+                          ...updateUser,
+                          aboutme: e.target.value,
+                        });
                       }}
                     />
                   )}
@@ -181,9 +167,12 @@ export default function TenantProfil() {
                         type="email"
                         className="textbox email"
                         maxLength="64"
-                        value={putEmail}
+                        value={updateUser.email}
                         onChange={(e) => {
-                          setPutEmail(e.target.value);
+                          setUpdateUser({
+                            ...updateUser,
+                            email: e.target.value,
+                          });
                         }}
                       />
                     )}
@@ -197,9 +186,12 @@ export default function TenantProfil() {
                         type="text"
                         className="textbox phone"
                         maxLength="32"
-                        value={putPhone}
+                        value={updateUser.telephone}
                         onChange={(e) => {
-                          setPutPhone(e.target.value);
+                          setUpdateUser({
+                            ...updateUser,
+                            telephone: e.target.value,
+                          });
                         }}
                       />
                     )}
@@ -213,12 +205,14 @@ export default function TenantProfil() {
                         <p className="row">&nbsp;{userInfos.age}</p>
                       ) : (
                         <input
-                          type="text"
+                          type="number"
                           className="textbox age"
-                          maxLength="2"
-                          value={putAge}
+                          value={updateUser.age}
                           onChange={(e) => {
-                            setPutAge(parseInt(e.target.value, 10));
+                            setUpdateUser({
+                              ...updateUser,
+                              age: e.target.value,
+                            });
                           }}
                         />
                       )}
@@ -232,25 +226,16 @@ export default function TenantProfil() {
                           type="text"
                           className="textbox city"
                           maxLength="32"
-                          value={putCity}
+                          value={updateUser.city}
                           onChange={(e) => {
-                            setPutCity(e.target.value);
+                            setUpdateUser({
+                              ...updateUser,
+                              city: e.target.value,
+                            });
                           }}
                         />
                       )}
                     </div>
-                  </div>
-                  <div className="song">
-                    <h2>Chanson favorite</h2>
-                    {!edit ? (
-                      <p>&nbsp;{userInfos.song || ''}</p>
-                    ) : (
-                      <input
-                        type="text"
-                        className="textbox song"
-                        value={userInfos.song || ''}
-                      />
-                    )}
                   </div>
                 </div>
               </section>
@@ -264,9 +249,12 @@ export default function TenantProfil() {
                       type="text"
                       className="textbox hobbies"
                       maxLength="256"
-                      value={putHobbies}
+                      value={updateUser.hobbies}
                       onChange={(e) => {
-                        setPutHobbies(e.target.value);
+                        setUpdateUser({
+                          ...updateUser,
+                          hobbies: e.target.value,
+                        });
                       }}
                     />
                   )}
