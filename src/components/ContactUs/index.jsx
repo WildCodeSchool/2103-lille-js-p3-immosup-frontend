@@ -21,50 +21,50 @@ export default function ContactUs() {
       <div className="content">
         <h2>Contact</h2>
 
-        <form className="contactUs" onSubmit={handleSubmit}>
-          <label htmlFor="username">
-            <h3>Utilisateur/trice</h3>
-            <input placeholder="Nom" name="firstname" id="field" />
-          </label>
+        {!isSent ? (
+          <form className="contactUs" onSubmit={handleSubmit}>
+            <label htmlFor="username">
+              <h3>Utilisateur/trice</h3>
+              <input placeholder="Nom" name="firstname" id="field" />
+            </label>
 
-          <label htmlFor="email">
-            <h3>Email</h3>
-            <input
-              placeholder="votre@mail.com"
-              name="email"
-              id="field"
-              value={expeditor}
-              onChange={(e) => {
-                setExpeditor(e.target.value);
-              }}
-            />
-          </label>
+            <label htmlFor="email">
+              <h3>Email</h3>
+              <input
+                placeholder="votre@mail.com"
+                name="email"
+                id="field"
+                value={expeditor}
+                onChange={(e) => {
+                  setExpeditor(e.target.value);
+                }}
+              />
+            </label>
 
-          <label htmlFor="message">
-            <h3>Message</h3>
-            <textarea
-              className="text"
-              type="textarea"
-              name="textValue"
-              id="field"
-              placeholder="Votre message"
-              value={body}
-              onChange={(e) => {
-                setBody(e.target.value);
-              }}
-            />
-          </label>
+            <label htmlFor="message">
+              <h3>Message</h3>
+              <textarea
+                className="text"
+                type="textarea"
+                name="textValue"
+                id="field"
+                placeholder="Votre message"
+                value={body}
+                onChange={(e) => {
+                  setBody(e.target.value);
+                }}
+              />
+            </label>
 
-          {isSent ? (
-            <button disabled type="submit" className="buttonSent">
-              Envoyé !
-            </button>
-          ) : (
             <button type="submit" className="buttonNotSent">
               Envoyer
             </button>
-          )}
-        </form>
+          </form>
+        ) : (
+          <button type="submit" disabled className="buttonSent">
+            Envoyé
+          </button>
+        )}
       </div>
     </SContactUs>
   );
