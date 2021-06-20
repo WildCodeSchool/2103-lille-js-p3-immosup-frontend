@@ -1,198 +1,150 @@
 import styled from 'styled-components';
 
 const SProfil = styled.div`
-  padding: 30px 10vw;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  padding: 0 10vw;
 
-  .profil-title {
+  .title-page {
     font-weight: bold;
     font-size: 60px;
-  }
-
-  h2 {
-    font-weight: bold;
-    font-size: 25px;
-    margin: 10px 0;
-  }
-
-  .row {
-    display: inline-block;
-  }
-
-  .profil-content {
-    position: relative;
-    background: #ffffff;
-    border: 1px solid #e8e8e8;
-    box-sizing: border-box;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
     margin: 30px 0;
+  }
 
-    .textbox {
-      border: 1px solid #109fe6;
-      background-color: #e5eef3;
-      font-size: 16px;
-      padding: 0 10px;
-      height: 40px;
-      margin-left: 5px;
+  .part {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
 
-      &:focus {
-        outline: none;
-        background-color: #f3f2e5;
-        border-color: #d8cb22;
+    &.profil {
+      text-align: center;
+
+      .avatar {
+        width: 168px;
+        height: 168px;
+        border-radius: 50%;
+        object-fit: cover;
       }
 
-      &:hover {
-        background-color: #f3f2e5;
-        border-color: #d8cb22;
-      }
-
-      &.aboutme {
-        width: 100%;
-        height: 100%;
-        resize: none;
-        padding: 10px;
+      .name {
+        font-weight: bold;
+        font-size: 32px;
+        color: #505254;
+        margin-top: 20px;
       }
     }
 
-    .edit {
-      position: absolute;
-      width: 80px;
-      height: 80px;
-      right: -40px;
-      top: -40px;
-      background-color: #109fe6;
-      border: none;
-      border-radius: 50%;
-      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
-      cursor: pointer;
+    h2 {
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 25px;
+      color: #505254;
+      margin-bottom: 30px;
+    }
 
-      &.open {
-        background-color: #109fe6;
+    h3 {
+      font-weight: 700;
+      font-size: 18px;
+      color: #505254;
+      line-height: 22px;
+      margin-bottom: 5px;
+    }
 
-        &:hover {
-          background-color: #2b99d0;
-        }
-      }
-
-      &.close {
-        background-color: #d43737;
-
-        &:hover {
-          background-color: #bd2a2a;
-        }
-      }
-
-      svg {
-        width: 40px;
-        height: 40px;
-        fill: #fff;
-      }
+    p {
+      font-size: 18px;
+      line-height: 22px;
+      color: #5c5e61;
     }
 
     section {
-      display: flex;
       width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
 
-      &#top {
-        margin: 40px 0;
-        align-items: center;
+      .picto {
+        width: 20px;
+        height: 20px;
       }
 
-      &#middle {
-        justify-content: space-around;
-        margin-bottom: 40px;
-      }
-
-      &#bottom {
-        justify-content: space-around;
-        margin-bottom: 40px;
-      }
-
-      .avatar {
-        text-align: right;
-        padding-right: 15px;
-        width: 50%;
-
-        .avatar-content {
-          width: 200px;
-          height: 200px;
-          border-radius: 50%;
-          box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
-        }
-      }
-
-      .infos {
-        text-align: left;
-        padding-left: 15px;
-        width: 50%;
-
-        p {
-          font-size: 25px;
-          text-transform: capitalize;
-        }
-      }
-
-      .description {
-        width: 35%;
-
-        p {
-          font-size: 15px;
-        }
-      }
-
-      .age-city {
-        p {
-          font-size: 22px;
-        }
-      }
-
-      .hobbies {
-        width: 50%;
-        padding-left: 60px;
-      }
-
-      .account {
-        width: 50%;
+      .content {
+        margin: 0 0 20px 10px;
       }
     }
+  }
 
-    .buttons {
-      width: 100%;
-      text-align: right;
-      margin-bottom: 20px;
+  .connected-parts {
+    display: flex;
+    width: 100%;
 
-      .edit-button {
-        width: auto;
-        height: 50px;
-        font-size: 20px;
-        font-weight: 500;
-        border: 1px solid;
-        padding: 0 30px;
-        cursor: pointer;
+    .parts {
+      &.first {
+        width: 30%;
+        padding-right: 10px;
+      }
 
-        &.save {
-          margin-right: 20px;
-          background-color: #109fe6;
-          color: #fff;
+      &.second {
+        width: 70%;
+        padding-left: 10px;
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0 40px 0;
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      border-radius: 4px;
+      font-size: 20px;
+      font-weight: 500;
+      border: 1px solid;
+      padding: 0 10px;
+      cursor: pointer;
+
+      .btn-text {
+        color: #fff;
+      }
+
+      .btn-icon {
+        width: 26px;
+        height: 26px;
+        fill: #fff;
+        margin-left: 10px;
+      }
+
+      &.modif,
+      &.login {
+        background-color: #109fe6;
+        border-color: #109fe6;
+
+        &:hover {
           border-color: #109fe6;
+          background-color: #fff;
 
-          &:hover {
-            color: #04d004;
-            border-color: #04d004;
-            background-color: #e0f5e2;
+          .btn-text {
+            color: #109fe6;
+          }
+
+          .btn-icon {
+            fill: #109fe6;
           }
         }
+      }
 
-        &.cancel {
-          margin-right: 40px;
-          background-color: #ecf2f5;
-          color: #109fe6;
-
-          &:hover {
-            color: red;
-            background-color: #f5e0e0;
-          }
-        }
+      &:active {
+        transform: translate(1px, 1px);
       }
     }
   }

@@ -7,7 +7,7 @@ export default function NavBar() {
   const { userInfos, setUserInfos } = useContext(UserInfos);
 
   const getUsersInfos = () => {
-    axios.get('http://localhost:5050/api/users/1').then(({ data }) => {
+    axios.get('http://localhost:5050/users?id=1').then(({ data }) => {
       setUserInfos(data);
     });
   };
