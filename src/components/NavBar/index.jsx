@@ -1,15 +1,21 @@
 import { useEffect, useContext } from 'react';
-import axios from 'axios';
 import UserInfos from '../../contexts/UserInfos';
+import sendRequest from '../../utilities/sendRequest';
 import SNavBar from './style';
 
 export default function NavBar() {
   const { userInfos, setUserInfos } = useContext(UserInfos);
 
-  const getUsersInfos = () => {
-    axios.get('http://localhost:5050/users?id=1').then(({ data }) => {
+  const getUsersInfos = async () => {
+    try {
+      const data = await sendRequest({
+        method: 'get',
+        url: '/users?id=1',
+      });
       setUserInfos(data);
-    });
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   useEffect(() => {

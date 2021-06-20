@@ -8,11 +8,18 @@ import SProfil from './style';
 export default function TenantProfil() {
   const history = useHistory();
   const { userInfos } = useContext(UserInfos);
-  const [edit, setEdit] = useState(true);
+  const [edit, setEdit] = useState(false);
+  const [updateInfos, setUpdateInfos] = useState(null);
 
   return (
     <>
-      {edit && <ModalProfil setEdit={setEdit} />}
+      {edit && (
+        <ModalProfil
+          updateInfos={updateInfos}
+          setUpdateInfos={setUpdateInfos}
+          setEdit={setEdit}
+        />
+      )}
       <NavBar />
       <SProfil>
         <h1 className="title-page">Mon profil</h1>

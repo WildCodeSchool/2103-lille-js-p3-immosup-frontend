@@ -33,7 +33,7 @@ const SModalProfil = styled.div`
 
       &:hover {
         .icon-close {
-          fill: #e62c2c;
+          fill: #e61010;
         }
       }
 
@@ -76,7 +76,7 @@ const SModalProfil = styled.div`
           outline: none;
 
           &:focus {
-            border: 2px solid #109fe6;
+            border: 1px solid #109fe6;
           }
         }
 
@@ -96,6 +96,80 @@ const SModalProfil = styled.div`
           resize: none;
           padding: 10px 10px;
         }
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 40px 0;
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      border-radius: 4px;
+      font-size: 20px;
+      font-weight: 500;
+      border: 1px solid;
+      padding: 0 10px;
+      cursor: pointer;
+
+      .btn-text {
+        color: #fff;
+      }
+
+      .btn-icon {
+        width: 26px;
+        height: 26px;
+        fill: #fff;
+        margin-left: 10px;
+      }
+
+      &.save {
+        background-color: #109fe6;
+        border-color: #109fe6;
+        margin-right: 10px;
+
+        &:hover {
+          border-color: #109fe6;
+          background-color: #fff;
+
+          .btn-text {
+            color: #109fe6;
+          }
+
+          .btn-icon {
+            fill: #109fe6;
+          }
+        }
+      }
+
+      &.cancel {
+        background-color: #e61010;
+        border-color: #e61010;
+        margin-left: 10px;
+
+        &:hover {
+          border-color: #e61010;
+          background-color: #fff;
+
+          .btn-text {
+            color: #e61010;
+          }
+
+          .btn-icon {
+            fill: #e61010;
+          }
+        }
+      }
+
+      &:active {
+        transform: translate(1px, 1px);
       }
     }
   }
