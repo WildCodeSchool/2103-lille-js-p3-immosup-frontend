@@ -1,15 +1,18 @@
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import UserInfos from '../../../contexts/UserInfos';
 import NavBar from '../../NavBar';
+import ModalProfil from './ModalProfil';
 import SProfil from './style';
 
 export default function TenantProfil() {
   const history = useHistory();
   const { userInfos } = useContext(UserInfos);
+  const [edit, setEdit] = useState(true);
 
   return (
     <>
+      {edit && <ModalProfil setEdit={setEdit} />}
       <NavBar />
       <SProfil>
         <h1 className="title-page">Mon profil</h1>
@@ -47,7 +50,7 @@ export default function TenantProfil() {
                   <img
                     className="picto"
                     src="/img/pictos/picto-location.svg"
-                    alt="age"
+                    alt="localisation"
                   />
                   <div className="content">
                     <h3>Localisation</h3>
@@ -58,7 +61,7 @@ export default function TenantProfil() {
                   <img
                     className="picto"
                     src="/img/pictos/picto-email.svg"
-                    alt="age"
+                    alt="email"
                   />
                   <div className="content">
                     <h3>Mail</h3>
@@ -69,7 +72,7 @@ export default function TenantProfil() {
                   <img
                     className="picto"
                     src="/img/pictos/picto-phone.svg"
-                    alt="age"
+                    alt="telephone"
                   />
                   <div className="content">
                     <h3>Téléphone</h3>
@@ -118,7 +121,13 @@ export default function TenantProfil() {
               </svg>
             </button>
           ) : (
-            <button className="btn modif" type="button">
+            <button
+              className="btn modif"
+              type="button"
+              onClick={() => {
+                setEdit(true);
+              }}
+            >
               <p className="btn-text">Modifier</p>
               <svg className="btn-icon" viewBox="0 0 24 24">
                 <path d="M0 0h24v24H0V0z" fill="none" />
