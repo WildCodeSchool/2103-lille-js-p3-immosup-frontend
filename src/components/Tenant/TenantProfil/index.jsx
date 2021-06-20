@@ -17,8 +17,7 @@ export default function TenantProfil() {
           <div className="part-content">
             <img
               className="avatar"
-              // NEED TO CHANGE DEFAULT IMG
-              src={userInfos?.url || '/img/carousel/carousel-1.jpg'}
+              src={userInfos?.url || '/img/default/disconnect.jpg'}
               alt="avatar"
             />
             <p className="name">
