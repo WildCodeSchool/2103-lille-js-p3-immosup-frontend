@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import UserInfos from './contexts/UserInfos';
+import 'react-toastify/dist/ReactToastify.css';
 import HomePage from './components/HomePage';
 import TenantDashboard from './components/Tenant/TenantDashboard';
 import TenantProfil from './components/Tenant/TenantProfil';
@@ -40,6 +42,7 @@ export default function App() {
           />
         </Switch>
       </UserInfos.Provider>
+      <ToastContainer />
       <Footer />
     </SApp>
   );

@@ -8,11 +8,11 @@ export default function NavBar() {
 
   const getUsersInfos = async () => {
     try {
-      const data = await sendRequest({
+      const res = await sendRequest({
         method: 'get',
         url: '/users?id=1',
       });
-      setUserInfos(data);
+      setUserInfos(res);
     } catch (err) {
       console.log(err);
     }

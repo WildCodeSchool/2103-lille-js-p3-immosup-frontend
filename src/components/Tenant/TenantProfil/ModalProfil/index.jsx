@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useEffect, useContext } from 'react';
+import { toast } from 'react-toastify';
 import UserInfos from '../../../../contexts/UserInfos';
 import sendRequest from '../../../../utilities/sendRequest';
 import SModalProfil from './style';
@@ -33,6 +34,15 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
       });
       setUserInfos(res);
       handleReset();
+      toast.success('Votre profil à été mis à jour', {
+        position: 'bottom-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     } catch (err) {
       console.log(err);
     }

@@ -8,7 +8,8 @@ const sendRequest = async (options) => {
     });
     return response.data;
   } catch (err) {
-    return err;
+    console.log(err.response);
+    return err.response;
   }
 };
 
