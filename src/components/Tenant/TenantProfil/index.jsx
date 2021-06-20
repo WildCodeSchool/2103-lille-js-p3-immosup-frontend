@@ -1,10 +1,13 @@
 import { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import UserInfos from '../../../contexts/UserInfos';
 import NavBar from '../../NavBar';
 import SProfil from './style';
 
 export default function TenantProfil() {
+  const history = useHistory();
   const { userInfos } = useContext(UserInfos);
+
   return (
     <>
       <NavBar />
@@ -102,7 +105,13 @@ export default function TenantProfil() {
         )}
         <div className="buttons">
           {!userInfos ? (
-            <button className="btn login" type="button">
+            <button
+              className="btn login"
+              type="button"
+              onClick={() => {
+                history.push('/login');
+              }}
+            >
               <p className="btn-text">Login</p>
               <svg className="btn-icon" viewBox="0 0 24 24">
                 <rect fill="none" />
