@@ -60,18 +60,9 @@ const SContactUs = styled.div`
         }
       }
     }
-    .buttonSent {
-      background-color: #ffffff;
-      font-family: Roboto;
-      font-weight: bold;
-      font-size: 20px;
-      margin: auto;
-      margin-top: 40px;
-      border-radius: 20px;
-      height: 60px;
-      width: 50%;
-      border: none;
-      box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.25);
+    .messageSent {
+      font-weight: normal;
+      line-height: 1.2em;
     }
   }
 `;

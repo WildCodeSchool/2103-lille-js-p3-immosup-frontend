@@ -61,9 +61,10 @@ export default function ContactUs() {
             </button>
           </form>
         ) : (
-          <button type="submit" disabled className="buttonSent">
-            Envoyé
-          </button>
+          <p className="messageSent">
+            Votre message a bien été envoyé. Votre demande sera traitée dans les
+            plus bref délais.
+          </p>
         )}
       </div>
     </SContactUs>
