@@ -1,6 +1,7 @@
 import { useEffect, useContext } from 'react';
+import { toast } from 'react-toastify';
 import UserInfos from '../../contexts/UserInfos';
-import sendRequest from '../../utilities/sendRequest';
+import request from '../../utilities/request';
 import SNavBar from './style';
 
 export default function NavBar() {
@@ -8,13 +9,16 @@ export default function NavBar() {
 
   const getUsersInfos = async () => {
     try {
-      const res = await sendRequest({
+      const { data } = await request({
         method: 'get',
         url: '/users?id=1',
       });
-      setUserInfos(res);
+      setUserInfos(data);
     } catch (err) {
-      console.log(err);
+      toast.error('Connexion impossible', {
+        position: 'bottom-right',
+        autoClose: 3000,
+      });
     }
   };
 

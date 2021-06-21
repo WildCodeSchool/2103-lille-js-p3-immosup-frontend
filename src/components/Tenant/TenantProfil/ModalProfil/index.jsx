@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useEffect, useContext } from 'react';
 import { toast } from 'react-toastify';
 import UserInfos from '../../../../contexts/UserInfos';
-import sendRequest from '../../../../utilities/sendRequest';
+import request from '../../../../utilities/request';
 import SModalProfil from './style';
 
 export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
@@ -27,24 +27,26 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
 
   const putUpdateInfos = async () => {
     try {
-      const res = await sendRequest({
+      const { data } = await request({
         method: 'put',
         url: `/users/${userInfos.id}`,
         data: updateInfos,
       });
-      setUserInfos(res);
+      setUserInfos(data);
       handleReset();
-      toast.success('Votre profil à été mis à jour', {
+      toast.success('Votre profil a été mis à jour', {
         position: 'bottom-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
+        autoClose: 3000,
       });
     } catch (err) {
-      console.log(err);
+      closeModal();
+      toast.error(
+        'Une erreur est survenue lors de la mise à jour de votre profil',
+        {
+          position: 'bottom-right',
+          autoClose: 3000,
+        }
+      );
     }
   };
 
