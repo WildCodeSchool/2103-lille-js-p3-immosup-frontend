@@ -5,6 +5,7 @@ import SContactUs from './style';
 export default function ContactUs() {
   const [expeditor, setExpeditor] = useState('');
   const [body, setBody] = useState('');
+  const [firstName, setFirstName] = useState('');
   const [isSent, setIsSent] = useState(false);
 
   const handleSubmit = (event) => {
@@ -12,6 +13,7 @@ export default function ContactUs() {
     axios.post('http://localhost:5050/access', {
       email: expeditor,
       message: body,
+      firstName,
     });
     setIsSent(true);
   };
@@ -25,7 +27,15 @@ export default function ContactUs() {
           <form className="contactUs" onSubmit={handleSubmit}>
             <label htmlFor="username">
               <h3>Utilisateur/trice</h3>
-              <input placeholder="Nom" name="firstname" id="field" />
+              <input
+                placeholder="Nom"
+                name="firstname"
+                id="field"
+                value={firstName}
+                onChange={(e) => {
+                  setFirstName(e.target.value);
+                }}
+              />
             </label>
 
             <label htmlFor="email">
