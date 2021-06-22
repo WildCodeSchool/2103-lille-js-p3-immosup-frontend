@@ -1,7 +1,6 @@
 import { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import UserInfos from '../../../contexts/UserInfos';
-import NavBar from '../../NavBar';
 import ModalProfil from './ModalProfil';
 import SButton from '../../styled/SButton';
 import SProfil from './style';
@@ -21,7 +20,6 @@ export default function TenantProfil() {
           setEdit={setEdit}
         />
       )}
-      <NavBar />
       <SProfil>
         <h1 className="title-page">Mon profil</h1>
         <div className="part profil">
