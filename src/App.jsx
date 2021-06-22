@@ -10,8 +10,10 @@ import TenantMatch from './components/Tenant/TenantMatch';
 import TenantAnnouncementsSave from './components/Tenant/TenantAnnouncementsSave';
 import TenantRoommateHunt from './components/Tenant/TenantRoommateHunt';
 import TenantHousingSearch from './components/Tenant/TenantHousingSearch';
+import TenantCriteria from './components/Tenant/TenantCriteria';
 import LandlordDashboard from './components/LandlordDashboard';
-import FiltreLogement from './components/FiltreLogement';
+import ContactUs from './components/ContactUs';
+import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import GlobalStyle from './GlobalStyle';
 import SApp from './SApp';
@@ -24,12 +26,13 @@ export default function App() {
     <SApp>
       <GlobalStyle />
       <UserInfos.Provider value={{ userInfos, setUserInfos }}>
+        <NavBar />
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/tenant/dashboard" component={TenantDashboard} />
           <Route path="/landlord/dashboard" component={LandlordDashboard} />
           <Route path="/tenant/profil" component={TenantProfil} />
-          <Route path="/tenant/criteria" component={FiltreLogement} />
+          <Route path="/tenant/criteria" component={TenantCriteria} />
           <Route path="/tenant/match" component={TenantMatch} />
           <Route
             path="/tenant/announcements-save"
@@ -40,6 +43,7 @@ export default function App() {
             path="/tenant/housing-search"
             component={TenantHousingSearch}
           />
+          <Route path="/contact-us" component={ContactUs} />
         </Switch>
       </UserInfos.Provider>
       <ToastContainer />
