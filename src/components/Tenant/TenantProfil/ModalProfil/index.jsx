@@ -3,6 +3,7 @@ import { useEffect, useContext } from 'react';
 import { toast } from 'react-toastify';
 import UserInfos from '../../../../contexts/UserInfos';
 import request from '../../../../utilities/request';
+import SButton from '../../../styled/SButton';
 import SModalProfil from './style';
 
 export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
@@ -13,6 +14,9 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
   const checkNbChar = (str, nb) => str.length <= nb;
 
   const closeModal = () => setEdit(false);
+
+  const formatHobbies = (hobbies) =>
+    hobbies.filter((hobbie) => hobbie !== '').join(';-;');
 
   const handleClick = (e) => {
     if (e.target.id === 'modal') {
@@ -30,7 +34,10 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
       const { data } = await request({
         method: 'put',
         url: `/users/${userInfos.id}`,
-        data: updateInfos,
+        data: {
+          ...updateInfos,
+          hobbies: formatHobbies(updateInfos.hobbies),
+        },
       });
       setUserInfos(data);
       handleReset();
@@ -65,6 +72,7 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
         city: userInfos.city,
         email: userInfos.email,
         telephone: userInfos.telephone,
+        hobbies: userInfos.hobbies.split(';-;'),
       });
     }
     window.addEventListener('click', handleClick);
@@ -211,17 +219,81 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
                 }}
               />
             </div>
+            <div className="form hobbies">
+              <h2>Hobbies</h2>
+              {updateInfos.hobbies.map((hobbie, index) => {
+                return (
+                  <div className="hobbies-inputs">
+                    <input
+                      className="input hobbies"
+                      type="text"
+                      value={hobbie}
+                      onChange={(e) => {
+                        const tmpHobbies = updateInfos.hobbies;
+
+                        tmpHobbies[index] = e.target.value;
+                        setUpdateInfos({
+                          ...updateInfos,
+                          hobbies: tmpHobbies,
+                        });
+                      }}
+                    />
+                    <button
+                      type="button"
+                      className="btn-remove-hobbies"
+                      onClick={() => {
+                        const tmpHobbies = updateInfos.hobbies;
+
+                        setUpdateInfos({
+                          ...updateInfos,
+                          hobbies: tmpHobbies.filter(
+                            (element, filterIndex) => filterIndex !== index
+                          ),
+                        });
+                      }}
+                    >
+                      <svg viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0V0z" fill="none" />
+                        <path d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+                      </svg>
+                    </button>
+                  </div>
+                );
+              })}
+              <SButton
+                type="button"
+                className="btn add"
+                onClick={() => {
+                  const tmpHobbies = updateInfos.hobbies;
+
+                  if (!tmpHobbies.includes('') && tmpHobbies.length < 5) {
+                    tmpHobbies.push('');
+                    setUpdateInfos({
+                      ...updateInfos,
+                      hobbies: tmpHobbies,
+                    });
+                  }
+                }}
+              >
+                <p className="btn-text">Ajouter</p>
+                <svg className="btn-icon" viewBox="0 0 24 24">
+                  <path d="M0 0h24v24H0V0z" fill="none" />
+                  <path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+                </svg>
+              </SButton>
+            </div>
             <div className="buttons">
-              <button className="btn save" type="submit">
+              <SButton className="btn save" type="submit">
                 <p className="btn-text">Enregistrer</p>
                 <svg className="btn-icon" viewBox="0 0 24 24">
                   <path d="M0 0h24v24H0V0z" fill="none" />
                   <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm2 16H5V5h11.17L19 7.83V19zm-7-7c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zM6 6h9v4H6z" />
                 </svg>
-              </button>
-              <button
+              </SButton>
+              <SButton
                 className="btn cancel"
                 type="button"
+                color="#e61010"
                 onClick={handleReset}
               >
                 <p className="btn-text">Annuler</p>
@@ -229,7 +301,7 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
                   <path d="M0 0h24v24H0V0z" fill="none" opacity=".87" />
                   <path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.59-13L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z" />
                 </svg>
-              </button>
+              </SButton>
             </div>
           </form>
         </div>
@@ -247,6 +319,7 @@ ModalProfil.propTypes = {
     city: PropTypes.string,
     email: PropTypes.string,
     telephone: PropTypes.string,
+    hobbies: PropTypes.string,
   }),
   setUpdateInfos: PropTypes.func.isRequired,
   setEdit: PropTypes.func.isRequired,

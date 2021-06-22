@@ -88,6 +88,10 @@ const SModalProfil = styled.div`
           &.age {
             width: 52px;
           }
+
+          &.hobbies {
+            margin-bottom: 20px;
+          }
         }
 
         .textarea {
@@ -95,6 +99,32 @@ const SModalProfil = styled.div`
           height: 160px;
           resize: none;
           padding: 10px 10px;
+        }
+
+        .hobbies-inputs {
+          display: flex;
+          flex-flow: row wrap;
+
+          .btn-remove-hobbies {
+            width: 30px;
+            height: 30px;
+            margin: 5px 0 0 10px;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+
+            svg {
+              fill: #908d8d;
+            }
+
+            &:hover svg {
+              fill: #dc5353;
+            }
+
+            &:active {
+              transform: translate(1px, 1px);
+            }
+          }
         }
       }
     }
@@ -107,70 +137,12 @@ const SModalProfil = styled.div`
     width: 100%;
     margin: 40px 0;
 
-    .btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 50px;
-      border-radius: 4px;
-      font-size: 20px;
-      font-weight: 500;
-      border: 1px solid;
-      padding: 0 10px;
-      cursor: pointer;
+    .btn.save {
+      margin-right: 10px;
+    }
 
-      .btn-text {
-        color: #fff;
-      }
-
-      .btn-icon {
-        width: 26px;
-        height: 26px;
-        fill: #fff;
-        margin-left: 10px;
-      }
-
-      &.save {
-        background-color: #109fe6;
-        border-color: #109fe6;
-        margin-right: 10px;
-
-        &:hover {
-          border-color: #109fe6;
-          background-color: #fff;
-
-          .btn-text {
-            color: #109fe6;
-          }
-
-          .btn-icon {
-            fill: #109fe6;
-          }
-        }
-      }
-
-      &.cancel {
-        background-color: #e61010;
-        border-color: #e61010;
-        margin-left: 10px;
-
-        &:hover {
-          border-color: #e61010;
-          background-color: #fff;
-
-          .btn-text {
-            color: #e61010;
-          }
-
-          .btn-icon {
-            fill: #e61010;
-          }
-        }
-      }
-
-      &:active {
-        transform: translate(1px, 1px);
-      }
+    .btn.cancel {
+      margin-left: 10px;
     }
   }
 `;

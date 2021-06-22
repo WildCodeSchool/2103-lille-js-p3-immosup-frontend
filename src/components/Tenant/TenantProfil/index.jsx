@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import UserInfos from '../../../contexts/UserInfos';
 import NavBar from '../../NavBar';
 import ModalProfil from './ModalProfil';
+import SButton from '../../styled/SButton';
 import SProfil from './style';
 
 export default function TenantProfil() {
@@ -99,7 +100,7 @@ export default function TenantProfil() {
                   <p>Vous n&apos;avez pas de hobbies.</p>
                 ) : (
                   <ul>
-                    {userInfos.hobbies.split(';').map((hobbie) => {
+                    {userInfos.hobbies.split(';-;').map((hobbie) => {
                       return (
                         <li key={hobbie}>
                           <p>{`• ${hobbie}`}</p>
@@ -114,7 +115,7 @@ export default function TenantProfil() {
         )}
         <div className="buttons">
           {!userInfos ? (
-            <button
+            <SButton
               className="btn login"
               type="button"
               onClick={() => {
@@ -126,9 +127,9 @@ export default function TenantProfil() {
                 <rect fill="none" />
                 <path d="M11,7L9.6,8.4l2.6,2.6H2v2h10.2l-2.6,2.6L11,17l5-5L11,7z M20,19h-8v2h8c1.1,0,2-0.9,2-2V5c0-1.1-0.9-2-2-2h-8v2h8V19z" />
               </svg>
-            </button>
+            </SButton>
           ) : (
-            <button
+            <SButton
               className="btn modif"
               type="button"
               onClick={() => {
@@ -140,7 +141,7 @@ export default function TenantProfil() {
                 <path d="M0 0h24v24H0V0z" fill="none" />
                 <path d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z" />
               </svg>
-            </button>
+            </SButton>
           )}
         </div>
       </SProfil>

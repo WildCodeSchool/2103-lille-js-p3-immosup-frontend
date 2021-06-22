@@ -100,53 +100,6 @@ const SProfil = styled.div`
     align-items: center;
     width: 100%;
     margin: 20px 0 40px 0;
-
-    .btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 50px;
-      border-radius: 4px;
-      font-size: 20px;
-      font-weight: 500;
-      border: 1px solid;
-      padding: 0 10px;
-      cursor: pointer;
-
-      .btn-text {
-        color: #fff;
-      }
-
-      .btn-icon {
-        width: 26px;
-        height: 26px;
-        fill: #fff;
-        margin-left: 10px;
-      }
-
-      &.modif,
-      &.login {
-        background-color: #109fe6;
-        border-color: #109fe6;
-
-        &:hover {
-          border-color: #109fe6;
-          background-color: #fff;
-
-          .btn-text {
-            color: #109fe6;
-          }
-
-          .btn-icon {
-            fill: #109fe6;
-          }
-        }
-      }
-
-      &:active {
-        transform: translate(1px, 1px);
-      }
-    }
   }
 `;
 
