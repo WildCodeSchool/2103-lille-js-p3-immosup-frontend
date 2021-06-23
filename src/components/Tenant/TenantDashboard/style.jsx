@@ -247,7 +247,7 @@ const STenantDashboard = styled.div`
         .profilAnnouncements {
           position: relative;
           display: flex;
-          //*background-color: grey;
+
           border: solid black 1px;
 
           width: 400px;
