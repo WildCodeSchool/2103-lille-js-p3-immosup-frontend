@@ -56,9 +56,6 @@ const Description = ({
             <div className="adress">
               <h2>Quartier :</h2>
               <select value={inputDistrict} onChange={handleChangeDistrict}>
-                <option selected value="">
-                  {' '}
-                </option>
                 <option value="toute la ville">toute la ville</option>
                 <option value="centre">Centre</option>
                 <option value="Wazemmes">Wazemmes</option>
