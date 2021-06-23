@@ -3,7 +3,6 @@ import { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import STenantDashboard from './style';
 import UserInfos from '../../../contexts/UserInfos';
-import NavBar from '../../NavBar';
 
 export default function TenantDashboard() {
   const [fav, setFav] = useState([]);
@@ -21,8 +20,6 @@ export default function TenantDashboard() {
   }, [userInfos]);
   return (
     <div>
-      <NavBar />
-
       <STenantDashboard>
         <h2>Tableau de bord</h2>
 
