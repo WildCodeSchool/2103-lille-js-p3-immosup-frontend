@@ -78,7 +78,7 @@ const Infos = ({
             </div>
           </div>
           <div className="boxFurnished">
-            <h2>Fourniture :</h2>
+            <h2>Meublé :</h2>
             <select value={inputFurnished} onChange={handleChangeFurnished}>
               <option selected value="">
                 {' '}
@@ -127,7 +127,7 @@ const Infos = ({
                   onClick={handleChangeAnimals}
                   checked={inputAnimals === '1'}
                 />
-                Oui
+                Ne me dérange pas
               </label>
               <label htmlFor="radio_2">
                 <input
@@ -138,7 +138,7 @@ const Infos = ({
                   onClick={handleChangeAnimals}
                   checked={inputAnimals === '0'}
                 />
-                Non
+                Non merci
               </label>
             </div>
           </div>

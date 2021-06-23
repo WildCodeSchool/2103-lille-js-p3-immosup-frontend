@@ -10,7 +10,7 @@ const Preview = ({
   inputAnimals,
   inputEnergyClass,
   inputGes,
-  inputAdress,
+  inputDistrict,
   inputCity,
   inputDescribe,
   inputRent,
@@ -29,10 +29,11 @@ const Preview = ({
         <p>{inputAnimals}</p>
         <p>{inputEnergyClass}</p>
         <p>{inputGes}</p>
-        <p>{inputAdress}</p>
+
         <p>{inputCity}</p>
-        <p>{inputDescribe}</p>
+        <p>{inputDistrict}</p>
         <p>{inputRent}</p>
+        <p>{inputDescribe}</p>
         <img src={inputPicture1} alt="Picture1" />
         <img src={inputPicture2} alt="Picture2" />
         <img src={inputPicture3} alt="Picture3" />
@@ -51,7 +52,7 @@ Preview.propTypes = {
   inputAnimals: PropTypes.string,
   inputEnergyClass: PropTypes.string,
   inputGes: PropTypes.string,
-  inputAdress: PropTypes.string,
+  inputDistrict: PropTypes.string,
   inputCity: PropTypes.string,
   inputDescribe: PropTypes.string,
   inputRent: PropTypes.number,
@@ -69,7 +70,7 @@ Preview.defaultProps = {
   inputAnimals: '',
   inputEnergyClass: '',
   inputGes: '',
-  inputAdress: '',
+  inputDistrict: '',
   inputCity: '',
   inputDescribe: '',
   inputRent: 0,

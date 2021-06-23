@@ -1,21 +1,29 @@
+import { useState } from 'react';
 import Proptypes from 'prop-types';
 import SDescription from './style';
 
 const Description = ({
-  setAdress,
+  setDistrict,
   setCity,
   setDescribe,
   setRent,
-  inputAdress,
+  inputDistrict,
   inputCity,
   inputDescribe,
   inputRent,
 }) => {
-  const handleChangeAdress = (evt) => {
-    setAdress(evt.target.value);
+  const [isLille, setIsLille] = useState(false);
+
+  const handleChangeDistrict = (evt) => {
+    setDistrict(evt.target.value);
   };
   const handleChangeCity = (evt) => {
     setCity(evt.target.value);
+    if (evt.target.value === 'Lille') {
+      setIsLille(true);
+    } else {
+      setIsLille(false);
+    }
   };
   const handleChangeDescribe = (evt) => {
     setDescribe(evt.target.value);
@@ -28,18 +36,47 @@ const Description = ({
     <SDescription>
       <div className="partContainer">
         <div className="addressCity">
-          <div className="adress">
-            <h2>Adresse :</h2>
-            <input
-              type="text"
-              value={inputAdress}
-              onChange={handleChangeAdress}
-            />
-          </div>
           <div className="city">
             <h2>Ville :</h2>
-            <input type="text" value={inputCity} onChange={handleChangeCity} />
+            <select type="text" value={inputCity} onChange={handleChangeCity}>
+              <option selected value="">
+                {' '}
+              </option>
+              <option value="Lille">Lille</option>
+              <option value="La Madeleine">La Madeleine</option>
+              <option value="Lambersart">Lambersart</option>
+              <option value="St André">St André</option>
+              <option value="Lomme">Lomme</option>
+              <option value="Marcq en Baroeul">Marcq en Baroeul</option>
+              <option value="Mons en Baroeul">Mons en Baroeul</option>
+              <option value="Hellemmes">Hellemmes</option>
+              <option value="Ronchin">Ronchin</option>
+              <option value="Loos">Loos</option>
+              <option value="Faches-Thumesnil ">Faches-Thumesnil </option>
+            </select>
           </div>
+          {isLille && (
+            <div className="adress">
+              <h2>Quartier :</h2>
+              <select value={inputDistrict} onChange={handleChangeDistrict}>
+                <option selected value="">
+                  {' '}
+                </option>
+                <option value="toute la ville">toute la ville</option>
+                <option value="centre">Centre</option>
+                <option value="Wazemmes">Wazemmes</option>
+                <option value="Moulins">Moulins</option>
+                <option value="Vieux-Lille">Vieux-Lille</option>
+                <option value="Fives">Fives</option>
+                <option value="Vauban">Vauban</option>
+                <option value="Sud">Sud</option>
+                <option value="Saint Maurice">Saint Maurice</option>
+                <option value="Bois Blanc">Bois Blanc</option>
+                <option value="Saint Maurice">Saint Maurice</option>
+                <option value="Saint Maurice">Saint Maurice</option>
+              </select>
+            </div>
+          )}
           <div className="rent">
             <h2>Prix :</h2>
             <input
@@ -68,20 +105,20 @@ const Description = ({
 export default Description;
 
 Description.propTypes = {
-  setAdress: Proptypes.func,
+  setDistrict: Proptypes.func,
   setCity: Proptypes.func,
   setDescribe: Proptypes.func,
   setRent: Proptypes.func,
-  inputAdress: Proptypes.string,
+  inputDistrict: Proptypes.string,
   inputCity: Proptypes.string,
   inputDescribe: Proptypes.string,
   inputRent: Proptypes.number,
 };
 Description.defaultProps = {
-  inputAdress: '',
+  inputDistrict: '',
   inputCity: '',
   inputDescribe: '',
-  setAdress: () => {},
+  setDistrict: () => {},
   setCity: () => {},
   setDescribe: () => {},
   inputRent: 0,

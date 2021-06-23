@@ -9,7 +9,7 @@ import Pictures from './Pictures';
 import Preview from './Preview';
 
 function AddAnnonce() {
-  const [inputAdress, setAdress] = useState('');
+  const [inputDistrict, setDistrict] = useState('');
   const [inputCity, setCity] = useState('');
   const [inputFurnished, setFurnished] = useState('');
   const [inputRent, setRent] = useState(0);
@@ -29,7 +29,7 @@ function AddAnnonce() {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     const dataToSend = {
-      address: inputAdress,
+      district: inputDistrict,
       city: inputCity,
       furnished: inputFurnished,
       rent: inputRent,
@@ -78,11 +78,11 @@ function AddAnnonce() {
         />
 
         <Description
-          setAdress={setAdress}
+          setDistrict={setDistrict}
           setCity={setCity}
           setDescribe={setDescribe}
           setRent={setRent}
-          inputAdress={inputAdress}
+          inputDistrict={inputDistrict}
           inputCity={inputCity}
           inputDescribe={inputDescribe}
           inputRent={inputRent}
@@ -106,7 +106,7 @@ function AddAnnonce() {
           inputAnimals={inputAnimals}
           inputEnergyClass={inputEnergyClass}
           inputGes={inputGes}
-          inputAdress={inputAdress}
+          inputDistrict={inputDistrict}
           inputCity={inputCity}
           inputDescribe={inputDescribe}
           inputRent={inputRent}
