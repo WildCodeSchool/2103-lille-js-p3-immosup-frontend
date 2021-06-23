@@ -9,6 +9,7 @@ import TenantRoommateHunt from './components/Tenant/TenantRoommateHunt';
 import TenantHousingSearch from './components/Tenant/TenantHousingSearch';
 import LandlordDashboard from './components/LandlordDashboard';
 import ContactUs from './components/ContactUs';
+import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import GlobalStyle from './GlobalStyle';
 import SApp from './SApp';
@@ -17,25 +18,32 @@ import './reset.css';
 
 export default function App() {
   return (
-    <SApp>
-      <GlobalStyle />
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/tenant/dashboard" component={TenantDashboard} />
-        <Route path="/landlord/dashboard" component={LandlordDashboard} />
-        <Route path="/addannonce" component={AddAnnonce} />
-        <Route path="/tenant/profil" component={TenantProfil} />
-        <Route path="/tenant/criteria" component={TenantCriteria} />
-        <Route path="/tenant/match" component={TenantMatch} />
-        <Route
-          path="/tenant/announcements-save"
-          component={TenantAnnouncementsSave}
-        />
-        <Route path="/tenant/roommate-hunt" component={TenantRoommateHunt} />
-        <Route path="/tenant/housing-search" component={TenantHousingSearch} />
-        <Route path="/contact-us" component={ContactUs} />
-      </Switch>
-      <Footer />
-    </SApp>
+    <div>
+      <NavBar />
+      <SApp>
+        <GlobalStyle />
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/tenant/dashboard" component={TenantDashboard} />
+          <Route path="/landlord/dashboard" component={LandlordDashboard} />
+          <Route path="landlord/addannonce" component={AddAnnonce} />
+          <Route path="/tenant/profil" component={TenantProfil} />
+          <Route path="/tenant/criteria" component={TenantCriteria} />
+          <Route path="/tenant/match" component={TenantMatch} />
+          <Route
+            path="/tenant/announcements-save"
+            component={TenantAnnouncementsSave}
+          />
+          <Route path="/tenant/roommate-hunt" component={TenantRoommateHunt} />
+          <Route
+            path="/tenant/housing-search"
+            component={TenantHousingSearch}
+          />
+
+          <Route path="/contact-us" component={ContactUs} />
+        </Switch>
+        <Footer />
+      </SApp>
+    </div>
   );
 }
