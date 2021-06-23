@@ -24,6 +24,23 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
     }
   };
 
+  const handleChange = (e, nbChar, isNb) => {
+    let sendUpdate = true;
+
+    if (nbChar) {
+      sendUpdate = checkNbChar(e.target.value, nbChar);
+    }
+    if (isNb) {
+      sendUpdate = isNumber(e.target.value);
+    }
+    if (sendUpdate) {
+      setUpdateInfos({
+        ...updateInfos,
+        [e.target.name]: e.target.value,
+      });
+    }
+  };
+
   const handleReset = () => {
     setUpdateInfos(null);
     closeModal();
@@ -100,14 +117,10 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
                 className="input firstname"
                 type="text"
                 maxLength="32"
+                name="firstname"
                 value={updateInfos.firstname}
                 onChange={(e) => {
-                  if (checkNbChar(e.target.value, 32)) {
-                    setUpdateInfos({
-                      ...updateInfos,
-                      firstname: e.target.value,
-                    });
-                  }
+                  handleChange(e, 32);
                 }}
               />
             </div>
@@ -117,14 +130,10 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
                 className="input lastname"
                 type="text"
                 maxLength="64"
+                name="name"
                 value={updateInfos.name}
                 onChange={(e) => {
-                  if (checkNbChar(e.target.value, 64)) {
-                    setUpdateInfos({
-                      ...updateInfos,
-                      name: e.target.value,
-                    });
-                  }
+                  handleChange(e, 64);
                 }}
               />
             </div>
@@ -134,14 +143,10 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
                 className="textarea bio"
                 type="text"
                 maxLength="256"
+                name="aboutme"
                 value={updateInfos.aboutme}
                 onChange={(e) => {
-                  if (checkNbChar(e.target.value, 256)) {
-                    setUpdateInfos({
-                      ...updateInfos,
-                      aboutme: e.target.value,
-                    });
-                  }
+                  handleChange(e, 256);
                 }}
               />
             </div>
@@ -151,17 +156,10 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
                 className="input age"
                 type="text"
                 maxLength="3"
+                name="age"
                 value={updateInfos.age}
                 onChange={(e) => {
-                  if (
-                    (e.target.value === '' || isNumber(e.target.value)) &&
-                    checkNbChar(e.target.value, 3)
-                  ) {
-                    setUpdateInfos({
-                      ...updateInfos,
-                      age: e.target.value,
-                    });
-                  }
+                  handleChange(e, 3, true);
                 }}
               />
             </div>
@@ -171,14 +169,10 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
                 className="input location"
                 type="text"
                 maxLength="32"
+                name="city"
                 value={updateInfos.city}
                 onChange={(e) => {
-                  if (checkNbChar(e.target.value, 32)) {
-                    setUpdateInfos({
-                      ...updateInfos,
-                      city: e.target.value,
-                    });
-                  }
+                  handleChange(e, 32);
                 }}
               />
             </div>
@@ -188,14 +182,10 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
                 className="input email"
                 type="email"
                 maxLength="64"
+                name="email"
                 value={updateInfos.email}
                 onChange={(e) => {
-                  if (checkNbChar(e.target.value, 64)) {
-                    setUpdateInfos({
-                      ...updateInfos,
-                      email: e.target.value,
-                    });
-                  }
+                  handleChange(e, 64);
                 }}
               />
             </div>
@@ -205,17 +195,10 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
                 className="input phone"
                 type="text"
                 maxLength="20"
+                name="telephone"
                 value={updateInfos.telephone}
                 onChange={(e) => {
-                  if (
-                    (e.target.value === '' || isNumber(e.target.value)) &&
-                    checkNbChar(e.target.value, 20)
-                  ) {
-                    setUpdateInfos({
-                      ...updateInfos,
-                      telephone: e.target.value,
-                    });
-                  }
+                  handleChange(e, 20, true);
                 }}
               />
             </div>
@@ -227,6 +210,7 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
                     <input
                       className="input hobbies"
                       type="text"
+                      name="hobbies"
                       value={hobbie}
                       onChange={(e) => {
                         const tmpHobbies = updateInfos.hobbies;
