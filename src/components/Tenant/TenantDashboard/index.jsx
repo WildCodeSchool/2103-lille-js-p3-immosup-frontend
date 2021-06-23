@@ -13,7 +13,6 @@ export default function TenantDashboard() {
       axios
         .get(`http://localhost:5050/api/favorites/${userInfos.id}`)
         .then(({ data }) => {
-          console.log(data);
           setFav(data);
         });
     }
