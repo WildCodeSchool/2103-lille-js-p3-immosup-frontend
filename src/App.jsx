@@ -12,6 +12,7 @@ import ContactUs from './components/ContactUs';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import GlobalStyle from './GlobalStyle';
+import Swipe from './components/swipePage';
 import SApp from './SApp';
 import './reset.css';
 
@@ -32,6 +33,7 @@ export default function App() {
             path="/tenant/announcements-save"
             component={TenantAnnouncementsSave}
           />
+          <Route path="/tenant/swipe" component={Swipe} />
           <Route path="/tenant/roommate-hunt" component={TenantRoommateHunt} />
           <Route
             path="/tenant/housing-search"
