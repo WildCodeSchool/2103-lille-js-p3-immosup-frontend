@@ -28,10 +28,6 @@ const Infos = ({
     setFurnished(evt.target.value);
   };
 
-  const handleChangeAnimals = (evt) => {
-    setAnimals(evt.target.value);
-  };
-
   const handleChangeEnergyClass = (evt) => {
     setEnergyClass(evt.target.value);
   };
@@ -80,11 +76,8 @@ const Infos = ({
           <div className="boxFurnished">
             <h2>Meublé :</h2>
             <select value={inputFurnished} onChange={handleChangeFurnished}>
-              <option selected value="">
-                {' '}
-              </option>
-              <option value="1">Meublé</option>
-              <option value="0">Non-meublé</option>
+              <option value>Meublé</option>
+              <option value={false}>Non-meublé</option>
             </select>
           </div>
         </div>
@@ -123,9 +116,9 @@ const Infos = ({
                   id="radio_1"
                   type="radio"
                   name="animals"
-                  value="1"
-                  onClick={handleChangeAnimals}
-                  checked={inputAnimals === '1'}
+                  value
+                  onClick={() => setAnimals(true)}
+                  checked={inputAnimals === true}
                 />
                 Ne me dérange pas
               </label>
@@ -134,9 +127,9 @@ const Infos = ({
                   id="radio_2"
                   type="radio"
                   name="animals"
-                  value="0"
-                  onClick={handleChangeAnimals}
-                  checked={inputAnimals === '0'}
+                  value={false}
+                  onClick={() => setAnimals(false)}
+                  checked={inputAnimals === false}
                 />
                 Non merci
               </label>
@@ -148,9 +141,6 @@ const Infos = ({
           <div className="selectEnergy">
             <h2>Classe énergie</h2>
             <select value={inputEnergyClass} onChange={handleChangeEnergyClass}>
-              <option selected value="">
-                {' '}
-              </option>
               <option value="A">A</option>
               <option value="B">B</option>
               <option value="C">C</option>
@@ -164,9 +154,6 @@ const Infos = ({
           <div className="selectGes">
             <h2>Gaz à effet de serre</h2>
             <select value={inputGes} onChange={handleChangeGes}>
-              <option selected value="">
-                {' '}
-              </option>
               <option value="A">A</option>
               <option value="B">B</option>
               <option value="C">C</option>
@@ -192,34 +179,18 @@ const Infos = ({
 
 export default Infos;
 Infos.propTypes = {
-  inputFurnished: PropTypes.string,
-  inputSurface: PropTypes.number,
-  inputAnimals: PropTypes.string,
-  inputType: PropTypes.string,
-  inputGes: PropTypes.string,
-  inputEnergyClass: PropTypes.string,
-  inputRooms: PropTypes.number,
-  setType: PropTypes.func,
-  setSurface: PropTypes.func,
-  setFurnished: PropTypes.func,
-  setRooms: PropTypes.func,
-  setAnimals: PropTypes.func,
-  setEnergyClass: PropTypes.func,
-  setGes: PropTypes.func,
-};
-Infos.defaultProps = {
-  inputFurnished: '',
-  inputSurface: '',
-  inputAnimals: '',
-  inputType: '',
-  inputGes: '',
-  inputEnergyClass: '',
-  inputRooms: '',
-  setType: () => {},
-  setSurface: () => {},
-  setFurnished: () => {},
-  setRooms: () => {},
-  setAnimals: () => {},
-  setEnergyClass: () => {},
-  setGes: () => {},
+  inputFurnished: PropTypes.bool.isRequired,
+  inputSurface: PropTypes.number.isRequired,
+  inputAnimals: PropTypes.bool.isRequired,
+  inputType: PropTypes.string.isRequired,
+  inputGes: PropTypes.string.isRequired,
+  inputEnergyClass: PropTypes.string.isRequired,
+  inputRooms: PropTypes.number.isRequired,
+  setType: PropTypes.func.isRequired,
+  setSurface: PropTypes.func.isRequired,
+  setFurnished: PropTypes.func.isRequired,
+  setRooms: PropTypes.func.isRequired,
+  setAnimals: PropTypes.func.isRequired,
+  setEnergyClass: PropTypes.func.isRequired,
+  setGes: PropTypes.func.isRequired,
 };

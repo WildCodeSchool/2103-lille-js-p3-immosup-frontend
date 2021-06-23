@@ -5,9 +5,6 @@ const Title = ({ setCategory, setTitle, inputTitle, inputCategory }) => {
   const handleChangeTitle = (evt) => {
     setTitle(evt.target.value);
   };
-  const handleChangeCategory = (evt) => {
-    setCategory(evt.target.value);
-  };
 
   return (
     <STitle>
@@ -30,9 +27,9 @@ const Title = ({ setCategory, setTitle, inputTitle, inputCategory }) => {
                   id="radio_1"
                   type="radio"
                   name="place-cat"
-                  value="Location"
-                  onClick={handleChangeCategory}
-                  checked={inputCategory === 'Location'}
+                  value
+                  onClick={() => setCategory(true)}
+                  checked={inputCategory === true}
                 />
                 Location
               </label>
@@ -41,9 +38,9 @@ const Title = ({ setCategory, setTitle, inputTitle, inputCategory }) => {
                   id="radio_2"
                   type="radio"
                   name="place-cat"
-                  value="Colocation"
-                  onClick={handleChangeCategory}
-                  checked={inputCategory === 'Colocation'}
+                  value={false}
+                  onClick={() => setCategory(false)}
+                  checked={inputCategory === false}
                 />
                 Colocation
               </label>
@@ -66,14 +63,8 @@ const Title = ({ setCategory, setTitle, inputTitle, inputCategory }) => {
 
 export default Title;
 Title.propTypes = {
-  setTitle: PropTypes.func,
-  setCategory: PropTypes.func,
-  inputTitle: PropTypes.string,
-  inputCategory: PropTypes.string,
-};
-Title.defaultProps = {
-  inputTitle: '',
-  inputCategory: '',
-  setTitle: () => {},
-  setCategory: () => {},
+  setTitle: PropTypes.func.isRequired,
+  setCategory: PropTypes.func.isRequired,
+  inputTitle: PropTypes.string.isRequired,
+  inputCategory: PropTypes.bool.isRequired,
 };

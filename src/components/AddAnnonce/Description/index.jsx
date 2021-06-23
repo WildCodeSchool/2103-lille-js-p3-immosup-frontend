@@ -39,9 +39,6 @@ const Description = ({
           <div className="city">
             <h2>Ville :</h2>
             <select type="text" value={inputCity} onChange={handleChangeCity}>
-              <option selected value="">
-                {' '}
-              </option>
               <option value="Lille">Lille</option>
               <option value="La Madeleine">La Madeleine</option>
               <option value="Lambersart">Lambersart</option>
@@ -72,8 +69,6 @@ const Description = ({
                 <option value="Sud">Sud</option>
                 <option value="Saint Maurice">Saint Maurice</option>
                 <option value="Bois Blanc">Bois Blanc</option>
-                <option value="Saint Maurice">Saint Maurice</option>
-                <option value="Saint Maurice">Saint Maurice</option>
               </select>
             </div>
           )}
@@ -105,22 +100,12 @@ const Description = ({
 export default Description;
 
 Description.propTypes = {
-  setDistrict: Proptypes.func,
-  setCity: Proptypes.func,
-  setDescribe: Proptypes.func,
-  setRent: Proptypes.func,
-  inputDistrict: Proptypes.string,
-  inputCity: Proptypes.string,
-  inputDescribe: Proptypes.string,
-  inputRent: Proptypes.number,
-};
-Description.defaultProps = {
-  inputDistrict: '',
-  inputCity: '',
-  inputDescribe: '',
-  setDistrict: () => {},
-  setCity: () => {},
-  setDescribe: () => {},
-  inputRent: 0,
-  setRent: () => {},
+  setDistrict: Proptypes.func.isRequired,
+  setCity: Proptypes.func.isRequired,
+  setDescribe: Proptypes.func.isRequired,
+  setRent: Proptypes.func.isRequired,
+  inputDistrict: Proptypes.string.isRequired,
+  inputCity: Proptypes.string.isRequired,
+  inputDescribe: Proptypes.string.isRequired,
+  inputRent: Proptypes.number.isRequired,
 };

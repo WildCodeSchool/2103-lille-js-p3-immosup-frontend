@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import axios from 'axios';
 import Addannoncestyle from './style';
 import Title from './Title';
 import Infos from './Infos';
 import Description from './Description';
+import request from '../../utilities/request';
 
 import Pictures from './Pictures';
 import Preview from './Preview';
@@ -11,12 +11,12 @@ import Preview from './Preview';
 function AddAnnonce() {
   const [inputDistrict, setDistrict] = useState('');
   const [inputCity, setCity] = useState('');
-  const [inputFurnished, setFurnished] = useState('');
+  const [inputFurnished, setFurnished] = useState(true);
   const [inputRent, setRent] = useState(0);
   const [inputSurface, setSurface] = useState(0);
-  const [inputAnimals, setAnimals] = useState('');
+  const [inputAnimals, setAnimals] = useState(true);
   const [inputTitle, setTitle] = useState('');
-  const [inputCategory, setCategory] = useState('');
+  const [inputCategory, setCategory] = useState(false);
   const [inputType, setType] = useState('');
   const [inputEnergyClass, setEnergyClass] = useState('');
   const [inputGes, setGes] = useState('');
@@ -47,7 +47,8 @@ function AddAnnonce() {
       Picture2: inputPicture2,
       Picture3: inputPicture3,
     };
-    axios.post('http://localhost:5050/annonce', dataToSend);
+
+    request({ method: 'post', url: '/annonce', data: dataToSend });
   };
 
   return (

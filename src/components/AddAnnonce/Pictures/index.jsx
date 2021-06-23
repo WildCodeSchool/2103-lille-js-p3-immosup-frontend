@@ -55,19 +55,10 @@ const Pictures = ({
 export default Pictures;
 
 Pictures.propTypes = {
-  setPicture1: Proptypes.func,
-  setPicture2: Proptypes.func,
-  setPicture3: Proptypes.func,
-  inputPicture1: Proptypes.string,
-  inputPicture2: Proptypes.string,
-  inputPicture3: Proptypes.string,
-};
-
-Pictures.defaultProps = {
-  inputPicture1: '',
-  inputPicture2: '',
-  inputPicture3: '',
-  setPicture1: () => {},
-  setPicture2: () => {},
-  setPicture3: () => {},
+  setPicture1: Proptypes.func.isRequired,
+  setPicture2: Proptypes.func.isRequired,
+  setPicture3: Proptypes.func.isRequired,
+  inputPicture1: Proptypes.string.isRequired,
+  inputPicture2: Proptypes.string.isRequired,
+  inputPicture3: Proptypes.string.isRequired,
 };
