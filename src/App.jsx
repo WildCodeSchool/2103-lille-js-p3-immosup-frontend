@@ -9,10 +9,11 @@ import TenantRoommateHunt from './components/Tenant/TenantRoommateHunt';
 import TenantHousingSearch from './components/Tenant/TenantHousingSearch';
 import LandlordDashboard from './components/LandlordDashboard';
 import ContactUs from './components/ContactUs';
+import Swipe from './components/swipePage';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+
 import GlobalStyle from './GlobalStyle';
-import Swipe from './components/swipePage';
 import SApp from './SApp';
 import './reset.css';
 
@@ -29,11 +30,11 @@ export default function App() {
           <Route path="/tenant/profil" component={TenantProfil} />
           <Route path="/tenant/criteria" component={TenantCriteria} />
           <Route path="/tenant/match" component={TenantMatch} />
+          <Route path="/tenant/swipe" component={Swipe} />
           <Route
             path="/tenant/announcements-save"
             component={TenantAnnouncementsSave}
           />
-          <Route path="/tenant/swipe" component={Swipe} />
           <Route path="/tenant/roommate-hunt" component={TenantRoommateHunt} />
           <Route
             path="/tenant/housing-search"
