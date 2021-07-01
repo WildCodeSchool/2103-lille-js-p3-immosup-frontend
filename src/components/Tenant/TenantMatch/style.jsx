@@ -47,7 +47,7 @@ const STenantMatch = styled.div`
         }
         h3 {
           padding-top: 15px;
-          font-size: 20px;
+          font-size: 18px;
           font-weight: bold;
         }
         p {
