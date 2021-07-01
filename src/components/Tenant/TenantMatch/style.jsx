@@ -44,6 +44,7 @@ const STenantMatch = styled.div`
           width: 150px;
           height: 150px;
           margin-top: 20px;
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
         }
         h3 {
           padding-top: 15px;
