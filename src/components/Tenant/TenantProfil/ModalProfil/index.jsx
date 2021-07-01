@@ -30,7 +30,7 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
     if (nbChar) {
       sendUpdate = checkNbChar(e.target.value, nbChar);
     }
-    if (isNb) {
+    if (isNb && sendUpdate) {
       sendUpdate = isNumber(e.target.value);
     }
     if (sendUpdate) {
