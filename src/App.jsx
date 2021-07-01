@@ -10,7 +10,7 @@ import TenantMatch from './components/Tenant/TenantMatch';
 import TenantAnnouncementsSave from './components/Tenant/TenantAnnouncementsSave';
 import TenantRoommateHunt from './components/Tenant/TenantRoommateHunt';
 import TenantHousingSearch from './components/Tenant/TenantHousingSearch';
-import TenantCriteria from './components/Tenant/TenantCriteria'
+import TenantCriteria from './components/Tenant/TenantCriteria';
 import LandlordDashboard from './components/Landlord/LandlordDashboard';
 import ContactUs from './components/ContactUs';
 import NavBar from './components/NavBar';
