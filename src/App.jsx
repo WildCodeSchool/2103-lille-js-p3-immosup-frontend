@@ -1,12 +1,16 @@
+import { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import UserInfos from './contexts/UserInfos';
+import 'react-toastify/dist/ReactToastify.css';
 import HomePage from './components/HomePage';
 import TenantDashboard from './components/Tenant/TenantDashboard';
 import TenantProfil from './components/Tenant/TenantProfil';
-import TenantCriteria from './components/Tenant/TenantCriteria';
 import TenantMatch from './components/Tenant/TenantMatch';
 import TenantAnnouncementsSave from './components/Tenant/TenantAnnouncementsSave';
 import TenantRoommateHunt from './components/Tenant/TenantRoommateHunt';
 import TenantHousingSearch from './components/Tenant/TenantHousingSearch';
+import TenantCriteria from './components/Tenant/TenantCriteria';
 import LandlordDashboard from './components/Landlord/LandlordDashboard';
 import ContactUs from './components/ContactUs';
 import NavBar from './components/NavBar';
@@ -16,11 +20,13 @@ import SApp from './SApp';
 import './reset.css';
 
 export default function App() {
+  const [userInfos, setUserInfos] = useState(null);
+
   return (
-    <div>
-      <NavBar />
-      <SApp>
-        <GlobalStyle />
+    <SApp>
+      <GlobalStyle />
+      <UserInfos.Provider value={{ userInfos, setUserInfos }}>
+        <NavBar />
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/tenant/dashboard" component={TenantDashboard} />
@@ -39,8 +45,9 @@ export default function App() {
           />
           <Route path="/contact-us" component={ContactUs} />
         </Switch>
-        <Footer />
-      </SApp>
-    </div>
+      </UserInfos.Provider>
+      <ToastContainer />
+      <Footer />
+    </SApp>
   );
 }
