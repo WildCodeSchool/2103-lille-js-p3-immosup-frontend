@@ -25,6 +25,16 @@ const SNavBar = styled.div`
       font-weight: bold;
     }
   }
+
+  .btn-connexion {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:active {
+      transform: translate(1px, 1px);
+    }
+  }
 `;
 
 export default SNavBar;
