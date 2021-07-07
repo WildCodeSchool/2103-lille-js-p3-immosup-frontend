@@ -16,6 +16,7 @@ import ContactUs from './components/ContactUs';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import GlobalStyle from './GlobalStyle';
+import Accomodation from './components/Accomodation/Display';
 import SApp from './SApp';
 import AddAnnonce from './components/AddAnnonce';
 import './reset.css';
@@ -47,6 +48,7 @@ export default function App() {
           />
 
           <Route path="/contact-us" component={ContactUs} />
+          <Route path="/accomodation" component={Accomodation} />
         </Switch>
       </UserInfos.Provider>
       <ToastContainer />
