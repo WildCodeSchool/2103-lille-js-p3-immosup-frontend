@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import SPerson from './style';
 
-function Person({ name, firstname, city, url, age }) {
+function Person({ name, firstname, city, url }) {
   return (
     <SPerson>
       <div>
@@ -11,7 +11,6 @@ function Person({ name, firstname, city, url, age }) {
           </h3>
           <img src={url} alt="" />
           <p>{city}</p>
-          <p>{age} ans</p>
         </li>
       </div>
     </SPerson>
@@ -23,7 +22,6 @@ Person.propTypes = {
   firstname: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
-  age: PropTypes.string.isRequired,
 };
 
 export default Person;

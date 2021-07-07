@@ -18,7 +18,7 @@ import Footer from './components/Footer';
 import GlobalStyle from './GlobalStyle';
 import SApp from './SApp';
 import AddAnnonce from './components/AddAnnonce';
-import RandomPage from './components/RandomPage';
+
 import './reset.css';
 
 export default function App() {
@@ -48,7 +48,6 @@ export default function App() {
           />
 
           <Route path="/contact-us" component={ContactUs} />
-          <Route path="/test" component={RandomPage} />
         </Switch>
       </UserInfos.Provider>
       <ToastContainer />
