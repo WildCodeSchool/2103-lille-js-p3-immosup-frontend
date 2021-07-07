@@ -3,21 +3,22 @@ import { Switch, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import UserInfos from './contexts/UserInfos';
 import 'react-toastify/dist/ReactToastify.css';
+import NavBar from './components/NavBar';
 import HomePage from './components/HomePage';
+import Signup from './components/Signup';
 import TenantDashboard from './components/Tenant/TenantDashboard';
+import LandlordDashboard from './components/Landlord/LandlordDashboard';
+import AddAnnonce from './components/AddAnnonce';
 import TenantProfil from './components/Tenant/TenantProfil';
+import TenantCriteria from './components/Tenant/TenantCriteria';
 import TenantMatch from './components/Tenant/TenantMatch';
 import TenantAnnouncementsSave from './components/Tenant/TenantAnnouncementsSave';
 import TenantRoommateHunt from './components/Tenant/TenantRoommateHunt';
 import TenantHousingSearch from './components/Tenant/TenantHousingSearch';
-import TenantCriteria from './components/Tenant/TenantCriteria';
-import LandlordDashboard from './components/Landlord/LandlordDashboard';
 import ContactUs from './components/ContactUs';
-import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import GlobalStyle from './GlobalStyle';
 import SApp from './SApp';
-import AddAnnonce from './components/AddAnnonce';
 import './reset.css';
 
 export default function App() {
@@ -30,6 +31,7 @@ export default function App() {
         <NavBar />
         <Switch>
           <Route exact path="/" component={HomePage} />
+          <Route path="/signup" component={Signup} />
           <Route path="/tenant/dashboard" component={TenantDashboard} />
           <Route path="/landlord/dashboard" component={LandlordDashboard} />
           <Route path="/landlord/addannonce" component={AddAnnonce} />

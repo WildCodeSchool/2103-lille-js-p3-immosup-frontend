@@ -1,15 +1,24 @@
 import { useState, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
+import { request, dateFormat } from '../../../utilities';
 import UserInfos from '../../../contexts/UserInfos';
 import ModalProfil from './ModalProfil';
 import SButton from '../../styled/SButton';
 import SProfil from './style';
 
 export default function TenantProfil() {
-  const history = useHistory();
-  const { userInfos } = useContext(UserInfos);
+  // const history = useHistory();
+  const { userInfos, setUserInfos } = useContext(UserInfos);
   const [edit, setEdit] = useState(false);
   const [updateInfos, setUpdateInfos] = useState(null);
+
+  const getInfos = async () => {
+    const { data } = await request({
+      method: 'get',
+      url: '/users/id/7',
+    });
+    setUserInfos(data);
+  };
 
   return (
     <>
@@ -26,13 +35,13 @@ export default function TenantProfil() {
           <div className="part-content">
             <img
               className="avatar"
-              src={userInfos?.url || '/img/default/disconnect.jpg'}
+              src={userInfos?.avatar_url || '/img/default/disconnect.jpg'}
               alt="avatar"
             />
             <p className="name">
               {!userInfos
                 ? "Vous n'êtes pas connecté"
-                : `${userInfos.firstname} ${userInfos.name}`}
+                : `${userInfos.firstname} ${userInfos.lastname}`}
             </p>
           </div>
         </div>
@@ -48,8 +57,12 @@ export default function TenantProfil() {
                     alt="age"
                   />
                   <div className="content">
-                    <h3>Age</h3>
-                    <p>{userInfos.age || '-'}</p>
+                    <h3>Date de naissance</h3>
+                    <p>
+                      {userInfos.birthday
+                        ? dateFormat(userInfos.birthday)
+                        : '-'}
+                    </p>
                   </div>
                 </section>
                 <section>
@@ -82,7 +95,7 @@ export default function TenantProfil() {
                   />
                   <div className="content">
                     <h3>Téléphone</h3>
-                    <p>{userInfos.telephone || '-'}</p>
+                    <p>{userInfos.phone || '-'}</p>
                   </div>
                 </section>
               </div>
@@ -117,7 +130,8 @@ export default function TenantProfil() {
               className="btn login"
               type="button"
               onClick={() => {
-                history.push('/login');
+                // history.push('/login');
+                getInfos();
               }}
             >
               <p className="btn-text">Login</p>
