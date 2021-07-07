@@ -4,6 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import UserInfos from './contexts/UserInfos';
 import 'react-toastify/dist/ReactToastify.css';
 import HomePage from './components/HomePage';
+import Signup from './components/Signup';
 import TenantDashboard from './components/Tenant/TenantDashboard';
 import TenantProfil from './components/Tenant/TenantProfil';
 import TenantMatch from './components/Tenant/TenantMatch';
@@ -22,14 +23,18 @@ import './reset.css';
 
 export default function App() {
   const [userInfos, setUserInfos] = useState(null);
+  const [userToken, setUserToken] = useState(null);
 
   return (
     <SApp>
       <GlobalStyle />
-      <UserInfos.Provider value={{ userInfos, setUserInfos }}>
+      <UserInfos.Provider
+        value={{ userInfos, setUserInfos, userToken, setUserToken }}
+      >
         <NavBar />
         <Switch>
           <Route exact path="/" component={HomePage} />
+          <Route path="/signup" component={Signup} />
           <Route path="/tenant/dashboard" component={TenantDashboard} />
           <Route path="/landlord/dashboard" component={LandlordDashboard} />
           <Route path="/landlord/addannonce" component={AddAnnonce} />

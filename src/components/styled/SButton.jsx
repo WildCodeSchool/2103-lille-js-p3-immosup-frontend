@@ -1,17 +1,16 @@
 import styled from 'styled-components';
 
-const defaultColor = '#109fe6';
+const defaultColor = '#2ac8bf';
 
 const SButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
   height: 50px;
-  border-radius: 4px;
-  font-size: 20px;
-  font-weight: 500;
+  border-radius: 20px;
+  font: 500 1.1em 'roboto';
   border: 1px solid;
-  padding: 0 10px;
+  padding: 10px 20px;
   cursor: pointer;
   background-color: ${(props) => props.color || defaultColor};
   border-color: ${(props) => props.color || defaultColor};
