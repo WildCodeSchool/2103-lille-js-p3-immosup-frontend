@@ -1,15 +1,16 @@
 import PropTypes from 'prop-types';
 import Person from '../Person/index';
+import SPersonsGallery from './style';
 
 function PersonsGallery({ persons }) {
   return (
-    <>
-      <ul>
+    <SPersonsGallery>
+      <div className="Gallery">
         {persons.map((person) => {
           return <Person key={person.id} {...person} />;
         })}
-      </ul>
-    </>
+      </div>
+    </SPersonsGallery>
   );
 }
 PersonsGallery.propTypes = {

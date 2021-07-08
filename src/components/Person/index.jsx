@@ -1,27 +1,29 @@
 import PropTypes from 'prop-types';
 import SPerson from './style';
 
-function Person({ name, firstname, city, url }) {
+function Person({ lastname, firstname, city, avatarUrl, birthday }) {
   return (
     <SPerson>
       <div>
-        <li>
-          <h3>
-            {name} {firstname}
-          </h3>
-          <img src={url} alt="" />
+        <div className="icons">
+          <h2>
+            {lastname} {firstname}
+          </h2>
+          <img src={avatarUrl} alt="" />
+          <p>{birthday} ans</p>
           <p>{city}</p>
-        </li>
+        </div>
       </div>
     </SPerson>
   );
 }
 
 Person.propTypes = {
-  name: PropTypes.string.isRequired,
+  lastname: PropTypes.string.isRequired,
   firstname: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
+  avatarUrl: PropTypes.string.isRequired,
+  birthday: PropTypes.string.isRequired,
 };
 
 export default Person;
