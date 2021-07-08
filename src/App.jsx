@@ -17,6 +17,7 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import GlobalStyle from './GlobalStyle';
 import Accomodation from './components/Accomodation/Display';
+import Thumbnail from './components/Accomodation/Thumbnail';
 import SApp from './SApp';
 import AddAnnonce from './components/AddAnnonce';
 import './reset.css';
@@ -49,6 +50,7 @@ export default function App() {
 
           <Route path="/contact-us" component={ContactUs} />
           <Route path="/accomodation" component={Accomodation} />
+          <Route path="/thumbnail" component={Thumbnail} />
         </Switch>
       </UserInfos.Provider>
       <ToastContainer />
