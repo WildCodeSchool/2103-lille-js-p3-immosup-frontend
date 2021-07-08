@@ -7,7 +7,7 @@ import HomePage from './components/HomePage';
 import TenantDashboard from './components/Tenant/TenantDashboard';
 import TenantProfil from './components/Tenant/TenantProfil';
 import TenantMatch from './components/Tenant/TenantMatch';
-import annoncesGen from './components/Accomodation/List';
+import AnnoncesList from './components/Accomodation/List';
 import TenantAnnouncementsSave from './components/Tenant/TenantAnnouncementsSave';
 import TenantRoommateHunt from './components/Tenant/TenantRoommateHunt';
 import TenantHousingSearch from './components/Tenant/TenantHousingSearch';
@@ -38,7 +38,9 @@ export default function App() {
           <Route path="/tenant/profil" component={TenantProfil} />
           <Route path="/tenant/criteria" component={TenantCriteria} />
           <Route path="/tenant/match" component={TenantMatch} />
-          <Route path="/Accomodation/List" component={annoncesGen} />
+          <Route path="/test">
+            <AnnoncesList data={[{}, {}]} />
+          </Route>
           <Route
             path="/tenant/announcements-save"
             component={TenantAnnouncementsSave}

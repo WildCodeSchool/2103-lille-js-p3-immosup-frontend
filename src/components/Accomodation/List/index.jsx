@@ -1,20 +1,22 @@
-import SAnnonce from './style';
+import PropTypes from 'prop-types';
+import Accomodation from '../Display';
 
-const annonces = ['annonceLille', 'annonceLille2'];
-
-function AnnoncesFilter() {
+const AnnonceList = ({ data }) => {
   return (
-    <SAnnonce>
-      <div className="FilterAnnonce">
-        <h1>Recherche de Logement</h1>
-        <section className="gallery">
-          {annonces.map((annonce) => {
-            return <annonceTest charname={annonce} />;
-          })}
-        </section>
-      </div>
-    </SAnnonce>
+    <ul>
+      {data.map((accomodationData) => {
+        return (
+          <li>
+            <Accomodation {...accomodationData} />
+          </li>
+        );
+      })}
+    </ul>
   );
-}
+};
 
-export default AnnoncesFilter;
+AnnonceList.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+};
+
+export default AnnonceList;

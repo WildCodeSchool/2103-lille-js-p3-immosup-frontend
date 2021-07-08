@@ -1,23 +1,6 @@
 import PropTypes from 'prop-types';
 import SAccomodation from './style';
 
-// const pictures = [
-//   'https://s2.dmcdn.net/v/8H4G_1TQjB7PgdZ71/x720',
-//   'https://s2.dmcdn.net/v/8H4G_1TQjB7PgdZ71/x720',
-// ];
-// const district = 'Lille Sud';
-// const city = 'Lille';
-// const furnished = true;
-// const rent = 732;
-// const surface = 67.3;
-// const animals = false;
-// const title = null;
-// const rooms = 2;
-// const energyClass = 'B';
-// const property = 'Maison';
-// const description =
-//   "Dans un cadre verdoyant en plein coeur d'un quartier en plein essort culturel, retrouvez une charmante petite maisonnée de presque 70m² à à peine 15 minutes du métro Porte des Postes.";
-
 const Accomodation = ({
   pictures = [],
   district,
