@@ -30,19 +30,43 @@ const SAccomodation = styled.div`
     margin-top: 50px;
     margin-bottom: 100px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+    @media (max-width: 1300px) {
+      width: 90%;
+    }
 
-    .picture {
-      max-height: 400px;
-      max-width: 400px;
-      padding-left: 10px;
-      padding-right: 10px;
-      border-radius: 20px;
-      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+    .img-position {
+      @media (max-width: 1300px) {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .picture {
+        max-height: 400px;
+        max-width: 400px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 20px;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+        margin: 20px;
+        @media (max-width: 1300px) {
+          max-height: 35vh;
+          max-width: 35vw;
+        }
+        @media (max-width: 1000px) {
+          max-height: 90%;
+          max-width: 90%;
+        }
+      }
     }
 
     .informations {
       display: flex;
-      margin-top: 40px;
+      margin-top: 30px;
+      @media (max-width: 1300px) {
+        flex-direction: column;
+        align-items: center;
+      }
 
       .criteria {
         min-width: 250px;
@@ -50,6 +74,10 @@ const SAccomodation = styled.div`
         padding: 30px;
         border-radius: 20px;
         box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+        @media (max-width: 1300px) {
+          width: 90%;
+          margin-right: 0px;
+        }
 
         .rent {
           font-size: 20px;
@@ -62,6 +90,10 @@ const SAccomodation = styled.div`
         padding: 30px;
         border-radius: 20px;
         box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+        @media (max-width: 1300px) {
+          width: 90%;
+          margin-top: 30px;
+        }
       }
     }
 

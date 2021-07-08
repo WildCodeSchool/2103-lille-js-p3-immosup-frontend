@@ -1,17 +1,6 @@
 import PropTypes from 'prop-types';
 import SThumbnail from './style';
 
-// const pictures = ['https://s2.dmcdn.net/v/8H4G_1TQjB7PgdZ71/x720'];
-// const district = 'Lille Sud';
-// const city = 'Lille';
-// const furnished = true;
-// const rent = 732;
-// const surface = 67.3;
-// const animals = false;
-// const rooms = 2;
-// const energyClass = 'B';
-// const property = 'Maison';
-
 const Thumbnail = ({
   pictures = [],
   district,
