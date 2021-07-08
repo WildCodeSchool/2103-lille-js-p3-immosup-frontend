@@ -1,5 +1,6 @@
 import Proptypes from 'prop-types';
 import SPictures from './style';
+/* import Upload from '../../UploadImage'; */
 
 const Pictures = ({
   setPicture1,
