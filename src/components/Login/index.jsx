@@ -5,7 +5,7 @@ import request from '../../utilities/request';
 import UserInfos from '../../contexts/UserInfos';
 
 export default function Login() {
-  const { setUserInfos } = useContext(UserInfos);
+  const { setUserInfos, setUserToken } = useContext(UserInfos);
 
   const [fields, setFields] = useState({
     email: '',
@@ -19,10 +19,12 @@ export default function Login() {
     setFields(newFields);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     request({ method: 'post', url: '/auth/login', data: fields }).then(
       ({ data }) => {
-        setUserInfos(data);
+        setUserInfos(data.user);
+        setUserToken(data.token);
       }
     );
   };

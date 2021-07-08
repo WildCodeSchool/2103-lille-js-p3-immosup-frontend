@@ -23,11 +23,14 @@ import './reset.css';
 
 export default function App() {
   const [userInfos, setUserInfos] = useState(null);
+  const [userToken, setUserToken] = useState(null);
 
   return (
     <SApp>
       <GlobalStyle />
-      <UserInfos.Provider value={{ userInfos, setUserInfos }}>
+      <UserInfos.Provider
+        value={{ userInfos, setUserInfos, setUserToken, userToken }}
+      >
         <NavBar />
         <Switch>
           <Route exact path="/" component={HomePage} />
