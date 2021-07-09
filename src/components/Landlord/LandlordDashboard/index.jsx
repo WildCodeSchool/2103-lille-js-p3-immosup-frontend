@@ -32,7 +32,7 @@ export default function LandlordDashboard() {
       <div className="navigation">
         <div className="announcement">
           <h3>
-            <Link to="/landlord/dashboard/annoucement">Mes annonces</Link>{' '}
+            <Link to="/landlord/dashboard/annoucement">Mes annonces</Link>
           </h3>
           <div className="bloc">
             <div className="housing">
@@ -62,8 +62,8 @@ export default function LandlordDashboard() {
         </div>
 
         <div className="buttons">
-          <Link to="/landlord/dashboard/contact">
-            <div className="contact"> Mes contact </div>
+          <Link to="/landlord/contacts">
+            <div className="contact"> Mes contacts </div>
           </Link>
 
           <Link to="/landlord/dashboard/buycredits">
