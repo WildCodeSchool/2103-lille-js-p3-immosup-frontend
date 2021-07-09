@@ -4,6 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import UserInfos from './contexts/UserInfos';
 import 'react-toastify/dist/ReactToastify.css';
 import HomePage from './components/HomePage';
+import Login from './components/Login';
 import Signup from './components/Signup';
 import TenantDashboard from './components/Tenant/TenantDashboard';
 import TenantProfil from './components/Tenant/TenantProfil';
@@ -37,6 +38,7 @@ export default function App() {
         <NavBar />
         <Switch>
           <Route exact path="/" component={HomePage} />
+          <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route path="/tenant/dashboard" component={TenantDashboard} />
           <Route path="/landlord/dashboard" component={LandlordDashboard} />
