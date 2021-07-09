@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useEffect, useContext } from 'react';
 import { toast } from 'react-toastify';
 import UserInfos from '../../../../contexts/UserInfos';
-import { request } from '../../../../utilities';
+import { request, dateFormat } from '../../../../utilities';
 import SButton from '../../../styled/SButton';
 import SModalProfil from './style';
 
@@ -83,12 +83,10 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
     if (!updateInfos) {
       const tmpInfos = {
         ...userInfos,
+        hobbies: !userInfos.hobbies ? [''] : userInfos.hobbies?.split(';-;'),
+        birthday: dateFormat(userInfos.birthday),
       };
-
-      if (tmpInfos.hobbies) {
-        tmpInfos.hobbies = userInfos.hobbies?.split(';-;');
-      }
-      setUpdateInfos({ ...userInfos });
+      setUpdateInfos(tmpInfos);
     }
     window.addEventListener('click', handleClick);
 
@@ -148,16 +146,16 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
                 }}
               />
             </div>
-            <div className="form age">
+            <div className="form birthday">
               <h2>Age</h2>
               <input
-                className="input age"
+                className="input birthday"
                 type="text"
-                maxLength="3"
-                name="age"
+                maxLength="10"
+                name="birthday"
                 value={updateInfos.birthday}
                 onChange={(e) => {
-                  handleChange(e, 3, true);
+                  handleChange(e, 10);
                 }}
               />
             </div>
@@ -193,8 +191,8 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
                 className="input phone"
                 type="text"
                 maxLength="20"
-                name="telephone"
-                value={updateInfos.telephone}
+                name="phone"
+                value={updateInfos.phone}
                 onChange={(e) => {
                   handleChange(e, 20, true);
                 }}
@@ -205,7 +203,7 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
               {updateInfos.hobbies &&
                 updateInfos.hobbies.map((hobbie, index) => {
                   return (
-                    <div className="hobbies-inputs">
+                    <div className="hobbies-inputs" key={index.toString()}>
                       <input
                         className="input hobbies"
                         type="text"
@@ -301,8 +299,8 @@ ModalProfil.propTypes = {
     birthday: PropTypes.string,
     city: PropTypes.string,
     email: PropTypes.string,
-    telephone: PropTypes.string,
-    hobbies: PropTypes.string,
+    phone: PropTypes.string,
+    hobbies: PropTypes.arrayOf(PropTypes.string),
   }),
   setUpdateInfos: PropTypes.func.isRequired,
   setEdit: PropTypes.func.isRequired,
