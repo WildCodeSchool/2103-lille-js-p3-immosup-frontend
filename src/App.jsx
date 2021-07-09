@@ -19,6 +19,7 @@ import Footer from './components/Footer';
 import GlobalStyle from './GlobalStyle';
 import SApp from './SApp';
 import AddAnnonce from './components/AddAnnonce';
+
 import './reset.css';
 
 export default function App() {
