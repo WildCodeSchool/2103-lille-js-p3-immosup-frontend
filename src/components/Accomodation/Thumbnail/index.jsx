@@ -15,7 +15,6 @@ const Thumbnail = ({
 }) => {
   return (
     <SThumbnail>
-      <h2>Recherche de logement</h2>
       <div className="container">
         <div className="thumbnail">
           {pictures.map((picture) => {

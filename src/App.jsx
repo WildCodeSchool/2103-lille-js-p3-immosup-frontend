@@ -22,7 +22,7 @@ import Accomodation from './components/Accomodation/Display';
 import Thumbnail from './components/Accomodation/Thumbnail';
 import SApp from './SApp';
 import AddAnnonce from './components/AddAnnonce';
-
+import SearchAdPage from './pages/SearchAdPage';
 import './reset.css';
 
 export default function App() {
@@ -37,6 +37,7 @@ export default function App() {
       >
         <NavBar />
         <Switch>
+          <Route exact path="/loic" component={SearchAdPage} />
           <Route exact path="/" component={HomePage} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
