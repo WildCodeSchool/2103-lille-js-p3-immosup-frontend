@@ -4,9 +4,8 @@ import Title from './Title';
 import Infos from './Infos';
 import Description from './Description';
 import request from '../../utilities/request';
-
+import Accomodation from '../Accomodation/Display';
 import Pictures from './Pictures';
-import Preview from './Preview';
 
 function AddAnnonce() {
   const [inputDistrict, setDistrict] = useState('');
@@ -98,23 +97,7 @@ function AddAnnonce() {
           inputPicture3={inputPicture3}
         />
 
-        <Preview
-          inputTitle={inputTitle}
-          inputCategory={inputCategory}
-          inputFurnished={inputFurnished}
-          inputSurface={inputSurface}
-          inputRooms={inputRooms}
-          inputAnimals={inputAnimals}
-          inputEnergyClass={inputEnergyClass}
-          inputGes={inputGes}
-          inputDistrict={inputDistrict}
-          inputCity={inputCity}
-          inputDescribe={inputDescribe}
-          inputRent={inputRent}
-          inputPicture1={inputPicture1}
-          inputPicture2={inputPicture2}
-          inputPicture3={inputPicture3}
-        />
+        <Accomodation />
 
         <input type="submit" value="Send!" className="sendButton" />
       </form>
