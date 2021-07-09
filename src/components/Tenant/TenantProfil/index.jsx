@@ -15,7 +15,7 @@ export default function TenantProfil() {
   const getInfos = async () => {
     const { data } = await request({
       method: 'get',
-      url: '/users/id/7',
+      url: '/users/id/32',
     });
     setUserInfos(data);
   };
