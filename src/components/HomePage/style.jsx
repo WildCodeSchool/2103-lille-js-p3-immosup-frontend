@@ -78,14 +78,14 @@ const SHomePage = styled.div`
       .title {
         font-style: normal;
         font-weight: bold;
-        font-size: 40px;
+        font-size: 26px;
         text-align: center;
         margin: 20px;
       }
 
       .body {
         text-align: justify;
-        font-size: 15px;
+        font-size: 17px;
       }
     }
   }
