@@ -6,15 +6,15 @@ import STenantCriteria from './style';
 
 const TenantCriteria = () => {
   const [form, setForm] = useState({
-    cr_ageCotenantsMax: 40,
-    cr_ageCotenantsMin: 17,
-    cr_budgetMax: 800,
-    cr_budgetMin: 200,
-    cr_city: 'All',
-    cr_nbCotenantsMax: 5,
-    cr_nbCotenantsMin: 1,
-    cr_pets: true,
-    cr_gender: 'A',
+    crAgeCotenantsMax: 40,
+    crAgeCotenantsMin: 17,
+    crBudgetMax: 800,
+    crBudgetMin: 200,
+    crCity: 'All',
+    crNbCotenantsMax: 5,
+    crNbCotenantsMin: 1,
+    crPets: true,
+    crGender: 'A',
   });
 
   const handleChange = (e) => {
@@ -48,11 +48,11 @@ const TenantCriteria = () => {
       </div>
       <form className="filterform" onSubmit={handleSubmit}>
         <fieldset className="selectprop">
-          <label className="townprop" htmlFor="cr_city">
+          <label className="townprop" htmlFor="crCity">
             Ville de Recherche:
             <select
               className="SelectCity"
-              name="cr_city"
+              name="crCity"
               type="text"
               onChange={handleChange}
             >
@@ -64,11 +64,11 @@ const TenantCriteria = () => {
               <option value="Loos">Loos</option>
             </select>
           </label>
-          <label htmlFor="cr_pets">
+          <label htmlFor="crPets">
             Animaux:
             <select
               className="SelectPets"
-              name="cr_pets"
+              name="crPets"
               onChange={handleChange}
             >
               <option value={false}>Non Merci</option>
@@ -77,11 +77,11 @@ const TenantCriteria = () => {
               </option>
             </select>
           </label>
-          <label htmlFor="cr_gender">
+          <label htmlFor="crGender">
             Genre:
             <select
               className="SelectGender"
-              name="cr_gender"
+              name="crGender"
               onChange={handleChange}
             >
               <option value="F">Femmes uniquement</option>
@@ -91,11 +91,11 @@ const TenantCriteria = () => {
           </label>
         </fieldset>
         <fieldset className="numberprop">
-          <label htmlFor="cr_nbCotenantsMin">
+          <label htmlFor="crNbCotenantsMin">
             Nombre de Colocataires:
             <input
               id="nbCotenantsMin"
-              name="cr_nbCotenantsMin"
+              name="crNbCotenantsMin"
               onChange={handleChange}
               type="number"
               min="1"
@@ -104,7 +104,7 @@ const TenantCriteria = () => {
             />
             <input
               id="nbCotenantsMax"
-              name="cr_nbCotenantsMax"
+              name="crNbCotenantsMax"
               onChange={handleChange}
               type="number"
               min={form.cr_nbCotenantsMin}
@@ -112,11 +112,11 @@ const TenantCriteria = () => {
               value={form.cr_nbCotenantsMax}
             />
           </label>
-          <label htmlFor="cr_ageCotenantsMin">
+          <label htmlFor="crAgeCotenantsMin">
             Age de Colocataires:
             <input
               id="ageCotenantsMin"
-              name="cr_ageCotenantsMin"
+              name="crAgeCotenantsMin"
               onChange={handleChange}
               type="number"
               min="17"
@@ -125,7 +125,7 @@ const TenantCriteria = () => {
             />
             <input
               id="ageCotenantsMax"
-              name="cr_ageCotenantsMax"
+              name="crAgeCotenantsMax"
               onChange={handleChange}
               type="number"
               min={form.ageCotenantsMin}
@@ -133,11 +133,11 @@ const TenantCriteria = () => {
               value={form.cr_ageCotenantsMax}
             />
           </label>
-          <label htmlFor="cr_budgetMin">
+          <label htmlFor="crBudgetMin">
             Prix Location:
             <input
               id="budgetMin"
-              name="cr_budgetMin"
+              name="crBudgetMin"
               onChange={handleChange}
               type="number"
               min="200"
@@ -146,7 +146,7 @@ const TenantCriteria = () => {
             />
             <input
               id="budgetMax"
-              name="cr_budgetMax"
+              name="crBudgetMax"
               onChange={handleChange}
               type="number"
               min={form.budgetMin}
