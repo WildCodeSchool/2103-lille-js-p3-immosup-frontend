@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import dotenv from 'dotenv';
 import App from './App';
+
+dotenv.config();
 
 ReactDOM.render(
   <React.StrictMode>

@@ -24,6 +24,36 @@ const SNavBar = styled.div`
     &.immosup {
       font-weight: bold;
     }
+
+    &.signup {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      p {
+        font-weight: 500;
+      }
+
+      &.connected {
+        p {
+          color: #2ac8bf;
+        }
+
+        svg {
+          fill: #2ac8bf;
+        }
+      }
+    }
+  }
+
+  .btn-connexion {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:active {
+      transform: translate(1px, 1px);
+    }
   }
 `;
 
