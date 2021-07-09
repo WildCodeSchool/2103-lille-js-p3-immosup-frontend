@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-const SAnnonce = styled.div`
-  background-color: red;
-`;
+const SAnnonce = styled.div``;
 
 export default SAnnonce;
