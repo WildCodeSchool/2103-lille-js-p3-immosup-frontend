@@ -1,165 +1,164 @@
-
-import Proptypes from 'prop-types';
+// import Proptypes from 'prop-types';
+import { useState } from 'react';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 import STenantCriteria from './style';
 
-function TenantCriteria = ({
-  setCity,
-  setPets,
-  setGender,
-  inputYears,
-  inputNumbers,
-  inputAge,
-  inputRent,
-}) => {
-  const handleChangeCity = (event) => {
-    setCity(event.target.value);
-    const handleChangeRent = (event) => {
-      inputRent(event.target.value);
-    };
-    const handleChangePets = (event) => {
-      setPets(event.target.value);
-    };
-    const handleChangeGender = (event) => {
-      setGender(event.target.value);
-    };
-    const handleChangeYears = (event) => {
-      inputYears(event.target.value);
-    };
-    const handleChangeAge = (event) => {
-      inputAge(event.target.value);
-    };
-    const handleChangeNumbers = (event) => {
-      inputNumbers(event.target.value);
-    };
-    return (
-      <STenantCriteria>
-        <h2 className="titleCriteria"> Mes Critéres</h2>
-        <div className="PhotoStyle">
-          <img
-            className="PhotoCriteria"
-            src="https://i.ibb.co/87SV21k/Capture-decran-2021-05-26-a-09-47-33.png"
-            alt="PhotoProfil"
-          />
-        </div>
-        <form className="filterform">
-          <div className="selectprop">
-            <label className="townprop" htmlFor="fname">
-              Ville de Recherche:
-              <select
-                className="SelectCity"
-                type="text"
-                value={setcity}
-                onChange={handleChangeCity}
-              >
-                <option value="LilleCentre">Lille Centre</option>
-                <option value="LilleWazemmes">Lille Wazemmes</option>
-                <option value="Loos">Loos</option>
-              </select>
-            </label>
-            <label htmlFor="fname">
-              Animaux:
-              <select
-                className="SelectPets"
-                value={setPets}
-                onChange={handleChangePets}
-              >
-                <option value="Non Merci">Non Merci</option>
-                <option value="Ne me derange pas">Ne me derange pas</option>
-              </select>
-            </label>
-            <label htmlFor="fname">
-              Genre:
-              <select
-                className="SelectGender"
-                value={setGender}
-                onChange={handleChangeGender}
-              >
-                <option value="Femme">Femme</option>
-                <option value="Homme">Homme</option>
-              </select>
-            </label>
-          </div>
-          <div className="numberprop">
-            <label htmlFor="firstField">
-              Anee etudes Colocataires:
-              <input
-                id="firstField"
-                value={inputYears}
-                onChange={handleChangeYears}
-                type="number"
-                min="1"
-                max="6"
-              />
-            </label>
-            <label htmlFor="secondField">
-              Nombre de Colocataires:
-              <input
-                id="secondField"
-                value={inputNumbers}
-                onChange={handleChangeNumbers}
-                type="number"
-                min="1"
-                max="5"
-              />
-            </label>
-            <label htmlFor="thirdField">
-              Age de Colocataires:
-              <input
-                id="thirdField"
-                value={inputAge}
-                onChange={handleChangeAge}
-                type="number"
-                min="17"
-                max="40"
-              />
-              <input
-                id="fourField"
-                value={inputAge}
-                onChange={handleChangeAge}
-                type="number"
-                min="17"
-                max="40"
-              />
-            </label>
-            <label htmlFor="thirdField">
-              Prix Location:
-              <input
-                id="fiveField"
-                value={inputRent}
-                onChange={handleChangeRent}
-                type="number"
-                min="200"
-                max="800"
-              />
-              <input
-                id="fourField"
-                value={inputRent}
-                onChange={handleChangeRent}
-                type="number"
-                min="200"
-                max="800"
-              />
-            </label>
-          </div>
-          <div>
-            <button className="buttonprop" type="submit">
-              Submit
-            </button>
-          </div>
-        </form>
-      </STenantCriteria>
-    );
+const TenantCriteria = () => {
+  const [form, setForm] = useState({
+    cr_ageCotenantsMax: 40,
+    cr_ageCotenantsMin: 17,
+    cr_budgetMax: 800,
+    cr_budgetMin: 200,
+    cr_city: 'All',
+    cr_nbCotenantsMax: 5,
+    cr_nbCotenantsMin: 1,
+    cr_pets: true,
+    cr_gender: 'A',
+  });
+
+  const handleChange = (e) => {
+    const newForm = { ...form };
+    newForm[e.target.name] = e.target.value;
+    setForm(newForm);
   };
 
-  export default TenantCriteria
-
-  TenantCriteria.propTypes = {
-    setCity: Proptypes.string.isRequired,
-    setPets: Proptypes.bool.isRequired,
-    setGender: Proptypes.string.isRequired,
-    inputYears: Proptypes.number.isRequired,
-    inputNumbers: Proptypes.number.isRequired,
-    inputAge: Proptypes.number.isRequired,
-    inputRent: Proptypes.func.isRequired,
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const myId = 7;
+    axios
+      .put(`http://localhost:5050/users/${myId}`, form)
+      .then(() => {
+        toast('Update succesful !');
+      })
+      .catch((err) => {
+        toast.warn(`Update failed : ${err}`);
+      });
   };
 
+  return (
+    <STenantCriteria>
+      <h2 className="titleCriteria"> Mes Critéres</h2>
+      <div className="PhotoStyle">
+        <img
+          className="PhotoCriteria"
+          src="https://i.ibb.co/87SV21k/Capture-decran-2021-05-26-a-09-47-33.png"
+          alt="PhotoProfil"
+        />
+      </div>
+      <form className="filterform" onSubmit={handleSubmit}>
+        <fieldset className="selectprop">
+          <label className="townprop" htmlFor="cr_city">
+            Ville de Recherche:
+            <select
+              className="SelectCity"
+              name="cr_city"
+              type="text"
+              onChange={handleChange}
+            >
+              <option value="All" selected>
+                Métropole lilloise
+              </option>
+              <option value="LilleCentre">Lille Centre</option>
+              <option value="LilleWazemmes">Lille Wazemmes</option>
+              <option value="Loos">Loos</option>
+            </select>
+          </label>
+          <label htmlFor="cr_pets">
+            Animaux:
+            <select
+              className="SelectPets"
+              name="cr_pets"
+              onChange={handleChange}
+            >
+              <option value={false}>Non Merci</option>
+              <option value selected>
+                Ne me derange pas
+              </option>
+            </select>
+          </label>
+          <label htmlFor="cr_gender">
+            Genre:
+            <select
+              className="SelectGender"
+              name="cr_gender"
+              onChange={handleChange}
+            >
+              <option value="F">Femmes uniquement</option>
+              <option value="M">Homme uniquement</option>
+              <option value="A">Sans préférence</option>
+            </select>
+          </label>
+        </fieldset>
+        <fieldset className="numberprop">
+          <label htmlFor="cr_nbCotenantsMin">
+            Nombre de Colocataires:
+            <input
+              id="nbCotenantsMin"
+              name="cr_nbCotenantsMin"
+              onChange={handleChange}
+              type="number"
+              min="1"
+              max={form.cr_nbCotenantsMax}
+              value={form.cr_nbCotenantsMin}
+            />
+            <input
+              id="nbCotenantsMax"
+              name="cr_nbCotenantsMax"
+              onChange={handleChange}
+              type="number"
+              min={form.cr_nbCotenantsMin}
+              max="5"
+              value={form.cr_nbCotenantsMax}
+            />
+          </label>
+          <label htmlFor="cr_ageCotenantsMin">
+            Age de Colocataires:
+            <input
+              id="ageCotenantsMin"
+              name="cr_ageCotenantsMin"
+              onChange={handleChange}
+              type="number"
+              min="17"
+              max={form.ageCotenantsMax}
+              value={form.cr_ageCotenantsMin}
+            />
+            <input
+              id="ageCotenantsMax"
+              name="cr_ageCotenantsMax"
+              onChange={handleChange}
+              type="number"
+              min={form.ageCotenantsMin}
+              max="40"
+              value={form.cr_ageCotenantsMax}
+            />
+          </label>
+          <label htmlFor="cr_budgetMin">
+            Prix Location:
+            <input
+              id="budgetMin"
+              name="cr_budgetMin"
+              onChange={handleChange}
+              type="number"
+              min="200"
+              max={form.budgetMax}
+              value={form.cr_budgetMin}
+            />
+            <input
+              id="budgetMax"
+              name="cr_budgetMax"
+              onChange={handleChange}
+              type="number"
+              min={form.budgetMin}
+              max="800"
+              value={form.cr_budgetMax}
+            />
+          </label>
+        </fieldset>
+        <input type="submit" className="buttonprop" value="Enregistrer" />
+      </form>
+    </STenantCriteria>
+  );
+};
+
+export default TenantCriteria;
