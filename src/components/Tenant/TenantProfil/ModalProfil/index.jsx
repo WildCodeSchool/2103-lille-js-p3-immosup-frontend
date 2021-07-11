@@ -7,7 +7,7 @@ import SButton from '../../../styled/SButton';
 import SModalProfil from './style';
 
 export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
-  const { userInfos, setUserInfos } = useContext(UserInfos);
+  const { userInfos, userToken, setUserInfos } = useContext(UserInfos);
 
   const isNumber = (str) => /^[0-9]+$/.test(str);
 
@@ -55,6 +55,7 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
           ...updateInfos,
           hobbies: formatHobbies(updateInfos.hobbies),
         },
+        headers: { Authorization: `Bearer ${userToken}` },
       });
       setUserInfos(data);
       handleReset();
@@ -84,7 +85,7 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
       const tmpInfos = {
         ...userInfos,
         hobbies: !userInfos.hobbies ? [''] : userInfos.hobbies?.split(';-;'),
-        birthday: dateFormat(userInfos.birthday, '%y/%m/%d'),
+        birthday: dateFormat(userInfos.birthday, '%y/%m/%d', '-'),
       };
       setUpdateInfos(tmpInfos);
     }

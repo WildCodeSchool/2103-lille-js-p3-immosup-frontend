@@ -1,24 +1,16 @@
 import { useState, useContext } from 'react';
-// import { useHistory } from 'react-router-dom';
-import { request, dateFormat } from '../../../utilities';
+import { useHistory } from 'react-router-dom';
+import { dateFormat } from '../../../utilities';
 import UserInfos from '../../../contexts/UserInfos';
 import ModalProfil from './ModalProfil';
 import SButton from '../../styled/SButton';
 import SProfil from './style';
 
 export default function TenantProfil() {
-  // const history = useHistory();
-  const { userInfos, setUserInfos } = useContext(UserInfos);
+  const history = useHistory();
+  const { userInfos } = useContext(UserInfos);
   const [edit, setEdit] = useState(false);
   const [updateInfos, setUpdateInfos] = useState(null);
-
-  const getInfos = async () => {
-    const { data } = await request({
-      method: 'get',
-      url: '/users/id/33',
-    });
-    setUserInfos(data);
-  };
 
   return (
     <>
@@ -130,8 +122,7 @@ export default function TenantProfil() {
               className="btn login"
               type="button"
               onClick={() => {
-                // history.push('/login');
-                getInfos();
+                history.push('/login');
               }}
             >
               <p className="btn-text">Login</p>
