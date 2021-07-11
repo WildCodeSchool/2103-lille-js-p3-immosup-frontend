@@ -11,7 +11,6 @@ export default function Signup() {
   const [infos, setInfos] = useState({
     gender: 'female',
   });
-
   const handleInput = (e) => {
     const tmpInfos = {
       ...infos,
@@ -44,6 +43,58 @@ export default function Signup() {
     }
   };
 
+  const [signupRules] = useState({
+    firstname: [
+      {
+        reg: /^[a-zA-Z]+$/,
+        msg: 'votre prénom ne peut contenir que des lettres',
+      },
+    ],
+  });
+
+  const checkInputs = (inputsName, required = false) => {
+    let errorFound = false;
+
+    inputsName.forEach((inputName) => {
+      const input = document.querySelector(`.input.${inputName}`);
+      const msgsError = [];
+
+      if (!input.value && required) {
+        msgsError.push('Champ obligatoire');
+      } else {
+        signupRules[inputName].forEach((rule) => {
+          if (!rule.reg.test(input.value)) msgsError.push(rule.msg);
+        });
+      }
+
+      let ul = document.querySelector(`.msgs-error.${inputName}`);
+
+      if (msgsError.length) {
+        errorFound = true;
+        input.style.borderColor = '#d44444';
+
+        if (!ul) {
+          ul = document.createElement('ul');
+          ul.classList.add('msgs-error', inputName);
+        } else {
+          ul.innerHTML = '';
+        }
+        msgsError.forEach((msgError) => {
+          const li = document.createElement('li');
+
+          li.innerHTML = msgError;
+          ul.appendChild(li);
+        });
+        document.querySelector(`.part-input.${inputName}`).appendChild(ul);
+      } else {
+        input.style.borderColor = '#737373';
+        if (ul) ul.parentNode.removeChild(ul);
+      }
+    });
+
+    return errorFound;
+  };
+
   return (
     <SSignup>
       <h1 className="title-page">Créez votre profil</h1>
@@ -56,7 +107,7 @@ export default function Signup() {
             </svg>
             <h2>Connexion</h2>
           </div>
-          <div className="part-input">
+          <div className="part-input email">
             <h3>
               Email<em className="not-null">*</em>
             </h3>
@@ -68,7 +119,7 @@ export default function Signup() {
               onChange={handleInput}
             />
           </div>
-          <div className="part-input">
+          <div className="part-input password">
             <h3>
               Password<em className="not-null">*</em>
             </h3>
@@ -89,7 +140,7 @@ export default function Signup() {
             </svg>
             <h2>Profil</h2>
           </div>
-          <div className="part-input">
+          <div className="part-input firstname">
             <h3>
               Prénom<em className="not-null">*</em>
             </h3>
@@ -99,9 +150,16 @@ export default function Signup() {
               type="text"
               value={infos.firstname || ''}
               onChange={handleInput}
+              onBlur={() => {
+                checkInputs(['firstname'], true);
+              }}
             />
+            <ul className="msgs-error firstname">
+              <li>need a firstname</li>
+              <li>bad firstname</li>
+            </ul>
           </div>
-          <div className="part-input">
+          <div className="part-input lastname">
             <h3>
               Nom<em className="not-null">*</em>
             </h3>
@@ -113,7 +171,7 @@ export default function Signup() {
               onChange={handleInput}
             />
           </div>
-          <div className="part-input">
+          <div className="part-input city">
             <h3>
               Ville<em className="not-null">*</em>
             </h3>
@@ -125,7 +183,7 @@ export default function Signup() {
               onChange={handleInput}
             />
           </div>
-          <div className="part-input">
+          <div className="part-input gender">
             <h3>
               Sexe<em className="not-null">*</em>
             </h3>
@@ -134,7 +192,7 @@ export default function Signup() {
               <option value="male">homme</option>
             </select>
           </div>
-          <div className="part-input">
+          <div className="part-input phone">
             <h3>
               Téléphone<em className="not-null">*</em>
             </h3>
@@ -146,7 +204,7 @@ export default function Signup() {
               onChange={handleInput}
             />
           </div>
-          <div className="part-input">
+          <div className="part-input birthday">
             <h3>
               Date de naissance<em className="not-null">*</em>
             </h3>
