@@ -5,6 +5,7 @@ import UserInfos from './contexts/UserInfos';
 import 'react-toastify/dist/ReactToastify.css';
 import NavBar from './components/NavBar';
 import HomePage from './components/HomePage';
+import Login from './components/Login';
 import Signup from './components/Signup';
 import TenantDashboard from './components/Tenant/TenantDashboard';
 import LandlordDashboard from './components/Landlord/LandlordDashboard';
@@ -18,6 +19,8 @@ import TenantHousingSearch from './components/Tenant/TenantHousingSearch';
 import ContactUs from './components/ContactUs';
 import Footer from './components/Footer';
 import GlobalStyle from './GlobalStyle';
+import Accomodation from './components/Accomodation/Display';
+import Thumbnail from './components/Accomodation/Thumbnail';
 import SApp from './SApp';
 import './reset.css';
 
@@ -34,6 +37,7 @@ export default function App() {
         <NavBar />
         <Switch>
           <Route exact path="/" component={HomePage} />
+          <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route path="/tenant/dashboard" component={TenantDashboard} />
           <Route path="/landlord/dashboard" component={LandlordDashboard} />
@@ -52,6 +56,8 @@ export default function App() {
           />
 
           <Route path="/contact-us" component={ContactUs} />
+          <Route path="/accomodation" component={Accomodation} />
+          <Route path="/thumbnail" component={Thumbnail} />
         </Switch>
       </UserInfos.Provider>
       <ToastContainer />

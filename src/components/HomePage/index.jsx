@@ -43,27 +43,47 @@ export default function HomePage() {
       </header>
       <div className="infos">
         <section className="info first">
-          <h1 className="title">IMMO’SUP c’est quoi ?</h1>
+          <h1 className="title">(Futurs) Etudiants ? jeunes diplômés ? </h1>
           <article className="body">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            Tu recherches un logement cool, qui te correspond ? Ou des futurs
+            coloc(s) pouvant devenir tes meilleurs potes ou capables de
+            supporter ton sale caractère ? Tu es au bon endroit ! <br /> <br />
+            IMMO’SUP, c’est la première plateforme dédiée à l’immobilier
+            étudiant & jeune diplômé, pensée par une jeune diplômée experte en
+            immobilier. <br />
+            <br /> Logements en location, en colocation, avec ou sans
+            colocataires… Il te suffit de remplir tes critères de recherche pour
+            trouver ton logement et/ou ton/tes futur(s) coloc(s) ! <br />
+            <br />
+            Si à l’inverse tu recherches un profil pour compléter ta colocation
+            actuelle, dépose gratuitement une annonce via l’espace « déposeurs
+            d’annonces »*. <br /> <br /> En complément, tu peux aussi t’informer
+            via des documents pdf, des podcasts ou vidéos sur des points clés
+            liés à l’immobilier. De quoi être au top pour trouver le lieu de vie
+            de tes rêves !
           </article>
         </section>
         <section className="info second">
-          <h1 className="title">IMMO’SUP c’est quoi ?</h1>
+          <h1 className="title">
+            Particulier ? Investisseurs locatifs ? Agences immobilières ?
+          </h1>
           <article className="body">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            IMMO’SUP est la première plateforme dédiée à l’immobilier étudiant &
+            jeune diplômé, pensée par une jeune diplômée experte en immobilier.
+            <br /> <br />
+            Fiabilité, conseil et innovation. Ce sont les valeurs d’IMMO’SUP.
+            <br /> <br />
+            Grâce aux profils vérifiés, on dit au revoir aux « faux intéressés »
+            et on gagne du temps pour la rédaction des dossiers !
+            <br /> <br />
+            Déposer gratuitement vos deux premières annonces de logement, ou
+            rendez-vous dans l espace « déposeurs d’annonces » pour les
+            professionnels qui ont besoin de plus.
+            <br /> <br />
+            Sur IMMO’SUP, vous pouvez également vous informer sur des points
+            clés liés à la (co)location : nouvelles normes locatives,
+            défiscalisation, actualités… De quoi être sans cesse à jour dans ce
+            domaine qui demande rigueur et implication.
           </article>
         </section>
       </div>
