@@ -84,7 +84,7 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
       const tmpInfos = {
         ...userInfos,
         hobbies: !userInfos.hobbies ? [''] : userInfos.hobbies?.split(';-;'),
-        birthday: dateFormat(userInfos.birthday),
+        birthday: dateFormat(userInfos.birthday, '%y/%m/%d'),
       };
       setUpdateInfos(tmpInfos);
     }
@@ -150,7 +150,7 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
               <h2>Age</h2>
               <input
                 className="input birthday"
-                type="text"
+                type="date"
                 maxLength="10"
                 name="birthday"
                 value={updateInfos.birthday}
