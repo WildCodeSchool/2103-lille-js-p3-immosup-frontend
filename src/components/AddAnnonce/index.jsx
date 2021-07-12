@@ -3,7 +3,7 @@ import Addannoncestyle from './style';
 import Title from './Title';
 import Infos from './Infos';
 import Description from './Description';
-import request from '../../utilities/request';
+import { request } from '../../utilities';
 
 import Pictures from './Pictures';
 import Preview from './Preview';

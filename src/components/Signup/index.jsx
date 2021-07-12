@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import request from '../../utilities/request';
+import { request } from '../../utilities';
 import User from '../../contexts/UserInfos';
 import SSignup from './style';
 import SButton from '../styled/SButton';

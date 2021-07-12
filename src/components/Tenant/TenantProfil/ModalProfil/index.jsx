@@ -2,12 +2,12 @@ import PropTypes from 'prop-types';
 import { useEffect, useContext } from 'react';
 import { toast } from 'react-toastify';
 import UserInfos from '../../../../contexts/UserInfos';
-import request from '../../../../utilities/request';
+import { request, dateFormat } from '../../../../utilities';
 import SButton from '../../../styled/SButton';
 import SModalProfil from './style';
 
 export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
-  const { userInfos, setUserInfos } = useContext(UserInfos);
+  const { userInfos, userToken, setUserInfos } = useContext(UserInfos);
 
   const isNumber = (str) => /^[0-9]+$/.test(str);
 
@@ -55,6 +55,7 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
           ...updateInfos,
           hobbies: formatHobbies(updateInfos.hobbies),
         },
+        headers: { Authorization: `Bearer ${userToken}` },
       });
       setUserInfos(data);
       handleReset();
@@ -81,16 +82,12 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
 
   useEffect(() => {
     if (!updateInfos) {
-      setUpdateInfos({
-        firstname: userInfos.firstname,
-        name: userInfos.name,
-        aboutme: userInfos.aboutme,
-        age: userInfos.age,
-        city: userInfos.city,
-        email: userInfos.email,
-        telephone: userInfos.telephone,
-        hobbies: userInfos.hobbies.split(';-;'),
-      });
+      const tmpInfos = {
+        ...userInfos,
+        hobbies: !userInfos.hobbies ? [''] : userInfos.hobbies?.split(';-;'),
+        birthday: dateFormat(userInfos.birthday, '%y/%m/%d', '-'),
+      };
+      setUpdateInfos(tmpInfos);
     }
     window.addEventListener('click', handleClick);
 
@@ -130,8 +127,8 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
                 className="input lastname"
                 type="text"
                 maxLength="64"
-                name="name"
-                value={updateInfos.name}
+                name="lastname"
+                value={updateInfos.lastname}
                 onChange={(e) => {
                   handleChange(e, 64);
                 }}
@@ -144,22 +141,22 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
                 type="text"
                 maxLength="256"
                 name="aboutme"
-                value={updateInfos.aboutme}
+                value={updateInfos.aboutme || ''}
                 onChange={(e) => {
                   handleChange(e, 256);
                 }}
               />
             </div>
-            <div className="form age">
+            <div className="form birthday">
               <h2>Age</h2>
               <input
-                className="input age"
-                type="text"
-                maxLength="3"
-                name="age"
-                value={updateInfos.age}
+                className="input birthday"
+                type="date"
+                maxLength="10"
+                name="birthday"
+                value={updateInfos.birthday}
                 onChange={(e) => {
-                  handleChange(e, 3, true);
+                  handleChange(e, 10);
                 }}
               />
             </div>
@@ -195,8 +192,8 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
                 className="input phone"
                 type="text"
                 maxLength="20"
-                name="telephone"
-                value={updateInfos.telephone}
+                name="phone"
+                value={updateInfos.phone}
                 onChange={(e) => {
                   handleChange(e, 20, true);
                 }}
@@ -204,46 +201,47 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
             </div>
             <div className="form hobbies">
               <h2>Hobbies</h2>
-              {updateInfos.hobbies.map((hobbie, index) => {
-                return (
-                  <div className="hobbies-inputs">
-                    <input
-                      className="input hobbies"
-                      type="text"
-                      name="hobbies"
-                      value={hobbie}
-                      onChange={(e) => {
-                        const tmpHobbies = updateInfos.hobbies;
+              {updateInfos.hobbies &&
+                updateInfos.hobbies.map((hobbie, index) => {
+                  return (
+                    <div className="hobbies-inputs" key={index.toString()}>
+                      <input
+                        className="input hobbies"
+                        type="text"
+                        name="hobbies"
+                        value={hobbie}
+                        onChange={(e) => {
+                          const tmpHobbies = updateInfos.hobbies;
 
-                        tmpHobbies[index] = e.target.value;
-                        setUpdateInfos({
-                          ...updateInfos,
-                          hobbies: tmpHobbies,
-                        });
-                      }}
-                    />
-                    <button
-                      type="button"
-                      className="btn-remove-hobbies"
-                      onClick={() => {
-                        const tmpHobbies = updateInfos.hobbies;
+                          tmpHobbies[index] = e.target.value;
+                          setUpdateInfos({
+                            ...updateInfos,
+                            hobbies: tmpHobbies,
+                          });
+                        }}
+                      />
+                      <button
+                        type="button"
+                        className="btn-remove-hobbies"
+                        onClick={() => {
+                          const tmpHobbies = updateInfos.hobbies;
 
-                        setUpdateInfos({
-                          ...updateInfos,
-                          hobbies: tmpHobbies.filter(
-                            (element, filterIndex) => filterIndex !== index
-                          ),
-                        });
-                      }}
-                    >
-                      <svg viewBox="0 0 24 24">
-                        <path d="M0 0h24v24H0V0z" fill="none" />
-                        <path d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
-                      </svg>
-                    </button>
-                  </div>
-                );
-              })}
+                          setUpdateInfos({
+                            ...updateInfos,
+                            hobbies: tmpHobbies.filter(
+                              (element, filterIndex) => filterIndex !== index
+                            ),
+                          });
+                        }}
+                      >
+                        <svg viewBox="0 0 24 24">
+                          <path d="M0 0h24v24H0V0z" fill="none" />
+                          <path d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+                        </svg>
+                      </button>
+                    </div>
+                  );
+                })}
               <SButton
                 type="button"
                 className="btn add"
@@ -297,13 +295,13 @@ export default function ModalProfil({ updateInfos, setUpdateInfos, setEdit }) {
 ModalProfil.propTypes = {
   updateInfos: PropTypes.shape({
     firstname: PropTypes.string,
-    name: PropTypes.string,
+    lastname: PropTypes.string,
     aboutme: PropTypes.string,
-    age: PropTypes.string,
+    birthday: PropTypes.string,
     city: PropTypes.string,
     email: PropTypes.string,
-    telephone: PropTypes.string,
-    hobbies: PropTypes.string,
+    phone: PropTypes.string,
+    hobbies: PropTypes.arrayOf(PropTypes.string),
   }),
   setUpdateInfos: PropTypes.func.isRequired,
   setEdit: PropTypes.func.isRequired,
