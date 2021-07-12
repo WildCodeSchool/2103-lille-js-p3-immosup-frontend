@@ -97,7 +97,20 @@ function AddAnnonce() {
           inputPicture3={inputPicture3}
         />
 
-        <Accomodation />
+        <Accomodation
+          pictures={[inputPicture1, inputPicture2, inputPicture3]}
+          district={inputDistrict}
+          city={inputCity}
+          furnished={inputFurnished}
+          rent={inputRent}
+          surface={inputSurface}
+          animals={inputAnimals}
+          title={inputTitle}
+          rooms={inputRooms}
+          energyClass={inputEnergyClass}
+          property={inputType}
+          description={inputDescribe}
+        />
 
         <input type="submit" value="Send!" className="sendButton" />
       </form>
