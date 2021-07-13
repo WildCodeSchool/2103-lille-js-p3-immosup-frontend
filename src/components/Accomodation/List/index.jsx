@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import Accomodation from '../Display';
 
 const AnnonceList = ({ data }) => {
   return (
@@ -7,7 +6,9 @@ const AnnonceList = ({ data }) => {
       {data.map((accomodationData) => {
         return (
           <li>
-            <Accomodation {...accomodationData} />
+            <div className="fakeCard" {...accomodationData}>
+              TODO
+            </div>
           </li>
         );
       })}

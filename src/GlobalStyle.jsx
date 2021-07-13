@@ -8,6 +8,17 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     color: #000;
   }
+
+  .fakeCard {
+    background-color: yellowgreen;
+    width:530px;
+    height:300px;
+  }
+  .fakeBadge {
+    background-color: yellowgreen;
+    width:300px;
+    height:300px;
+  }
 `;
 
 export default GlobalStyle;

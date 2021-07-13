@@ -162,29 +162,7 @@ const STenantDashboard = styled.div`
       @media (max-width: 1200px) {
         width: 90%;
       }
-      .h3Match {
-        font-weight: bold;
-        font-size: 40px;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-      .galleryMatch {
-        display: flex;
-        justify-content: space-around;
-        margin-top: 50px;
-        @media (max-width: 1200px) {
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-        .profilMatch {
-          background-color: grey;
-          width: 150px;
-          height: 150px;
-          border-radius: 20%;
-          @media (max-width: 1200px) {
-            margin: 15px;
-          }
+
         }
       }
     }
