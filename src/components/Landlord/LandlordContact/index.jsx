@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import request from '../../../utilities/request';
 import SLandlordContacts from './style';
 import Contact from './Contact';
@@ -7,7 +7,6 @@ import Contact from './Contact';
 export default function LandlordContacts() {
   const [contacts, setContacts] = useState([]);
   const [userInfos] = useState({ id: 1 });
-  const { idReceiver } = useParams();
 
   useEffect(() => {
     request({ method: 'get', url: `/contacts/${userInfos.id}` }).then(
@@ -26,7 +25,9 @@ export default function LandlordContacts() {
             contacts.map((contact, index) => {
               return (
                 <div key={index.toString()}>
-                  <Link to={`/landlord/messages/${idReceiver}`}>
+                  <Link
+                    to={`/landlord/messages/${contact.id_sender}/${userInfos.id}`}
+                  >
                     <Contact idSender={contact.id_sender} />
                   </Link>
                 </div>
