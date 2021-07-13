@@ -8,7 +8,6 @@ export default function Contact({ idSender }) {
   useEffect(() => {
     request({ method: 'get', url: `/users/id/${idSender}` }).then(
       ({ data }) => {
-        console.log(data);
         setUser(data);
       }
     );

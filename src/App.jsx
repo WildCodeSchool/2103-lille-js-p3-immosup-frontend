@@ -45,7 +45,7 @@ export default function App() {
           <Route path="/tenant/dashboard" component={TenantDashboard} />
           <Route path="/landlord/dashboard" component={LandlordDashboard} />
           <Route path="/landlord/addannonce" component={AddAnnonce} />
-          <Route path="/landlord/messages/:id" component={Messages} />
+          <Route path="/landlord/messages/:idReceiver" component={Messages} />
           <Route path="/tenant/profil" component={TenantProfil} />
           <Route path="/tenant/criteria" component={TenantCriteria} />
           <Route path="/tenant/match" component={TenantMatch} />
