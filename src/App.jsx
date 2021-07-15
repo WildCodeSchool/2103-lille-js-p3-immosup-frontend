@@ -17,6 +17,8 @@ import TenantAnnouncementsSave from './components/Tenant/TenantAnnouncementsSave
 import TenantRoommateHunt from './components/Tenant/TenantRoommateHunt';
 import TenantHousingSearch from './components/Tenant/TenantHousingSearch';
 import ContactUs from './components/ContactUs';
+import LandlordContacts from './components/Landlord/LandlordContact';
+import Messages from './components/Landlord/LandlordContact/Messages';
 import Footer from './components/Footer';
 import GlobalStyle from './GlobalStyle';
 import Thumbnail from './components/Accomodation/Thumbnail';
@@ -46,9 +48,11 @@ export default function App() {
           <Route path="/tenant/dashboard" component={TenantDashboard} />
           <Route path="/landlord/dashboard" component={LandlordDashboard} />
           <Route path="/landlord/addannonce" component={AddAnnonce} />
+          <Route path="/landlord/messages/:idReceiver" component={Messages} />
           <Route path="/tenant/profil" component={TenantProfil} />
 
           <Route path="/tenant/match" component={TenantMatch} />
+          <Route path="/landlord/contacts" component={LandlordContacts} />
           <Route path="/test">
             <AnnoncesList data={[{}, {}]} />
           </Route>
