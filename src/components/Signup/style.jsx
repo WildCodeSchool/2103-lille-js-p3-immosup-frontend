@@ -40,10 +40,11 @@ const SSignup = styled.div`
     }
 
     .part-input {
-      width: 100%;
+      width: 60%;
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin: 0 auto 20px auto;
 
       h3 {
         font: 500 1.3em 'roboto';
@@ -56,10 +57,21 @@ const SSignup = styled.div`
       input,
       select {
         font-size: 18px;
-        margin-bottom: 20px;
+        margin-bottom: 5px;
         height: 40px;
-        width: 60%;
+        width: 100%;
         padding: 0 10px;
+        border: 1px solid #737373;
+        border-radius: 4px;
+      }
+
+      .msgs-error {
+        align-self: flex-start;
+        text-align: left;
+
+        li {
+          color: #d44444;
+        }
       }
     }
   }
