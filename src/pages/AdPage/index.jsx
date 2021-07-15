@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Accomodation from '../../components/Accomodation/Display';
 import SAdPage from './style';
-import request from '../../utilities/request';
+import { request } from '../../utilities';
 
 const AdPage = () => {
   const { id } = useParams();

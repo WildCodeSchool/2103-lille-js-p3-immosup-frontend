@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import AnnonceList from '../../components/Accomodation/List';
 import SSearchAdPage from './style';
-import request from '../../utilities/request';
+import { request } from '../../utilities';
 
 const SearchAdPage = () => {
   const [accomodationsData, setData] = useState([]);
