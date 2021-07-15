@@ -15,7 +15,7 @@ export default function Contact({ idSender }) {
   return (
     user && (
       <div className="icon">
-        <img src={user.avatar_url} alt="icon" />
+        <img src={user.avatarUrl} alt="icon" />
         <div className="text">
           <p>
             <span className="first-word">
