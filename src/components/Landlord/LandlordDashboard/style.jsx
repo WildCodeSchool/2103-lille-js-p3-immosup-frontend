@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-// const boxShadow = '4px 4px 10px rgba(0, 0, 0, 0.25)';
+const boxShadow = '4px 4px 10px rgba(0, 0, 0, 0.25)';
 // const hoverBoxShadow = '2px 2px 5px rgba(0, 0, 0, 0.25);';
 
 const SLandlordDashboard = styled.div`
@@ -16,6 +16,72 @@ const SLandlordDashboard = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin: 50px 0;
+    img {
+      width: 100px;
+      margin-right: 40px;
+    }
+    .userName {
+      font-size: 1.5em;
+    }
+  }
+
+  .navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    div {
+      width: 400px;
+      height: 70px;
+      border: 1px solid #e8e8e8;
+      border-radius: 20px;
+      box-shadow: ${boxShadow};
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      a {
+        text-decoration: none;
+        font: 500 1.8em 'roboto';
+
+        &:hover {
+          color: #2ac8bf;
+        }
+      }
+    }
+  }
+
+  .annonce {
+    margin-top: 30px;
+    box-shadow: ${boxShadow};
+    border-radius: 20px;
+    min-height: 300px;
+
+    .linkAnnonce {
+      text-decoration: none;
+      font: 500 2em 'roboto';
+      margin: 30px;
+    }
+
+    .buttonAdd {
+      margin: 40px;
+      box-shadow: ${boxShadow};
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      a {
+        text-decoration: none;
+        font: 500 10em 'roboto';
+        color: #a8a8a8;
+      }
+    }
   }
 `;
 

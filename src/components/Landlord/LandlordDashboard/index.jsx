@@ -17,22 +17,32 @@ export default function LandlordDashboard() {
           />
           <h3>
             Bienvenue <br />
-            {userInfos?.firstname || 'Utilisateur'}
+            <span className="userName">
+              {userInfos?.firstname || 'Utilisateur'}
+            </span>
           </h3>
         </section>
         <section className="navigation">
-          <Link to="/landlord/dashboard/profil"> Mon profil</Link>
-          <Link to="/landlord/dashboard/contact">Mes contacts</Link>
-          <Link to="/landlord/dashboard/buycredits">Acheter des crédits</Link>
+          <div>
+            <Link to="/landlord/dashboard/profil"> Mon profil</Link>
+          </div>
+          <div>
+            <Link to="/landlord/dashboard/contact">Mes contacts</Link>
+          </div>
+          <div>
+            <Link to="/landlord/dashboard/buycredits">Acheter des crédits</Link>
+          </div>
         </section>
 
         <section className="annonce">
+          <Link to="/landlord/dashboard/annoucement" className="linkAnnonce">
+            Mes annonces
+          </Link>
           <div className="announcement">
-            <h3>
-              <Link to="/landlord/dashboard/annoucement">Mes annonces</Link>
-            </h3>
             {/* inclure annnonce list */}
-            <button type="button">+</button>
+            <div className="buttonAdd">
+              <Link to="/landlord/addanonce">+</Link>
+            </div>
           </div>
         </section>
       </SLandlordDashboard>
