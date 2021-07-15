@@ -3,8 +3,9 @@ import Addannoncestyle from './style';
 import Title from './Title';
 import Infos from './Infos';
 import Description from './Description';
-import request from '../../utilities/request';
 import Accomodation from '../Accomodation/Display';
+import { request } from '../../utilities';
+
 import Pictures from './Pictures';
 
 function AddAnnonce() {

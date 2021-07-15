@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import SLogin from './style';
-import request from '../../utilities/request';
+import { request } from '../../utilities';
 import UserInfos from '../../contexts/UserInfos';
 
 export default function Login() {
