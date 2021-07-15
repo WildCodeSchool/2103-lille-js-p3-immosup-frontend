@@ -99,7 +99,6 @@ const SSignup = styled.div`
       }
     }
   }
-
   @media screen and (max-width: 850px) {
     width: 100%;
 
@@ -118,6 +117,12 @@ const SSignup = styled.div`
           width: 90%;
         }
       }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .part .part-input {
+      width: 100%;
     }
   }
 `;
