@@ -34,7 +34,7 @@ const Accomodation = ({
             <p>{furnished ? 'Meublé' : 'Non meublé'}</p>
             <p>Surface {surface} m²</p>
             <p>{rooms} chambres</p>
-            <p>{animals ? 'Animaux accepter' : 'Animaux non accepter'}</p>
+            <p>{animals ? 'Animaux acceptés' : 'Animaux interdits'}</p>
             <p>Class energie {energyClass}</p>
             <p className="rent">{rent} €</p>
           </div>
