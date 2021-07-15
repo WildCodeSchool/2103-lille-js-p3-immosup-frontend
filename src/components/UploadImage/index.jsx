@@ -14,7 +14,7 @@ function Upload() {
   };
   const handleUpload = async (e) => {
     e.preventDefault();
-    /* console.log(image); */
+    console.log(image);
     const formData = new FormData();
     formData.append('image', image.raw);
 
