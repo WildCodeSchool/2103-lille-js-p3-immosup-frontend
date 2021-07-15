@@ -1,21 +1,15 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import PersonMatch from '../PersonMatch';
 import SPersonsGallery from './style';
-// import PersonMatch from '../PersonMatch/PersonMatch';
+// import Person from '../Person';
 
 function PersonsGallery({ persons }) {
   return (
     <SPersonsGallery>
+      <h3>Mes matchs</h3>
       <div className="Gallery">
-        <Link to="/tenant/match">
-          <h2>Mes matchs</h2>
-        </Link>
         {persons.map((person) => {
-          return (
-            <div className="fakeBadge" {...person}>
-              TODO
-            </div>
-          );
+          return <PersonMatch key={person.id} {...person} />;
         })}
       </div>
     </SPersonsGallery>
