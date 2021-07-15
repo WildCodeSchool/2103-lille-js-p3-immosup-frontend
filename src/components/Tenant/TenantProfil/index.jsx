@@ -1,5 +1,6 @@
 import { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
+import { dateFormat } from '../../../utilities';
 import UserInfos from '../../../contexts/UserInfos';
 import ModalProfil from './ModalProfil';
 import SButton from '../../styled/SButton';
@@ -26,13 +27,13 @@ export default function TenantProfil() {
           <div className="part-content">
             <img
               className="avatar"
-              src={userInfos?.url || '/img/default/disconnect.jpg'}
+              src={userInfos?.avatar_url || '/img/default/disconnect.jpg'}
               alt="avatar"
             />
             <p className="name">
               {!userInfos
                 ? "Vous n'êtes pas connecté"
-                : `${userInfos.firstname} ${userInfos.name}`}
+                : `${userInfos.firstname} ${userInfos.lastname}`}
             </p>
           </div>
         </div>
@@ -48,8 +49,12 @@ export default function TenantProfil() {
                     alt="age"
                   />
                   <div className="content">
-                    <h3>Age</h3>
-                    <p>{userInfos.age || '-'}</p>
+                    <h3>Date de naissance</h3>
+                    <p>
+                      {userInfos.birthday
+                        ? dateFormat(userInfos.birthday)
+                        : '-'}
+                    </p>
                   </div>
                 </section>
                 <section>
@@ -82,7 +87,7 @@ export default function TenantProfil() {
                   />
                   <div className="content">
                     <h3>Téléphone</h3>
-                    <p>{userInfos.telephone || '-'}</p>
+                    <p>{userInfos.phone || '-'}</p>
                   </div>
                 </section>
               </div>

@@ -39,7 +39,7 @@ const Accomodation = ({
             <p className="rent">{rent} €</p>
           </div>
           <div className="description">
-            <h3>Description</h3>
+            <h3>Description:</h3>
             <p>{description}</p>
           </div>
         </div>
