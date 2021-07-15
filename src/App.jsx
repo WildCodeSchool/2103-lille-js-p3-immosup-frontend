@@ -3,27 +3,25 @@ import { Switch, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import UserInfos from './contexts/UserInfos';
 import 'react-toastify/dist/ReactToastify.css';
+import NavBar from './components/NavBar';
 import HomePage from './components/HomePage';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import TenantDashboard from './components/Tenant/TenantDashboard';
+import LandlordDashboard from './components/Landlord/LandlordDashboard';
+import AddAnnonce from './components/AddAnnonce';
 import TenantProfil from './components/Tenant/TenantProfil';
 import TenantMatch from './components/Tenant/TenantMatch';
 import AnnoncesList from './components/Accomodation/List';
 import TenantAnnouncementsSave from './components/Tenant/TenantAnnouncementsSave';
 import TenantRoommateHunt from './components/Tenant/TenantRoommateHunt';
 import TenantHousingSearch from './components/Tenant/TenantHousingSearch';
-
-import LandlordDashboard from './components/Landlord/LandlordDashboard';
 import ContactUs from './components/ContactUs';
-import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import GlobalStyle from './GlobalStyle';
 import Accomodation from './components/Accomodation/Display';
 
 import SApp from './SApp';
-import AddAnnonce from './components/AddAnnonce';
-
 import './reset.css';
 
 export default function App() {
