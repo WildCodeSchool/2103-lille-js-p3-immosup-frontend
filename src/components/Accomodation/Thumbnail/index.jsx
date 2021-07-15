@@ -14,7 +14,7 @@ const Thumbnail = ({
 }) => {
   return (
     <SThumbnail>
-      <Link to={`/acoomodations/${id}`}>
+      <Link to={`/accomodations/${id}`}>
         <div className="thumbnail">
           {pictures.map((picture) => {
             return (
