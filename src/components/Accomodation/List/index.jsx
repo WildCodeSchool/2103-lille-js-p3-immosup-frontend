@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
 import Thumbnail from '../Thumbnail';
+import SList from './style';
 
 const AnnonceList = ({ title, data }) => {
   return (
-    <>
+    <SList>
       <h2>{title}</h2>
       <ul>
         {data.map((accomodationData) => {
@@ -14,7 +15,7 @@ const AnnonceList = ({ title, data }) => {
           );
         })}
       </ul>
-    </>
+    </SList>
   );
 };
 

@@ -18,7 +18,6 @@ import ContactUs from './components/ContactUs';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import GlobalStyle from './GlobalStyle';
-import Accomodation from './components/Accomodation/Display';
 import Thumbnail from './components/Accomodation/Thumbnail';
 import SApp from './SApp';
 import AddAnnonce from './components/AddAnnonce';
@@ -58,9 +57,7 @@ export default function App() {
             path="/tenant/housing-search"
             component={TenantHousingSearch}
           />
-
           <Route path="/contact-us" component={ContactUs} />
-          <Route path="/accomodation" component={Accomodation} />
           <Route path="/thumbnail" component={Thumbnail} />
         </Switch>
       </UserInfos.Provider>

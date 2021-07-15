@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import AnnonceList from '../components/Accomodation/List';
+import AnnonceList from '../../components/Accomodation/List';
+import SSearchAdPage from './style';
 
 const SearchAdPage = () => {
   const [accomodationsData, setData] = useState([]);
@@ -15,7 +16,11 @@ const SearchAdPage = () => {
     });
   }, []);
 
-  return <AnnonceList title="Toutes mes annonces" data={accomodationsData} />;
+  return (
+    <SSearchAdPage>
+      <AnnonceList title="Title" data={accomodationsData} />
+    </SSearchAdPage>
+  );
 };
 
 export default SearchAdPage;

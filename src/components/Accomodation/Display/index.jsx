@@ -29,12 +29,12 @@ const Accomodation = ({
         <div className="informations">
           <div className="criteria">
             <h3>{city}</h3>
-            <p>Quartier {district}</p>
+            <p>{district}</p>
             <p>{property}</p>
-            <p>{furnished}</p>
+            <p>{furnished ? 'Meublé' : 'Non meublé'}</p>
             <p>Surface {surface} m²</p>
             <p>{rooms} chambres</p>
-            <p>{animals}</p>
+            <p>{animals ? 'Animaux accepter' : 'Animaux non accepter'}</p>
             <p>Class energie {energyClass}</p>
             <p className="rent">{rent} €</p>
           </div>
@@ -42,10 +42,6 @@ const Accomodation = ({
             <h3>Description</h3>
             <p>{description}</p>
           </div>
-        </div>
-        <div className="buttons">
-          <div className="button">Sauvegarder</div>
-          <div className="button">Contacter</div>
         </div>
       </div>
     </SAccomodation>
