@@ -19,9 +19,11 @@ import TenantHousingSearch from './components/Tenant/TenantHousingSearch';
 import ContactUs from './components/ContactUs';
 import Footer from './components/Footer';
 import GlobalStyle from './GlobalStyle';
-import Accomodation from './components/Accomodation/Display';
-
+import Thumbnail from './components/Accomodation/Thumbnail';
 import SApp from './SApp';
+import SearchAdPage from './pages/SearchAdPage';
+import AdPage from './pages/AdPage';
+import Accomodation from './components/Accomodation/Display';
 import './reset.css';
 
 export default function App() {
@@ -37,6 +39,8 @@ export default function App() {
         <NavBar />
         <Switch>
           <Route exact path="/" component={HomePage} />
+          <Route path="/accomodations/:id" component={AdPage} />
+          <Route path="/accomodations" component={SearchAdPage} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route path="/tenant/dashboard" component={TenantDashboard} />
@@ -57,8 +61,8 @@ export default function App() {
             path="/tenant/housing-search"
             component={TenantHousingSearch}
           />
-
           <Route path="/contact-us" component={ContactUs} />
+          <Route path="/thumbnail" component={Thumbnail} />
           <Route path="/accomodation" component={Accomodation} />
         </Switch>
       </UserInfos.Provider>
