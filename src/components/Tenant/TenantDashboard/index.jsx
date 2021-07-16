@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import STenantDashboard from './style';
-import PersonsGallery from '../../PersonsGallery';
+import PersonsGallery from '../../PersonsGalleryMatch';
 import AnnonceList from '../../Accomodation/List';
 
 export default function TenantDashboard() {
