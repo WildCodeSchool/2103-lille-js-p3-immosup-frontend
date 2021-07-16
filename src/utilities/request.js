@@ -1,9 +1,12 @@
 import axios from 'axios';
 
 const request = (options) => {
+  const port = process.env.REACT_APP_API_PORT || 5050;
+  const path = process.env.REACT_APP_API_PATH_DEV;
+
   return axios({
     ...options,
-    baseURL: process.env.REACT_APP_API_PATH_DEV,
+    baseURL: `http://${path}:${port}/`,
   });
 };
 

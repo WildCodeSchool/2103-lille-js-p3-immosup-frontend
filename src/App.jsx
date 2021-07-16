@@ -3,22 +3,29 @@ import { Switch, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import UserInfos from './contexts/UserInfos';
 import 'react-toastify/dist/ReactToastify.css';
+import NavBar from './components/NavBar';
 import HomePage from './components/HomePage';
+import Login from './components/Login';
 import Signup from './components/Signup';
 import TenantDashboard from './components/Tenant/TenantDashboard';
+import LandlordDashboard from './components/Landlord/LandlordDashboard';
+import AddAnnonce from './components/AddAnnonce';
 import TenantProfil from './components/Tenant/TenantProfil';
 import TenantMatch from './components/Tenant/TenantMatch';
+import AnnoncesList from './components/Accomodation/List';
 import TenantAnnouncementsSave from './components/Tenant/TenantAnnouncementsSave';
 import TenantRoommateHunt from './components/Tenant/TenantRoommateHunt';
 import TenantHousingSearch from './components/Tenant/TenantHousingSearch';
-import TenantCriteria from './components/Tenant/TenantCriteria';
-import LandlordDashboard from './components/Landlord/LandlordDashboard';
 import ContactUs from './components/ContactUs';
-import NavBar from './components/NavBar';
+import LandlordContacts from './components/Landlord/LandlordContact';
+import Messages from './components/Landlord/LandlordContact/Messages';
 import Footer from './components/Footer';
 import GlobalStyle from './GlobalStyle';
+import Thumbnail from './components/Accomodation/Thumbnail';
 import SApp from './SApp';
-import AddAnnonce from './components/AddAnnonce';
+import SearchAdPage from './pages/SearchAdPage';
+import AdPage from './pages/AdPage';
+import Accomodation from './components/Accomodation/Display';
 import './reset.css';
 
 export default function App() {
@@ -34,13 +41,21 @@ export default function App() {
         <NavBar />
         <Switch>
           <Route exact path="/" component={HomePage} />
+          <Route path="/accomodations/:id" component={AdPage} />
+          <Route path="/accomodations" component={SearchAdPage} />
+          <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route path="/tenant/dashboard" component={TenantDashboard} />
           <Route path="/landlord/dashboard" component={LandlordDashboard} />
           <Route path="/landlord/addannonce" component={AddAnnonce} />
+          <Route path="/landlord/messages/:idReceiver" component={Messages} />
           <Route path="/tenant/profil" component={TenantProfil} />
-          <Route path="/tenant/criteria" component={TenantCriteria} />
+
           <Route path="/tenant/match" component={TenantMatch} />
+          <Route path="/landlord/contacts" component={LandlordContacts} />
+          <Route path="/test">
+            <AnnoncesList data={[{}, {}]} />
+          </Route>
           <Route
             path="/tenant/announcements-save"
             component={TenantAnnouncementsSave}
@@ -50,8 +65,9 @@ export default function App() {
             path="/tenant/housing-search"
             component={TenantHousingSearch}
           />
-
           <Route path="/contact-us" component={ContactUs} />
+          <Route path="/thumbnail" component={Thumbnail} />
+          <Route path="/accomodation" component={Accomodation} />
         </Switch>
       </UserInfos.Provider>
       <ToastContainer />

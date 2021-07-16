@@ -5,8 +5,7 @@ import Infos from './Infos';
 import Description from './Description';
 import Upload from '../UploadImage';
 
-// import Pictures from './Pictures';
-import Preview from './Preview';
+import Accomodation from '../Accomodation/Display';
 
 function AddAnnonce() {
   const [inputDistrict, setDistrict] = useState('');
@@ -22,9 +21,6 @@ function AddAnnonce() {
   const [inputGes, setGes] = useState('');
   const [inputRooms, setRooms] = useState(0);
   const [inputDescribe, setDescribe] = useState('');
-  // const [inputPicture1, setPicture1] = useState('');
-  // const [inputPicture2, setPicture2] = useState('');
-  // const [inputPicture3, setPicture3] = useState('');
 
   return (
     <Addannoncestyle>
@@ -64,31 +60,20 @@ function AddAnnonce() {
 
       <Upload />
 
-      {/* <Pictures
-          setPicture1={setPicture1}
-          setPicture2={setPicture2}
-          setPicture3={setPicture3}
-          inputPicture1={inputPicture1}
-          inputPicture2={inputPicture2}
-          inputPicture3={inputPicture3}
-        /> */}
-      <Preview
-        inputTitle={inputTitle}
-        inputCategory={inputCategory}
-        inputFurnished={inputFurnished}
-        inputSurface={inputSurface}
-        inputRooms={inputRooms}
-        inputAnimals={inputAnimals}
-        inputEnergyClass={inputEnergyClass}
-        inputGes={inputGes}
-        inputDistrict={inputDistrict}
-        inputCity={inputCity}
-        inputDescribe={inputDescribe}
-        inputRent={inputRent}
-        // inputPicture1={inputPicture1}
-        // inputPicture2={inputPicture2}
-        // inputPicture3={inputPicture3}
+      <Accomodation
+        district={inputDistrict}
+        city={inputCity}
+        furnished={inputFurnished}
+        rent={inputRent}
+        surface={inputSurface}
+        animals={inputAnimals}
+        title={inputTitle}
+        rooms={inputRooms}
+        energyClass={inputEnergyClass}
+        property={inputType}
+        description={inputDescribe}
       />
+
       <input type="submit" value="Send!" className="sendButton" />
     </Addannoncestyle>
   );

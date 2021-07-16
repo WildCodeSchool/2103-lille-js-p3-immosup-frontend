@@ -14,9 +14,6 @@ const Preview = ({
   inputCity,
   inputDescribe,
   inputRent,
-  inputPicture1,
-  inputPicture2,
-  inputPicture3,
 }) => {
   return (
     <SPreview>
@@ -34,9 +31,6 @@ const Preview = ({
         <p>{inputDistrict}</p>
         <p>{inputRent}</p>
         <p>{inputDescribe}</p>
-        <img src={inputPicture1} alt="Picture1" />
-        <img src={inputPicture2} alt="Picture2" />
-        <img src={inputPicture3} alt="Picture3" />
       </div>
     </SPreview>
   );
@@ -56,7 +50,4 @@ Preview.propTypes = {
   inputCity: PropTypes.string.isRequired,
   inputDescribe: PropTypes.string.isRequired,
   inputRent: PropTypes.number.isRequired,
-  inputPicture1: PropTypes.string.isRequired,
-  inputPicture2: PropTypes.string.isRequired,
-  inputPicture3: PropTypes.string.isRequired,
 };
