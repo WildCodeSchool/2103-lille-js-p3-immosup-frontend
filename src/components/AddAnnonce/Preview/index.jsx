@@ -26,7 +26,6 @@ const Preview = ({
         <p>{inputAnimals}</p>
         <p>{inputEnergyClass}</p>
         <p>{inputGes}</p>
-
         <p>{inputCity}</p>
         <p>{inputDistrict}</p>
         <p>{inputRent}</p>
