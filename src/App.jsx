@@ -26,6 +26,7 @@ import SApp from './SApp';
 import SearchAdPage from './pages/SearchAdPage';
 import AdPage from './pages/AdPage';
 import Accomodation from './components/Accomodation/Display';
+import WorkInProgress from './components/WorkInProgress';
 import './reset.css';
 
 export default function App() {
@@ -68,6 +69,7 @@ export default function App() {
           <Route path="/contact-us" component={ContactUs} />
           <Route path="/thumbnail" component={Thumbnail} />
           <Route path="/accomodation" component={Accomodation} />
+          <Route path="/work-in-progress" component={WorkInProgress} />
         </Switch>
       </UserInfos.Provider>
       <ToastContainer />
