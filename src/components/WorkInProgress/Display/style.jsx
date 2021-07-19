@@ -6,6 +6,9 @@ const SWorkInProgressDisplay = styled.div`
   left: 50%;
   margin-top: -150px;
   margin-left: -300px;
+  @media screen and (max-width: 650px) {
+    margin-left: -150px;
+  }
 `;
 
 export default SWorkInProgressDisplay;
