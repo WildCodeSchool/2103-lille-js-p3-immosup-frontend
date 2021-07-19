@@ -33,10 +33,10 @@ export default function HomePage() {
           />
         </div>
         <div className={`carousel img-${currImg}`}>
-          <Link to="tenant/dashboard" className="link-dashboard tenant">
+          <Link to="/work-in-progress" className="link-dashboard tenant">
             Espace étudiants et jeunes dîplomés
           </Link>
-          <Link to="landlord/dashboard" className="link-dashboard landlord">
+          <Link to="/work-in-progress" className="link-dashboard landlord">
             Espace déposeurs d&apos;annonces
           </Link>
         </div>
