@@ -145,6 +145,36 @@ const SModalProfil = styled.div`
       margin-left: 10px;
     }
   }
+
+  @media screen and (max-width: 850px) {
+    .modal-content {
+      width: 100%;
+
+      form {
+        .form {
+          .input {
+            width: 75%;
+          }
+        }
+      }
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin: 40px 0;
+
+      .btn.save {
+        margin-right: 10px;
+      }
+
+      .btn.cancel {
+        margin-left: 10px;
+      }
+    }
+  }
 `;
 
 export default SModalProfil;

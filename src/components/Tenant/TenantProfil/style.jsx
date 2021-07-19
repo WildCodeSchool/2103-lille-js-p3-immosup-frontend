@@ -19,6 +19,7 @@ const SProfil = styled.div`
     border-radius: 20px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
     background-color: #fff;
+    overflow: hidden;
 
     &.profil {
       text-align: center;
@@ -83,12 +84,11 @@ const SProfil = styled.div`
 
     .parts {
       &.first {
-        width: 30%;
         padding-right: 10px;
       }
 
       &.second {
-        width: 70%;
+        width: 100%;
         padding-left: 10px;
       }
     }
@@ -100,6 +100,58 @@ const SProfil = styled.div`
     align-items: center;
     width: 100%;
     margin: 20px 0 40px 0;
+  }
+
+  @media screen and (max-width: 850px) {
+    padding: 0;
+
+    .title-page {
+      font-size: 40px;
+      margin: 30px 0 0 20px;
+    }
+
+    .part {
+      box-shadow: none;
+      padding: 10px 20px;
+      margin-top: 40px;
+
+      h2 {
+        width: 100%;
+        color: #2ac8bf;
+      }
+
+      &.about {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        section {
+          width: auto;
+          padding: 10px 20px 0px 20px;
+          flex-direction: column;
+          align-items: center;
+
+          .picto {
+            width: 36px;
+            height: 36px;
+          }
+
+          .content {
+            margin: 10px 0;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    .connected-parts {
+      flex-direction: column;
+
+      .parts {
+        width: 100%;
+        padding: 0;
+      }
+    }
   }
 `;
 
