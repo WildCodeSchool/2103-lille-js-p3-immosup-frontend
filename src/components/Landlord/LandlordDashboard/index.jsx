@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import User from '../../../contexts/UserInfos';
 import SLandlordDashboard from './style';
+import SearchAdPage from '../../../pages/SearchAdPage';
 
 export default function LandlordDashboard() {
   const { userInfos } = useContext(User);
@@ -39,7 +40,7 @@ export default function LandlordDashboard() {
             Mes annonces
           </Link>
           <div className="announcement">
-            {/* inclure annnonce list */}
+            {userInfos && <SearchAdPage />}
             <div className="buttonAdd">
               <Link to="/landlord/addanonce">+</Link>
             </div>

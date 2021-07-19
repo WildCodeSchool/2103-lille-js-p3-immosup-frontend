@@ -2,6 +2,7 @@ import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { request } from '../../utilities';
+import usersRules from '../../utilities/inputsDataRules';
 import User from '../../contexts/UserInfos';
 import SSignup from './style';
 import SButton from '../styled/SButton';
@@ -11,7 +12,6 @@ export default function Signup() {
   const [infos, setInfos] = useState({
     gender: 'female',
   });
-
   const handleInput = (e) => {
     const tmpInfos = {
       ...infos,
@@ -22,8 +22,7 @@ export default function Signup() {
     setInfos(tmpInfos);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
     try {
       const { data } = await request({
         method: 'post',
@@ -44,10 +43,70 @@ export default function Signup() {
     }
   };
 
+  const checkInputsRequired = (inputsName) => {
+    let errorFound = false;
+
+    inputsName.forEach((inputName) => {
+      const input = document.querySelector(`.input.${inputName}`);
+      const msgsError = [];
+
+      if (!input.value) {
+        msgsError.push('Champ obligatoire');
+      } else {
+        usersRules[inputName]?.forEach((rule) => {
+          if (!rule.reg.test(input.value)) msgsError.push(rule.msg);
+        });
+      }
+
+      let ul = document.querySelector(`.msgs-error.${inputName}`);
+
+      if (msgsError.length) {
+        errorFound = true;
+        input.style.borderColor = '#d44444';
+
+        if (!ul) {
+          ul = document.createElement('ul');
+          ul.classList.add('msgs-error', inputName);
+        } else {
+          ul.innerHTML = '';
+        }
+        msgsError.forEach((msgError) => {
+          const li = document.createElement('li');
+
+          li.innerHTML = msgError;
+          ul.appendChild(li);
+        });
+        document.querySelector(`.part-input.${inputName}`).appendChild(ul);
+      } else {
+        input.style.borderColor = '#737373';
+        if (ul) ul.parentNode.removeChild(ul);
+      }
+    });
+
+    return errorFound;
+  };
+
   return (
     <SSignup>
       <h1 className="title-page">Créez votre profil</h1>
-      <form>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (
+            !checkInputsRequired([
+              'email',
+              'password',
+              'firstname',
+              'lastname',
+              'city',
+              'phone',
+              'birthday',
+            ])
+          ) {
+            handleSubmit(e);
+          }
+        }}
+      >
         <div className="part">
           <div className="part-title">
             <svg viewBox="0 0 24 24">
@@ -56,7 +115,7 @@ export default function Signup() {
             </svg>
             <h2>Connexion</h2>
           </div>
-          <div className="part-input">
+          <div className="part-input email">
             <h3>
               Email<em className="not-null">*</em>
             </h3>
@@ -66,9 +125,12 @@ export default function Signup() {
               type="email"
               value={infos.email || ''}
               onChange={handleInput}
+              onBlur={() => {
+                checkInputsRequired(['email']);
+              }}
             />
           </div>
-          <div className="part-input">
+          <div className="part-input password">
             <h3>
               Password<em className="not-null">*</em>
             </h3>
@@ -78,6 +140,9 @@ export default function Signup() {
               type="password"
               value={infos.password || ''}
               onChange={handleInput}
+              onBlur={() => {
+                checkInputsRequired(['password']);
+              }}
             />
           </div>
         </div>
@@ -89,7 +154,7 @@ export default function Signup() {
             </svg>
             <h2>Profil</h2>
           </div>
-          <div className="part-input">
+          <div className="part-input firstname">
             <h3>
               Prénom<em className="not-null">*</em>
             </h3>
@@ -99,9 +164,12 @@ export default function Signup() {
               type="text"
               value={infos.firstname || ''}
               onChange={handleInput}
+              onBlur={() => {
+                checkInputsRequired(['firstname']);
+              }}
             />
           </div>
-          <div className="part-input">
+          <div className="part-input lastname">
             <h3>
               Nom<em className="not-null">*</em>
             </h3>
@@ -111,9 +179,12 @@ export default function Signup() {
               type="text"
               value={infos.lastname || ''}
               onChange={handleInput}
+              onBlur={() => {
+                checkInputsRequired(['lastname']);
+              }}
             />
           </div>
-          <div className="part-input">
+          <div className="part-input city">
             <h3>
               Ville<em className="not-null">*</em>
             </h3>
@@ -123,9 +194,12 @@ export default function Signup() {
               type="text"
               value={infos.city || ''}
               onChange={handleInput}
+              onBlur={() => {
+                checkInputsRequired(['city']);
+              }}
             />
           </div>
-          <div className="part-input">
+          <div className="part-input gender">
             <h3>
               Sexe<em className="not-null">*</em>
             </h3>
@@ -134,7 +208,7 @@ export default function Signup() {
               <option value="male">homme</option>
             </select>
           </div>
-          <div className="part-input">
+          <div className="part-input phone">
             <h3>
               Téléphone<em className="not-null">*</em>
             </h3>
@@ -144,9 +218,12 @@ export default function Signup() {
               type="text"
               value={infos.phone || ''}
               onChange={handleInput}
+              onBlur={() => {
+                checkInputsRequired(['phone']);
+              }}
             />
           </div>
-          <div className="part-input">
+          <div className="part-input birthday">
             <h3>
               Date de naissance<em className="not-null">*</em>
             </h3>
@@ -156,12 +233,15 @@ export default function Signup() {
               type="date"
               value={infos.birthday || ''}
               onChange={handleInput}
+              onBlur={() => {
+                checkInputsRequired(['birthday']);
+              }}
             />
           </div>
         </div>
 
         <div className="box-button">
-          <SButton type="submit" onClick={handleSubmit}>
+          <SButton type="submit">
             <p className="btn-text">Créer le profil</p>
           </SButton>
           <Link to="/login">

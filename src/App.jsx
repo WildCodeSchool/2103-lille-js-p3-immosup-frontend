@@ -17,11 +17,15 @@ import TenantAnnouncementsSave from './components/Tenant/TenantAnnouncementsSave
 import TenantRoommateHunt from './components/Tenant/TenantRoommateHunt';
 import TenantHousingSearch from './components/Tenant/TenantHousingSearch';
 import ContactUs from './components/ContactUs';
+import LandlordContacts from './components/Landlord/LandlordContact';
+import Messages from './components/Landlord/LandlordContact/Messages';
 import Footer from './components/Footer';
 import GlobalStyle from './GlobalStyle';
-import Accomodation from './components/Accomodation/Display';
-
+import Thumbnail from './components/Accomodation/Thumbnail';
 import SApp from './SApp';
+import SearchAdPage from './pages/SearchAdPage';
+import AdPage from './pages/AdPage';
+import Accomodation from './components/Accomodation/Display';
 import './reset.css';
 
 export default function App() {
@@ -37,14 +41,18 @@ export default function App() {
         <NavBar />
         <Switch>
           <Route exact path="/" component={HomePage} />
+          <Route path="/accomodations/:id" component={AdPage} />
+          <Route path="/accomodations" component={SearchAdPage} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route path="/tenant/dashboard" component={TenantDashboard} />
           <Route path="/landlord/dashboard" component={LandlordDashboard} />
           <Route path="/landlord/addannonce" component={AddAnnonce} />
+          <Route path="/landlord/messages/:idReceiver" component={Messages} />
           <Route path="/tenant/profil" component={TenantProfil} />
 
           <Route path="/tenant/match" component={TenantMatch} />
+          <Route path="/landlord/contacts" component={LandlordContacts} />
           <Route path="/test">
             <AnnoncesList data={[{}, {}]} />
           </Route>
@@ -57,8 +65,8 @@ export default function App() {
             path="/tenant/housing-search"
             component={TenantHousingSearch}
           />
-
           <Route path="/contact-us" component={ContactUs} />
+          <Route path="/thumbnail" component={Thumbnail} />
           <Route path="/accomodation" component={Accomodation} />
         </Switch>
       </UserInfos.Provider>

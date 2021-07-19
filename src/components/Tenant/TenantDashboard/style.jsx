@@ -3,7 +3,7 @@ import styled from 'styled-components';
 // const global ===================================
 
 const boxShadow = '4px 4px 10px rgba(0, 0, 0, 0.25)';
-const hoverBoxShadow = '2px 2px 5px rgba(0, 0, 0, 0.25);';
+const hoverBoxShadow = '2px 2px 5px rgba(0, 0, 0, 0.25)';
 const widthPage = '1100px';
 
 // const button ===================================
