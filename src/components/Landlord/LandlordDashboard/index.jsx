@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import User from '../../../contexts/UserInfos';
 import SLandlordDashboard from './style';
-import SearchAdPage from '../../../pages/SearchAdPage';
+import LandlordAd from '../../../pages/LandlordAd';
 
 export default function LandlordDashboard() {
   const { userInfos } = useContext(User);
@@ -25,10 +25,10 @@ export default function LandlordDashboard() {
         </section>
         <section className="navigation">
           <div>
-            <Link to="/landlord/dashboard/profil"> Mon profil</Link>
+            <Link to="/tenant/profil"> Mon profil</Link>
           </div>
           <div>
-            <Link to="/landlord/dashboard/contact">Mes contacts</Link>
+            <Link to="/landlord/contacts">Mes contacts</Link>
           </div>
           <div>
             <Link to="/landlord/dashboard/buycredits">Acheter des crédits</Link>
@@ -39,11 +39,11 @@ export default function LandlordDashboard() {
           <Link to="/landlord/dashboard/annoucement" className="linkAnnonce">
             Mes annonces
           </Link>
-          <div className="announcement">
-            {userInfos && <SearchAdPage />}
-            <div className="buttonAdd">
-              <Link to="/landlord/addanonce">+</Link>
-            </div>
+
+          <div className="annonce">{userInfos && <LandlordAd />}</div>
+
+          <div className="buttonAdd">
+            <Link to="/landlord/addannonce">+</Link>
           </div>
         </section>
       </SLandlordDashboard>

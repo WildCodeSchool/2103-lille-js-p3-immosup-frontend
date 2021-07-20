@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const boxShadow = '4px 4px 10px rgba(0, 0, 0, 0.25)';
-// const hoverBoxShadow = '2px 2px 5px rgba(0, 0, 0, 0.25);';
 
 const SLandlordDashboard = styled.div`
   padding: 60px;
@@ -59,6 +58,12 @@ const SLandlordDashboard = styled.div`
     box-shadow: ${boxShadow};
     border-radius: 20px;
     min-height: 300px;
+    padding: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
     .linkAnnonce {
       text-decoration: none;
@@ -67,16 +72,17 @@ const SLandlordDashboard = styled.div`
     }
 
     .buttonAdd {
-      margin: 40px;
       box-shadow: ${boxShadow};
       width: 200px;
       height: 200px;
       border-radius: 50%;
+      margin: 30px;
 
       display: flex;
       align-items: center;
       justify-content: center;
       a {
+        margin: 100px;
         text-decoration: none;
         font: 500 10em 'roboto';
         color: #a8a8a8;

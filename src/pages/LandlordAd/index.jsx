@@ -4,7 +4,7 @@ import User from '../../contexts/UserInfos';
 // import SSearchAdPage from './style';
 import { request } from '../../utilities';
 
-const SearchAdPage = () => {
+const LandlordAd = () => {
   const [accomodationsData, setData] = useState([]);
 
   const { userInfos } = useContext(User);
@@ -28,9 +28,9 @@ const SearchAdPage = () => {
 
   return (
     // <SSearchAdPage>
-    <AnnonceList title="Title" data={accomodationsData} />
+    <AnnonceList title="" data={accomodationsData} />
     // </SSearchAdPage>
   );
 };
 
-export default SearchAdPage;
+export default LandlordAd;
