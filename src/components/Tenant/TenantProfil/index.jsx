@@ -1,6 +1,5 @@
 import { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-//* import { dateFormat } from '../../../utilities';
 import UserInfos from '../../../contexts/UserInfos';
 import ModalProfil from './ModalProfil';
 import SButton from '../../styled/SButton';
