@@ -56,11 +56,11 @@ export default function HomePage() {
             trouver ton logement et/ou ton/tes futur(s) coloc(s) ! <br />
             <br />
             Si à l’inverse tu recherches un profil pour compléter ta colocation
-            actuelle, dépose gratuitement une annonce via l’espace « déposeurs
-            d’annonces »*. <br /> <br /> En complément, tu peux aussi t’informer
-            via des documents pdf, des podcasts ou vidéos sur des points clés
-            liés à l’immobilier. De quoi être au top pour trouver le lieu de vie
-            de tes rêves !
+            actuelle, dépose gratuitement une annonce via l&apos;espace «
+            déposeurs d’annonces »*. <br /> <br /> En complément, tu peux aussi
+            t’informer via des documents pdf, des podcasts ou vidéos sur des
+            points clés liés à l’immobilier. De quoi être au top pour trouver le
+            lieu de vie de tes rêves !
           </article>
         </section>
         <section className="info second">
