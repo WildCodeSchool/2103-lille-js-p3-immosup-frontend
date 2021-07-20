@@ -10,7 +10,11 @@ function Person({ lastname, firstname, city, avatarUrl, birthday }) {
             {lastname} {firstname}
           </h2>
           <img src={avatarUrl} alt="" />
-          <p>{birthday} ans</p>
+          <p>
+            {Math.floor(
+              (new Date() - new Date(birthday).getTime()) / 3.15576e10
+            )}
+          </p>
           <p>{city}</p>
         </div>
       </div>

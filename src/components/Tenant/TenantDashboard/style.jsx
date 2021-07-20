@@ -3,7 +3,7 @@ import styled from 'styled-components';
 // const global ===================================
 
 const boxShadow = '4px 4px 10px rgba(0, 0, 0, 0.25)';
-const hoverBoxShadow = '2px 2px 5px rgba(0, 0, 0, 0.25)';
+const hoverBoxShadow = '2px 2px 5px rgba(0, 0, 0, 0.25);';
 const widthPage = '1100px';
 
 // const button ===================================
@@ -162,29 +162,7 @@ const STenantDashboard = styled.div`
       @media (max-width: 1200px) {
         width: 90%;
       }
-      .h3Match {
-        font-weight: bold;
-        font-size: 40px;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-      .galleryMatch {
-        display: flex;
-        justify-content: space-around;
-        margin-top: 50px;
-        @media (max-width: 1200px) {
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-        .profilMatch {
-          background-color: grey;
-          width: 150px;
-          height: 150px;
-          border-radius: 20%;
-          @media (max-width: 1200px) {
-            margin: 15px;
-          }
+
         }
       }
     }
@@ -207,28 +185,28 @@ const STenantDashboard = styled.div`
   }
 
   // style of announcements ===================================
-
   .announcements {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: ${widthPage};
-    margin: auto;
-    padding-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: ${widthPage};
+  margin: auto;
+  //padding-bottom: 50px;
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    width: 100%;
+    padding-top: 30px;
+  }
+  
+  .housing {
+    box-shadow: ${boxShadow};
+    border-radius: 20px;
+    width: 900px;
+    //padding: 20px;
     @media (max-width: 1200px) {
-      flex-direction: column;
-      width: 100%;
-      padding-top: 30px;
+      width: 90%;
     }
-
-    .housing {
-      box-shadow: ${boxShadow};
-      border-radius: 20px;
-      width: 900px;
-      padding: 20px;
-      @media (max-width: 1200px) {
-        width: 90%;
-      }
+    /* 
       .h3Announcements {
         font-weight: bold;
         font-size: 40px;
@@ -254,7 +232,7 @@ const STenantDashboard = styled.div`
           }
         }
       }
-    }
+    } */
 
     .search {
       box-shadow: ${boxShadow};
