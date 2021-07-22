@@ -1,7 +1,6 @@
 import { useEffect, useState, useContext } from 'react';
 import AnnonceList from '../../components/Accomodation/List';
 import User from '../../contexts/UserInfos';
-// import SSearchAdPage from './style';
 import { request } from '../../utilities';
 
 const LandlordAd = () => {
@@ -26,11 +25,7 @@ const LandlordAd = () => {
     );
   }, []);
 
-  return (
-    // <SSearchAdPage>
-    <AnnonceList title="" data={accomodationsData} />
-    // </SSearchAdPage>
-  );
+  return <AnnonceList title="" data={accomodationsData} />;
 };
 
 export default LandlordAd;
