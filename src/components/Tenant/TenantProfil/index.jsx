@@ -1,6 +1,5 @@
 import { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import { dateFormat } from '../../../utilities';
 import UserInfos from '../../../contexts/UserInfos';
 import ModalProfil from './ModalProfil';
 import SButton from '../../styled/SButton';
@@ -49,11 +48,13 @@ export default function TenantProfil() {
                     alt="age"
                   />
                   <div className="content">
-                    <h3>Date de naissance</h3>
+                    <h3>Age</h3>
                     <p>
-                      {userInfos.birthday
-                        ? dateFormat(userInfos.birthday)
-                        : '-'}
+                      {Math.floor(
+                        (new Date() - new Date(userInfos.birthday).getTime()) /
+                          3.15576e10
+                      )}{' '}
+                      ans
                     </p>
                   </div>
                 </section>
