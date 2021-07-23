@@ -25,7 +25,7 @@ const LandlordAd = () => {
     );
   }, []);
 
-  return <AnnonceList title="" data={accomodationsData} />;
+  return <AnnonceList title="?" data={accomodationsData} />;
 };
 
 export default LandlordAd;
