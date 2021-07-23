@@ -26,6 +26,9 @@ import SApp from './SApp';
 import SearchAdPage from './pages/SearchAdPage';
 import AdPage from './pages/AdPage';
 import Accomodation from './components/Accomodation/Display';
+import WorkInProgress from './components/WorkInProgress';
+import WorkInProgressDisplay from './components/WorkInProgress/Display';
+import PositionFooter from './PositionFooter';
 import './reset.css';
 
 export default function App() {
@@ -34,43 +37,50 @@ export default function App() {
 
   return (
     <SApp>
-      <GlobalStyle />
-      <UserInfos.Provider
-        value={{ userInfos, setUserInfos, userToken, setUserToken }}
-      >
-        <NavBar />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/accomodations/:id" component={AdPage} />
-          <Route path="/accomodations" component={SearchAdPage} />
-          <Route path="/login" component={Login} />
-          <Route path="/signup" component={Signup} />
-          <Route path="/tenant/dashboard" component={TenantDashboard} />
-          <Route path="/landlord/dashboard" component={LandlordDashboard} />
-          <Route path="/landlord/addannonce" component={AddAnnonce} />
-          <Route path="/landlord/messages/:idReceiver" component={Messages} />
-          <Route path="/tenant/profil" component={TenantProfil} />
+      <PositionFooter>
+        <GlobalStyle />
+        <UserInfos.Provider
+          value={{ userInfos, setUserInfos, userToken, setUserToken }}
+        >
+          <NavBar />
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/accomodations/:id" component={AdPage} />
+            <Route path="/accomodations" component={SearchAdPage} />
+            <Route path="/login" component={Login} />
+            <Route path="/signup" component={Signup} />
+            <Route path="/tenant/dashboard" component={TenantDashboard} />
+            <Route path="/landlord/dashboard" component={LandlordDashboard} />
+            <Route path="/landlord/addannonce" component={AddAnnonce} />
+            <Route path="/landlord/messages/:idReceiver" component={Messages} />
+            <Route path="/tenant/profil" component={TenantProfil} />
 
-          <Route path="/tenant/match" component={TenantMatch} />
-          <Route path="/landlord/contacts" component={LandlordContacts} />
-          <Route path="/test">
-            <AnnoncesList data={[{}, {}]} />
-          </Route>
-          <Route
-            path="/tenant/announcements-save"
-            component={TenantAnnouncementsSave}
-          />
-          <Route path="/tenant/roommate-hunt" component={TenantRoommateHunt} />
-          <Route
-            path="/tenant/housing-search"
-            component={TenantHousingSearch}
-          />
-          <Route path="/contact-us" component={ContactUs} />
-          <Route path="/thumbnail" component={Thumbnail} />
-          <Route path="/accomodation" component={Accomodation} />
-        </Switch>
-      </UserInfos.Provider>
-      <ToastContainer />
+            <Route path="/tenant/match" component={TenantMatch} />
+            <Route path="/landlord/contacts" component={LandlordContacts} />
+            <Route path="/test">
+              <AnnoncesList data={[{}, {}]} />
+            </Route>
+            <Route
+              path="/tenant/announcements-save"
+              component={TenantAnnouncementsSave}
+            />
+            <Route
+              path="/tenant/roommate-hunt"
+              component={TenantRoommateHunt}
+            />
+            <Route
+              path="/tenant/housing-search"
+              component={TenantHousingSearch}
+            />
+            <Route path="/contact-us" component={ContactUs} />
+            <Route path="/thumbnail" component={Thumbnail} />
+            <Route path="/accomodation" component={Accomodation} />
+            <Route path="/work-in-progress-test" component={WorkInProgress} />
+            <Route path="/work-in-progress" component={WorkInProgressDisplay} />
+          </Switch>
+        </UserInfos.Provider>
+        <ToastContainer />
+      </PositionFooter>
       <Footer />
     </SApp>
   );

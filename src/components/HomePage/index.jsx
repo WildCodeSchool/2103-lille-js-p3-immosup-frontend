@@ -33,10 +33,10 @@ export default function HomePage() {
           />
         </div>
         <div className={`carousel img-${currImg}`}>
-          <Link to="tenant/dashboard" className="link-dashboard tenant">
+          <Link to="/work-in-progress" className="link-dashboard tenant">
             Espace étudiants et jeunes dîplomés
           </Link>
-          <Link to="landlord/dashboard" className="link-dashboard landlord">
+          <Link to="/work-in-progress" className="link-dashboard landlord">
             Espace déposeurs d&apos;annonces
           </Link>
         </div>
@@ -56,11 +56,11 @@ export default function HomePage() {
             trouver ton logement et/ou ton/tes futur(s) coloc(s) ! <br />
             <br />
             Si à l’inverse tu recherches un profil pour compléter ta colocation
-            actuelle, dépose gratuitement une annonce via l’espace « déposeurs
-            d’annonces »*. <br /> <br /> En complément, tu peux aussi t’informer
-            via des documents pdf, des podcasts ou vidéos sur des points clés
-            liés à l’immobilier. De quoi être au top pour trouver le lieu de vie
-            de tes rêves !
+            actuelle, dépose gratuitement une annonce via l&apos;espace «
+            déposeurs d’annonces »*. <br /> <br /> En complément, tu peux aussi
+            t’informer via des documents pdf, des podcasts ou vidéos sur des
+            points clés liés à l’immobilier. De quoi être au top pour trouver le
+            lieu de vie de tes rêves !
           </article>
         </section>
         <section className="info second">
