@@ -11,7 +11,7 @@ export default function Footer() {
         <Link to="/contact-us" className="link contact">
           Contact
         </Link>
-        <Link to="/legal-information" className="link legal-information">
+        <Link to="/work-in-progress" className="link legal-information">
           Informations légales (CGU)
         </Link>
       </div>

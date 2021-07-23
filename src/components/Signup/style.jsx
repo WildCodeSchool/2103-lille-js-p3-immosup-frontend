@@ -56,6 +56,8 @@ const SSignup = styled.div`
 
       input,
       select {
+        border: 1px solid #737373;
+        border-radius: 4px;
         font-size: 18px;
         margin-bottom: 5px;
         height: 40px;
@@ -95,6 +97,32 @@ const SSignup = styled.div`
       em {
         border-bottom: 1px solid;
       }
+    }
+  }
+  @media screen and (max-width: 850px) {
+    width: 100%;
+
+    h1 {
+      margin-bottom: 60px;
+      margin-left: 20px;
+      text-align: left;
+    }
+
+    .part {
+      box-shadow: none;
+
+      .part-input {
+        input,
+        select {
+          width: 90%;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .part .part-input {
+      width: 100%;
     }
   }
 `;
