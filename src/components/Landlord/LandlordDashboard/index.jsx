@@ -1,76 +1,52 @@
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import User from '../../../contexts/UserInfos';
 import SLandlordDashboard from './style';
+import LandlordAd from '../../../pages/LandlordAd';
 
 export default function LandlordDashboard() {
+  const { userInfos } = useContext(User);
+
   return (
-    <SLandlordDashboard>
-      <h2>Tableau de bord</h2>
-      <div className="personal">
-        <div className="user">
+    <>
+      <SLandlordDashboard>
+        <h1>Tableau de bord</h1>
+        <section className="personalInfo">
           <img
-            src="https://static.vecteezy.com/ti/vecteur-libre/t1/550980-utilisateur-icone-vecteur-gratuit-vectoriel.jpg"
+            src={userInfos?.avatarUrl || '/image/IconeProfilNoir.png'}
             alt="Avatar"
           />
           <h3>
             Bienvenue <br />
-            Nom de l&apos;utilisateur
+            <span className="userName">
+              {userInfos?.firstname || 'Utilisateur'}
+            </span>
           </h3>
-        </div>
-
-        <Link to="/landlord/dashboard/profil">
-          <div className="profil"> Mon profil </div>
-        </Link>
-
-        <div className="disconnected">
-          <img
-            src="https://icones.pro/wp-content/uploads/2021/05/icone-connexion-grise.png"
-            alt="Disconnected"
-          />
-        </div>
-      </div>
-
-      <div className="navigation">
-        <div className="announcement">
-          <h3>
-            <Link to="/landlord/dashboard/annoucement">Mes annonces</Link>
-          </h3>
-          <div className="bloc">
-            <div className="housing">
-              <img
-                src="https://i.pinimg.com/originals/ae/91/73/ae917300d4e1c1fae700029d998ba981.jpg"
-                alt="Housing"
-              />
-              <div className="housingDescription">
-                <h5>Titre</h5>
-                <br />
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Pariatur, in! Reiciendis corporis ipsum, facilis illum enim
-                  libero dolor assumenda sapiente quos non aut impedit? Dolore
-                  tempora voluptatum voluptate eum rem.
-                </p>
-                <br />
-                <h5>Prix</h5>
-              </div>
-            </div>
-            <div className="bloc2">
-              <div className="housingPlus">
-                <p>+</p>
-              </div>
-            </div>
+        </section>
+        <section className="navigation">
+          <div>
+            <Link to="/tenant/profil"> Mon profil</Link>
           </div>
-        </div>
+          <div>
+            <Link to="/landlord/contacts">Mes contacts</Link>
+          </div>
+          <div>
+            <Link to="/landlord/dashboard/buycredits">Acheter des crédits</Link>
+          </div>
+        </section>
 
-        <div className="buttons">
-          <Link to="/landlord/contacts">
-            <div className="contact"> Mes contacts </div>
+        <section className="annonce">
+          <Link to="/landlord/dashboard/annoucement" className="linkAnnonce">
+            Mes annonces
           </Link>
 
-          <Link to="/landlord/dashboard/buycredits">
-            <div className="buyCredits">Acheter des crédits </div>
-          </Link>
-        </div>
-      </div>
-    </SLandlordDashboard>
+          <div className="annonce">{userInfos && <LandlordAd />}</div>
+
+          <div className="buttonAdd">
+            <Link to="/landlord/addannonce">+</Link>
+          </div>
+        </section>
+      </SLandlordDashboard>
+    </>
   );
 }
