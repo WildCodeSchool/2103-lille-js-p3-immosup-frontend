@@ -21,6 +21,7 @@ function AddAnnonce() {
   const [inputGes, setGes] = useState('');
   const [inputRooms, setRooms] = useState(0);
   const [inputDescribe, setDescribe] = useState('');
+  const [image, setImage] = useState({ preview: '', raw: '' });
 
   return (
     <Addannoncestyle>
@@ -58,7 +59,7 @@ function AddAnnonce() {
         inputRent={inputRent}
       />
 
-      <Upload />
+      <Upload image={image} setImage={setImage} />
 
       <Accomodation
         district={inputDistrict}
