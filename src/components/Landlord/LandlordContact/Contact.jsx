@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import request from '../../../utilities/request';
+import { request } from '../../../utilities';
 
 export default function Contact({ idSender }) {
   const [user, setUser] = useState(null);

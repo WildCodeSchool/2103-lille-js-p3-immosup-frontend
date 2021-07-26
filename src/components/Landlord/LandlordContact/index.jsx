@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import request from '../../../utilities/request';
+import { request } from '../../../utilities';
 import SLandlordContacts from './style';
 import Contact from './Contact';
 
 export default function LandlordContacts() {
   const [contacts, setContacts] = useState([]);
-  const [userInfos] = useState({ id: 1 });
+  const [userInfos] = useState({ id: 18 });
 
   useEffect(() => {
     request({ method: 'get', url: `/contacts/${userInfos.id}` }).then(

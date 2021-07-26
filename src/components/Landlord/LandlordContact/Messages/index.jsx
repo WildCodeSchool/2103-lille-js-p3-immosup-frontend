@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
 import SMessages from './style';
 import SButton from '../../../styled/SButton';
-import request from '../../../../utilities/request';
+import { request } from '../../../../utilities';
 
 export default function Message() {
   const { idReceiver } = useParams();
@@ -32,7 +31,12 @@ export default function Message() {
         idSender: idUser,
         idReceiver,
       };
-      axios.post(`http://localhost:5002/contacts/messages`, aEnvoyer);
+      request({
+        method: 'post',
+        url: `/contacts/messages`,
+        data: aEnvoyer,
+      });
+      // axios.post(`http://localhost:5002/contacts/messages`, aEnvoyer);
       setContent('');
     }
   };
