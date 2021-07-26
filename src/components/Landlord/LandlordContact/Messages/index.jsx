@@ -50,7 +50,6 @@ export default function Message() {
   return (
     <SMessages>
       <div className="contain">
-        <hr />
         {messages &&
           messages.map((message, index) => {
             const ownerMessage =

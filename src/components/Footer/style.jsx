@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
 const SFooter = styled.footer`
+  position: absolute;
+  bottom: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #109fe6;
+  background-color: #ff705c;
   width: 100vw;
   height: 75px;
   padding: 0 20px;

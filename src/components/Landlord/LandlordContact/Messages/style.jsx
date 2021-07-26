@@ -5,8 +5,7 @@ const SMessages = styled.div`
   line-height: 1.3;
 
   .contain {
-    margin-left: 8%;
-    margin-right: 8%;
+    padding: 40px 14%;
   }
   textarea {
     resize: none;
@@ -28,7 +27,7 @@ const SMessages = styled.div`
   }
   .message {
     background: #f1f1f1;
-    margin: 15px;
+    margin: 20px 0;
     border: 1px solid #e8e8e8;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
