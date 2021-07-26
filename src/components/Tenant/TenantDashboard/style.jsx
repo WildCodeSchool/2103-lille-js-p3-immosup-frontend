@@ -175,8 +175,7 @@ const STenantDashboard = styled.div`
 
         }
       }
-    }
-
+    
     .imgHunt {
       box-shadow: ${boxShadow};
       padding: 40px;
@@ -218,7 +217,9 @@ const STenantDashboard = styled.div`
     }
    
 
-    .search {
+    
+  }
+  .search {
       box-shadow: ${boxShadow};
       padding: 40px;
       border-radius: 100%;
@@ -233,7 +234,6 @@ const STenantDashboard = styled.div`
         box-shadow: ${hoverBoxShadow};
       }
     }
-  }
 `;
 
 export default STenantDashboard;
