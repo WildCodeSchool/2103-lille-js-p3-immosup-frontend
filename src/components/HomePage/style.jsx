@@ -53,12 +53,10 @@ const SHomePage = styled.div`
 
       &.tenant {
         text-align: left;
-        border-radius: 0px 10px 10px 0px;
       }
 
       &.landlord {
         text-align: right;
-        border-radius: 10px 0px 0px 10px;
       }
     }
   }
@@ -81,15 +79,12 @@ const SHomePage = styled.div`
         font-style: normal;
         font-weight: bold;
         font-size: 26px;
+        text-align: center;
         margin: 20px;
-        margin-left: 0;
       }
 
       .body {
         text-align: justify;
-        text-justify: inter-word;
-        hyphens: auto;
-        line-height: 1.2em;
         font-size: 17px;
       }
     }
