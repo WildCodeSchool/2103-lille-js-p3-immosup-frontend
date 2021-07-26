@@ -28,7 +28,7 @@ export default function TenantDashboard() {
           <h3 className="h3Profil">Mon profile</h3>
         </Link>
 
-        <Link to="/tenant/criteria" className="buttonCriteria">
+        <Link to="/tenant/dashboard" className="buttonCriteria">
           <h3 className="h3Criteria">Mes critères</h3>
         </Link>
 
@@ -63,7 +63,7 @@ export default function TenantDashboard() {
             <div className="profilMatch" />
           </div>
         </div>
-        <Link to="/tenant/roommate-hunt">
+        <Link to="/tenant/dashboard">
           <img
             src="/Tenant/TenantDashbord/people.svg"
             alt="Roommate hunt"
@@ -88,7 +88,7 @@ export default function TenantDashboard() {
             <div className="profilAnnouncements" />
           </div>
         </div>
-        <Link to="/tenant/housing-search">
+        <Link to="/tenant/dashboard">
           <img
             src="/Tenant/TenantDashbord/search.svg"
             alt="Housing search"
