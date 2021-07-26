@@ -1,7 +1,11 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import User from '../../../contexts/UserInfos';
 import STenantDashboard from './style';
 
 export default function TenantDashboard() {
+  const { setUserInfos } = useContext(User);
+
   return (
     <STenantDashboard>
       <h2>Tableau de bord</h2>
@@ -26,14 +30,20 @@ export default function TenantDashboard() {
           <h3 className="h3Criteria">Mes critères</h3>
         </Link>
 
-        <Link to="/" className="buttonDisconnected">
+        <button
+          type="button"
+          className="buttonDisconnected"
+          onClick={() => {
+            setUserInfos(null);
+          }}
+        >
           <img
             src="/Tenant/TenantDashbord/logout.svg"
             alt="Disconnected"
             title="Déconnexion"
             className="imgDisconnected"
           />
-        </Link>
+        </button>
       </div>
 
       {/* flatsharing ================================================= */}

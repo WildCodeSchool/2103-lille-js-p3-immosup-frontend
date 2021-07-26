@@ -4,7 +4,7 @@ const SApp = styled.div`
   position: relative;
   background-color: white;
   padding: 60px 0;
-  min-height: calc(100vh - 60px);
+  min-height: 100vh;
 `;
 
 export default SApp;

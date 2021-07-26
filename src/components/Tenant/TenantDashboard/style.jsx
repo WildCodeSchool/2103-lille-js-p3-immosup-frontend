@@ -123,6 +123,7 @@ const STenantDashboard = styled.div`
     margin-right: 30px;
     width: 90px;
     height: 90px;
+    cursor: pointer;
     @media (max-width: 1200px) {
       padding: 15px;
       border-radius: 20px;
