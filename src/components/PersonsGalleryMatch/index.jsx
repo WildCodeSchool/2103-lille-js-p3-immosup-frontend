@@ -7,9 +7,13 @@ function PersonsGallery({ persons }) {
     <SPersonsGallery>
       <h3>Mes matchs</h3>
       <div className="Gallery">
-        {persons.map((person) => {
-          return <PersonMatch key={person.id} {...person} />;
-        })}
+        {persons
+          .filter((person, index) => {
+            return index > 0 && index <= 8;
+          })
+          .map((person) => {
+            return <PersonMatch key={person.id} {...person} />;
+          })}
       </div>
     </SPersonsGallery>
   );

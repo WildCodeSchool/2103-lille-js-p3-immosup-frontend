@@ -11,6 +11,8 @@ const SPersonsGallery = styled.div`
   .Gallery {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
   }
 `;
 

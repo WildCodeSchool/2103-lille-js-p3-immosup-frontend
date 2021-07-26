@@ -8,9 +8,10 @@ const SPersonMatch = styled.div`
   height: 200px;
   width: 200px;
   img {
+    display: inline-block;
     margin-top: 10px;
-    width: 180px;
-    height: 180px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
 
     border-radius: 100%;
