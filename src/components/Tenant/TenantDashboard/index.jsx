@@ -101,7 +101,7 @@ export default function TenantDashboard() {
             <AnnonceList title="Toutes mes annonces" data={accomodationsData} />
           </div>
         </div>
-        <Link to="/tenant/dashboard">
+        <Link to="/tenant/housing-search">
           <img
             src="/Tenant/TenantDashbord/search.svg"
             alt="Housing search"
