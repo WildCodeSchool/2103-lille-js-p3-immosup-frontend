@@ -6,7 +6,7 @@ const SContactUs = styled.div`
   width: 600px;
   margin: auto;
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 100px;
   border-radius: 20px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
   @media (max-width: 700px) {

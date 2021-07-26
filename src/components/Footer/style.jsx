@@ -7,7 +7,7 @@ const SFooter = styled.footer`
   justify-content: space-between;
   align-items: center;
   background-color: #ff705c;
-  width: 100vw;
+  width: 100%;
   height: 75px;
   padding: 0 20px;
 

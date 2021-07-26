@@ -88,7 +88,7 @@ export default function TenantDashboard() {
             <div className="profilAnnouncements" />
           </div>
         </div>
-        <Link to="/tenant/dashboard">
+        <Link to="/tenant/housing-search">
           <img
             src="/Tenant/TenantDashbord/search.svg"
             alt="Housing search"

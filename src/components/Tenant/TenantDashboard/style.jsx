@@ -24,6 +24,7 @@ const SProfil = styled.div`
 `;
 
 const STenantDashboard = styled.div`
+  margin-bottom: 50px;
   background-color: #ffffff;
   font-family: 'Roboto', serif;
   a {
