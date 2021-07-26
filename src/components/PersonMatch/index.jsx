@@ -6,8 +6,9 @@ function PersonMatch({ lastname, firstname, avatarUrl }) {
     <SPersonMatch>
       <div>
         <img src={avatarUrl} alt="" />
-        {lastname} {firstname}
-        <p />
+        <p>
+          {lastname} {firstname}
+        </p>
       </div>
     </SPersonMatch>
   );
