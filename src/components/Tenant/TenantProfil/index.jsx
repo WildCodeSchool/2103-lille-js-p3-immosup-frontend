@@ -26,7 +26,7 @@ export default function TenantProfil() {
           <div className="part-content">
             <img
               className="avatar"
-              src={userInfos?.avatar_url || '/img/default/disconnect.jpg'}
+              src={userInfos?.avatarUrl || '/image/IconeProfilNoir.png'}
               alt="avatar"
             />
             <p className="name">
