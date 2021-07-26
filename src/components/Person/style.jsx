@@ -22,15 +22,15 @@ const SPerson = styled.div`
     border: 1px solid #e8e8e8;
     border-radius: 20px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
-  }
 
-  .icons img {
-    color: #a8a8a8;
-    border-radius: 50%;
-    height: 30vh;
-    width: 15vw;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
-    margin: 10px;
+    img {
+      color: #a8a8a8;
+      border-radius: 50%;
+      height: 30vh;
+      width: 15vw;
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+      margin: 10px;
+    }
   }
 
   .icon {
