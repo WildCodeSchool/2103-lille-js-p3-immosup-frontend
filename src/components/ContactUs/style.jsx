@@ -5,7 +5,7 @@ const SContactUs = styled.div`
   font-weight: bold;
   width: 600px;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 30px;
   margin-bottom: 30px;
   border-radius: 20px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
