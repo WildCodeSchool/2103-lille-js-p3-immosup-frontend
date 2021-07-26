@@ -191,7 +191,7 @@ const STenantDashboard = styled.div`
   justify-content: space-between;
   width: ${widthPage};
   margin: auto;
-  //padding-bottom: 50px;
+  padding-bottom: 50px;
   @media (max-width: 1200px) {
     flex-direction: column;
     width: 100%;
@@ -202,37 +202,11 @@ const STenantDashboard = styled.div`
     box-shadow: ${boxShadow};
     border-radius: 20px;
     width: 900px;
-    //padding: 20px;
+    padding: 20px;
     @media (max-width: 1200px) {
       width: 90%;
     }
-    /* 
-      .h3Announcements {
-        font-weight: bold;
-        font-size: 40px;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-      .galleryAnnouncements {
-        display: flex;
-        justify-content: space-around;
-        margin-top: 50px;
-        @media (max-width: 1200px) {
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-        .profilAnnouncements {
-          background-color: grey;
-          width: 150px;
-          height: 150px;
-          border-radius: 20%;
-          @media (max-width: 1200px) {
-            margin: 15px;
-          }
-        }
-      }
-    } */
+   
 
     .search {
       box-shadow: ${boxShadow};

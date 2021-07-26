@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import PersonMatch from '../PersonMatch';
 import SPersonsGallery from './style';
-// import Person from '../Person';
 
 function PersonsGallery({ persons }) {
   return (
