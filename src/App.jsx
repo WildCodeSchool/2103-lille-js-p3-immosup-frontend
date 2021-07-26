@@ -13,7 +13,7 @@ import AddAnnonce from './components/AddAnnonce';
 import TenantProfil from './components/Tenant/TenantProfil';
 import TenantMatch from './components/Tenant/TenantMatch';
 import AnnoncesList from './components/Accomodation/List';
-import TenantAnnouncementsSave from './components/Tenant/TenantAnnouncementsSave';
+import SaveAd from './pages/SaveAd';
 import TenantRoommateHunt from './components/Tenant/TenantRoommateHunt';
 import TenantHousingSearch from './components/Tenant/TenantHousingSearch';
 import ContactUs from './components/ContactUs';
@@ -46,6 +46,7 @@ export default function App() {
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route path="/tenant/dashboard" component={TenantDashboard} />
+          <Route path="/tenant/housing-search" component={SearchAdPage} />
           <Route path="/landlord/dashboard" component={LandlordDashboard} />
           <Route path="/landlord/addannonce" component={AddAnnonce} />
           <Route path="/landlord/messages/:idReceiver" component={Messages} />
@@ -56,10 +57,7 @@ export default function App() {
           <Route path="/test">
             <AnnoncesList data={[{}, {}]} />
           </Route>
-          <Route
-            path="/tenant/announcements-save"
-            component={TenantAnnouncementsSave}
-          />
+          <Route path="/tenant/announcements-save" component={SaveAd} />
           <Route path="/tenant/roommate-hunt" component={TenantRoommateHunt} />
           <Route
             path="/tenant/housing-search"

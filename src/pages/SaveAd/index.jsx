@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import AnnonceList from '../../components/Accomodation/List';
-import SSearchAdPage from './style';
+import SSaveAd from './style';
 import { request } from '../../utilities';
 
-const SearchAdPage = () => {
+const SaveAd = () => {
   const [accomodationsData, setData] = useState([]);
 
   useEffect(() => {
@@ -17,10 +17,10 @@ const SearchAdPage = () => {
   }, []);
 
   return (
-    <SSearchAdPage>
-      <AnnonceList title="Recherche de logements" data={accomodationsData} />
-    </SSearchAdPage>
+    <SSaveAd>
+      <AnnonceList title="Mes logements" data={accomodationsData} />
+    </SSaveAd>
   );
 };
 
-export default SearchAdPage;
+export default SaveAd;

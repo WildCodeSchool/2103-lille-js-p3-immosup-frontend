@@ -66,7 +66,7 @@ export default function TenantDashboard() {
       <div className="announcements">
         <div className="housing">
           <Link to="/tenant/announcements-save">
-            <h3 className="h3Announcements">Mes annonces sauvegardées</h3>
+            <h3 className="h3Announcements">Mes logements</h3>
           </Link>
           <div className="galleryAnnouncements">
             <div className="profilAnnouncements" />
