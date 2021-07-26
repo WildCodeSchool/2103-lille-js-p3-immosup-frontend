@@ -1,10 +1,10 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import User from '../../../contexts/UserInfos';
-import STenantDashboard from './style';
+import STenantDashboard, { SProfil } from './style';
 
 export default function TenantDashboard() {
-  const { setUserInfos } = useContext(User);
+  const { userInfos, setUserInfos } = useContext(User);
 
   return (
     <STenantDashboard>
@@ -14,11 +14,13 @@ export default function TenantDashboard() {
 
       <div className="personal">
         <div className="user">
-          <div className="imgAvatar" />
+          <SProfil
+            bckImg={userInfos?.avatarUrl || '/image/IconeProfilNoir.png'}
+          />
           <h3 className="h3User">
             Bienvenue
             <br />
-            &apos;UserName&apos;
+            {userInfos?.firstname || "'UserName'"}
           </h3>
         </div>
 

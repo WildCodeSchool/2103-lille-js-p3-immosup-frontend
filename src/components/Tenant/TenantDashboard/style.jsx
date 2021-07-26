@@ -14,6 +14,15 @@ const paddingButton = '20px';
 
 // style of personal ===================================
 
+const SProfil = styled.div`
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  background-image: url(${(props) => props.bckImg});
+  background-repeat: no-repeat;
+  background-size: cover;
+`;
+
 const STenantDashboard = styled.div`
   background-color: #ffffff;
   font-family: 'Roboto', serif;
@@ -276,3 +285,5 @@ const STenantDashboard = styled.div`
 `;
 
 export default STenantDashboard;
+
+export { SProfil };
