@@ -1,10 +1,34 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import User from '../../../contexts/UserInfos';
 import STenantDashboard, { SProfil } from './style';
 
+import PersonsGallery from '../../PersonsGalleryMatch';
+import AnnonceList from '../../Accomodation/List';
+
 export default function TenantDashboard() {
   const { userInfos, setUserInfos } = useContext(User);
+  const [match, setMatch] = useState([]);
+  const [accomodationsData, setData] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:5050/users').then(({ data }) => {
+      const newData = data.map((person) => {
+        return { ...person };
+      });
+
+      setMatch(newData);
+    });
+
+    axios.get('http://localhost:5050/annonce').then(({ data }) => {
+      const newData = data.map((annonce) => {
+        return { ...annonce, pictures: annonce.photos?.split(',').slice(0, 1) };
+      });
+
+      setData(newData);
+    });
+  }, []);
 
   return (
     <STenantDashboard>
@@ -52,15 +76,10 @@ export default function TenantDashboard() {
 
       <div className="flatsharing">
         <div className="myMatch">
-          <Link to="/tenant/match">
-            <h3 className="h3Match">Mes matchs</h3>
-          </Link>
           <div className="galleryMatch">
-            <div className="profilMatch" />
-            <div className="profilMatch" />
-            <div className="profilMatch" />
-            <div className="profilMatch" />
-            <div className="profilMatch" />
+            <div className="profilMatch">
+              <PersonsGallery persons={match} />
+            </div>
           </div>
         </div>
         <Link to="/tenant/dashboard">
@@ -77,15 +96,9 @@ export default function TenantDashboard() {
 
       <div className="announcements">
         <div className="housing">
-          <Link to="/tenant/announcements-save">
-            <h3 className="h3Announcements">Mes logements</h3>
-          </Link>
+          <Link to="/tenant/announcements-save" />
           <div className="galleryAnnouncements">
-            <div className="profilAnnouncements" />
-            <div className="profilAnnouncements" />
-            <div className="profilAnnouncements" />
-            <div className="profilAnnouncements" />
-            <div className="profilAnnouncements" />
+            <AnnonceList title="Toutes mes annonces" data={accomodationsData} />
           </div>
         </div>
         <Link to="/tenant/dashboard">
