@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Addannoncestyle from './style';
+import User from '../../contexts/UserInfos';
 import Title from './Title';
 import Infos from './Infos';
 import Description from './Description';
@@ -9,6 +10,8 @@ import { request } from '../../utilities';
 import Pictures from './Pictures';
 
 function AddAnnonce() {
+  const { userInfos } = useContext(User);
+
   const [inputDistrict, setDistrict] = useState('');
   const [inputCity, setCity] = useState('');
   const [inputFurnished, setFurnished] = useState(true);
@@ -42,7 +45,7 @@ function AddAnnonce() {
       ges: inputGes,
       rooms: inputRooms,
       describe: inputDescribe,
-      idUser: 1,
+      idUser: userInfos.id,
       Picture1: inputPicture1,
       Picture2: inputPicture2,
       Picture3: inputPicture3,
