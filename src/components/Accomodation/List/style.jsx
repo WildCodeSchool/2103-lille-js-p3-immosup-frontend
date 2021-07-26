@@ -12,6 +12,10 @@ const SList = styled.div`
     font-size: 40px;
   }
 
+  h3 {
+    font-size: 40px;
+  }
+
   ul {
     display: flex;
     flex-wrap: wrap;

@@ -34,11 +34,14 @@ const STenantDashboard = styled.div`
     }
   }
 
+  
+
   h2 {
     font-weight: bold;
     font-size: 60px;
     width: ${widthPage};
-
+    margin: auto;
+    padding-top: 50px;
     @media (max-width: 1200px) {
       width: 90%;
     }
@@ -172,7 +175,7 @@ const STenantDashboard = styled.div`
         width: 90%;
       }
 
-        }
+        
       }
     }
 
@@ -190,8 +193,10 @@ const STenantDashboard = styled.div`
       &:hover {
         box-shadow: ${hoverBoxShadow};
       }
+      
     }
   }
+  
 
   // style of announcements ===================================
   .announcements {
@@ -217,20 +222,20 @@ const STenantDashboard = styled.div`
     }
    
 
-    .search {
-      box-shadow: ${boxShadow};
-      padding: 40px;
-      border-radius: 100%;
-      width: 150px;
-      height: 150px;
-      @media (max-width: 1200px) {
-        margin-top: 20px;
-        width: 90vw;
-        border-radius: 20px;
-      }
-      &:hover {
-        box-shadow: ${hoverBoxShadow};
-      }
+  }
+  .search {
+    box-shadow: ${boxShadow};
+    padding: 40px;
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    @media (max-width: 1200px) {
+      margin-top: 20px;
+      width: 90vw;
+      border-radius: 20px;
+    }
+    &:hover {
+      box-shadow: ${hoverBoxShadow};
     }
   }
 `;

@@ -5,7 +5,7 @@ import SList from './style';
 const AnnonceList = ({ title, data }) => {
   return (
     <SList>
-      <h2>{title}</h2>
+      <h3>{title}</h3>
       <ul>
         {data.map((accomodationData, index) => {
           return (
