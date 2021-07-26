@@ -7,10 +7,10 @@ const AnnonceList = ({ title, data }) => {
     <SList>
       <h2>{title}</h2>
       <ul>
-        {data.map((accomodationData) => {
+        {data.map((accomodationData, index) => {
           return (
             <li>
-              <Thumbnail {...accomodationData} />
+              <Thumbnail key={index.toString()} {...accomodationData} />
             </li>
           );
         })}
@@ -21,7 +21,11 @@ const AnnonceList = ({ title, data }) => {
 
 AnnonceList.propTypes = {
   data: PropTypes.arrayOf(PropTypes.shape()).isRequired,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
+};
+
+AnnonceList.defaultProps = {
+  title: '',
 };
 
 export default AnnonceList;

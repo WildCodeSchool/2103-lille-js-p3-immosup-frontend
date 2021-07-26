@@ -6,7 +6,7 @@ import Contact from './Contact';
 
 export default function LandlordContacts() {
   const [contacts, setContacts] = useState([]);
-  const [userInfos] = useState({ id: 18 });
+  const [userInfos] = useState({ id: 1 });
 
   useEffect(() => {
     request({ method: 'get', url: `/contacts/${userInfos.id}` }).then(

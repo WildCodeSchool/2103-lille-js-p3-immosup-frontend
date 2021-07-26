@@ -36,7 +36,6 @@ export default function Message() {
         url: `/contacts/messages`,
         data: aEnvoyer,
       });
-      // axios.post(`http://localhost:5002/contacts/messages`, aEnvoyer);
       setContent('');
     }
   };
@@ -53,11 +52,14 @@ export default function Message() {
       <div className="contain">
         <hr />
         {messages &&
-          messages.map((message) => {
+          messages.map((message, index) => {
             const ownerMessage =
               `${message.id_sender}` === idUser ? 'me' : 'other';
             return (
-              <div key={message.id} className={`message ${ownerMessage}`}>
+              <div
+                key={`${message.id}-${index.toString()}`}
+                className={`message ${ownerMessage}`}
+              >
                 {message.content}
               </div>
             );
