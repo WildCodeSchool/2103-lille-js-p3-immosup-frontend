@@ -1,5 +1,6 @@
 import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import SLogin from './style';
 import { request } from '../../utilities';
 import UserInfos from '../../contexts/UserInfos';
@@ -21,12 +22,21 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    request({ method: 'post', url: '/auth/login', data: fields }).then(
-      ({ data }) => {
+    request({ method: 'post', url: '/auth/login', data: fields })
+      .then(({ data }) => {
         setUserInfos(data.user);
         setUserToken(data.token);
-      }
-    );
+        toast.success('Vous êtes connecté', {
+          position: 'bottom-right',
+          autoClose: 3000,
+        });
+      })
+      .catch(() => {
+        toast.error('Email ou mot de passe non valide', {
+          position: 'bottom-right',
+          autoClose: 3000,
+        });
+      });
   };
 
   return (
