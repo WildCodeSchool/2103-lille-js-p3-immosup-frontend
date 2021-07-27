@@ -16,6 +16,10 @@ const STenantCriteria = styled.div`
     padding: 30px;
   }
 
+  .label-number {
+    text-align: center;
+  }
+
   .filterform {
     display: flex;
     flex-direction: column;
@@ -86,11 +90,19 @@ const STenantCriteria = styled.div`
     }
   }
 
+  .inputs {
+    padding: 20px 0;
+  }
+
   .input-number {
     font-size: 20px;
     width: 60px;
     text-align: center;
-    margin-left: 5px;
+    margin: 0 5px;
+
+    h3 {
+      font-size: 1.1em;
+    }
   }
 `;
 

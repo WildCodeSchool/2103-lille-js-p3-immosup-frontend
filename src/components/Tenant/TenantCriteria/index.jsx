@@ -45,7 +45,7 @@ const TenantCriteria = () => {
 
   return (
     <STenantCriteria>
-      <h2 className="titleCriteria"> Mes Critéres</h2>
+      <h2 className="titleCriteria"> Mes Critères</h2>
       <div className="pagestyle">
         <div className="PhotoStyle">
           <img
@@ -98,74 +98,85 @@ const TenantCriteria = () => {
             </label>
           </fieldset>
           <fieldset className="numberprop">
-            <label className="cotenantstyle" htmlFor="crNbCotenantsMin">
-              Nombre de Colocataires:
-              <input
-                id="nbCotenantsMin"
-                className="input-number"
-                name="crNbCotenantsMin"
-                onChange={handleChange}
-                type="number"
-                min="1"
-                max={form.crNbCotenantsMax}
-                value={form.crNbCotenantsMin}
-              />
-              <input
-                id="nbCotenantsMax"
-                className="input-number"
-                name="crNbCotenantsMax"
-                onChange={handleChange}
-                type="number"
-                min={form.crNbCotenantsMin}
-                max="5"
-                value={form.crNbCotenantsMax}
-              />
+            <label className="label-number" htmlFor="crNbCotenantsMin">
+              <h3>Nombre de Colocataires</h3>
+              <div className="inputs">
+                <input
+                  id="nbCotenantsMin"
+                  className="input-number"
+                  name="crNbCotenantsMin"
+                  onChange={handleChange}
+                  type="number"
+                  min="1"
+                  max={form.crNbCotenantsMax}
+                  value={form.crNbCotenantsMin}
+                />
+                -
+                <input
+                  id="nbCotenantsMax"
+                  className="input-number"
+                  name="crNbCotenantsMax"
+                  onChange={handleChange}
+                  type="number"
+                  min={form.crNbCotenantsMin}
+                  max="5"
+                  value={form.crNbCotenantsMax}
+                />
+              </div>
             </label>
-            <label className="cotenantStyle" htmlFor="crAgeCotenantsMin">
-              Age de Colocataires:
-              <input
-                id="ageCotenantsMin"
-                className="input-number"
-                name="crAgeCotenantsMin"
-                onChange={handleChange}
-                type="number"
-                min="17"
-                max={form.crAgeCotenantsMax}
-                value={form.crAgeCotenantsMin}
-              />
-              <input
-                id="ageCotenantsMax"
-                className="input-number"
-                name="crAgeCotenantsMax"
-                onChange={handleChange}
-                type="number"
-                min={form.crAgeCotenantsMin}
-                max="40"
-                value={form.crAgeCotenantsMax}
-              />
+            <label className="label-number" htmlFor="crAgeCotenantsMin">
+              <h3>Âge des Colocataires</h3>
+              <div className="inputs">
+                <input
+                  id="ageCotenantsMin"
+                  className="input-number"
+                  name="crAgeCotenantsMin"
+                  onChange={handleChange}
+                  type="number"
+                  min="17"
+                  max={form.crAgeCotenantsMax}
+                  value={form.crAgeCotenantsMin}
+                />
+                -
+                <input
+                  id="ageCotenantsMax"
+                  className="input-number"
+                  name="crAgeCotenantsMax"
+                  onChange={handleChange}
+                  type="number"
+                  min={form.crAgeCotenantsMin}
+                  max="40"
+                  value={form.crAgeCotenantsMax}
+                />
+                ans
+              </div>
             </label>
-            <label className="budgetStyle" htmlFor="crBudgetMin">
-              Prix Location:
-              <input
-                id="budgetMin"
-                className="input-number"
-                name="crBudgetMin"
-                onChange={handleChange}
-                type="number"
-                min="200"
-                max={form.crBudgetMax}
-                value={form.crBudgetMin}
-              />
-              <input
-                id="budgetMax"
-                className="input-number"
-                name="crBudgetMax"
-                onChange={handleChange}
-                type="number"
-                min={form.crBudgetMin}
-                max="800"
-                value={form.crBudgetMax}
-              />
+            <label className="label-number" htmlFor="crBudgetMin">
+              <h3>Prix Location</h3>
+              <div className="inputs">
+                <input
+                  id="budgetMin"
+                  className="input-number"
+                  name="crBudgetMin"
+                  onChange={handleChange}
+                  type="number"
+                  min="200"
+                  max={form.crBudgetMax}
+                  value={form.crBudgetMin}
+                />
+                -
+                <input
+                  id="budgetMax"
+                  className="input-number"
+                  name="crBudgetMax"
+                  onChange={handleChange}
+                  type="number"
+                  min={form.crBudgetMin}
+                  max="800"
+                  value={form.crBudgetMax}
+                />
+                €
+              </div>
             </label>
           </fieldset>
           <div className="submit-container">

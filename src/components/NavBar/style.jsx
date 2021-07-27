@@ -12,6 +12,7 @@ const SNavBar = styled.div`
   width: 100vw;
   height: 60px;
   padding: 0 20px;
+  z-index: 10;
 
   .link {
     text-decoration: none;
