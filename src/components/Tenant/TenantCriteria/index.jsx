@@ -32,7 +32,7 @@ const TenantCriteria = () => {
       request({
         method: 'put',
         url: `/users/${userInfos.id}`,
-        data: form,
+        data: { ...form, crPets: form.crPets !== 'false' },
         headers: { Authorization: `Bearer ${userToken}` },
       })
         .then(() => {
