@@ -6,7 +6,7 @@ import STenantCriteria from './style';
 import SButton from '../../styled/SButton';
 
 const TenantCriteria = () => {
-  const { userInfos } = useContext(User);
+  const { userInfos, userToken } = useContext(User);
 
   const [form, setForm] = useState({
     crAgeCotenantsMax: 40,
@@ -33,13 +33,16 @@ const TenantCriteria = () => {
         method: 'put',
         url: `/users/${userInfos.id}`,
         data: form,
+        headers: { Authorization: `Bearer ${userToken}` },
       })
         .then(() => {
-          toast('Update succesful !');
+          toast.success('Update succesful !');
         })
         .catch((err) => {
           toast.warn(`Update failed : ${err}`);
         });
+    } else {
+      toast.warn("Vous n'êtes pas connecté");
     }
   };
 
