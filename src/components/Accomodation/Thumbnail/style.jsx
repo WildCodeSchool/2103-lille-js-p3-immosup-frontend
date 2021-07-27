@@ -20,6 +20,10 @@ const SThumbnail = styled.div`
     font-size: 20px;
   }
 
+  h4 {
+    font-size: 25px;
+  }
+
   p {
     margin-top: 10px;
   }

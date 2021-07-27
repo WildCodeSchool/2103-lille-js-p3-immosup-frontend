@@ -22,7 +22,7 @@ const Thumbnail = ({
             );
           })}
           <div className="information">
-            <h3>{city}</h3>
+            <h4>{city}</h4>
             <p>{district}</p>
             <p>{property}</p>
             <p>Surface {surface} m²</p>

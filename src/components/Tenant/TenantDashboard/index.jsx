@@ -98,7 +98,7 @@ export default function TenantDashboard() {
         <div className="housing">
           <Link to="/tenant/announcements-save" />
           <div className="galleryAnnouncements">
-            <AnnonceList title="Toutes mes annonces" data={accomodationsData} />
+            <AnnonceList title="Mes annonces" data={accomodationsData} />
           </div>
         </div>
         <Link to="/tenant/housing-search">

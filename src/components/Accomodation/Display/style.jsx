@@ -22,6 +22,10 @@ const SAccomodation = styled.div`
     margin-bottom: 20px;
   }
 
+  h4 {
+    font-size: 25px;
+  }
+
   p {
     line-height: 1.5em;
   }
