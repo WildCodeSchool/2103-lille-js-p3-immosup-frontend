@@ -1,10 +1,13 @@
-// import Proptypes from 'prop-types';
-import { useState } from 'react';
-import axios from 'axios';
+import { useState, useContext } from 'react';
 import { toast } from 'react-toastify';
+import { request } from '../../../utilities';
+import User from '../../../contexts/UserInfos';
 import STenantCriteria from './style';
+import SButton from '../../styled/SButton';
 
 const TenantCriteria = () => {
+  const { userInfos } = useContext(User);
+
   const [form, setForm] = useState({
     crAgeCotenantsMax: 40,
     crAgeCotenantsMin: 17,
@@ -25,9 +28,11 @@ const TenantCriteria = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const myId = 7;
-    axios
-      .put(`http://localhost:5050/users/${myId}`, form)
+    request({
+      method: 'put',
+      url: `/users/${userInfos.id}`,
+      data: form,
+    })
       .then(() => {
         toast('Update succesful !');
       })
@@ -43,7 +48,7 @@ const TenantCriteria = () => {
         <div className="PhotoStyle">
           <img
             className="PhotoCriteria"
-            src="/image\photoprofil.jpg"
+            src={userInfos?.avatarUrl || '/image/IconeProfilNoir.png'}
             alt="PhotoProfil"
           />
         </div>
@@ -52,14 +57,13 @@ const TenantCriteria = () => {
             <label className="townstyle" htmlFor="crCity">
               Ville de Recherche:
               <select
-                className="SelectCity"
+                className=" select city"
                 name="crCity"
                 type="text"
                 onChange={handleChange}
               >
-                <option value="All" selected>
-                  Métropole lilloise
-                </option>
+                <option value=""> </option>
+                <option value="All">Métropole lilloise</option>
                 <option value="LilleCentre">Lille Centre</option>
                 <option value="LilleWazemmes">Lille Wazemmes</option>
                 <option value="Loos">Loos</option>
@@ -68,23 +72,23 @@ const TenantCriteria = () => {
             <label className="petsstyle" htmlFor="crPets">
               Animaux:
               <select
-                className="SelectPets"
+                className="select pets"
                 name="crPets"
                 onChange={handleChange}
               >
+                <option value=""> </option>
                 <option value={false}>Non Merci</option>
-                <option value selected>
-                  Ne me derange pas
-                </option>
+                <option value>Ne me derange pas</option>
               </select>
             </label>
             <label className="genderStyle" htmlFor="crGender">
               Genre:
               <select
-                className="SelectGender"
+                className="select gender"
                 name="crGender"
                 onChange={handleChange}
               >
+                <option value=""> </option>
                 <option value="F">Femmes uniquement</option>
                 <option value="M">Homme uniquement</option>
                 <option value="A">Sans préférence</option>
@@ -96,6 +100,7 @@ const TenantCriteria = () => {
               Nombre de Colocataires:
               <input
                 id="nbCotenantsMin"
+                className="input-number"
                 name="crNbCotenantsMin"
                 onChange={handleChange}
                 type="number"
@@ -105,6 +110,7 @@ const TenantCriteria = () => {
               />
               <input
                 id="nbCotenantsMax"
+                className="input-number"
                 name="crNbCotenantsMax"
                 onChange={handleChange}
                 type="number"
@@ -117,6 +123,7 @@ const TenantCriteria = () => {
               Age de Colocataires:
               <input
                 id="ageCotenantsMin"
+                className="input-number"
                 name="crAgeCotenantsMin"
                 onChange={handleChange}
                 type="number"
@@ -126,6 +133,7 @@ const TenantCriteria = () => {
               />
               <input
                 id="ageCotenantsMax"
+                className="input-number"
                 name="crAgeCotenantsMax"
                 onChange={handleChange}
                 type="number"
@@ -138,6 +146,7 @@ const TenantCriteria = () => {
               Prix Location:
               <input
                 id="budgetMin"
+                className="input-number"
                 name="crBudgetMin"
                 onChange={handleChange}
                 type="number"
@@ -147,6 +156,7 @@ const TenantCriteria = () => {
               />
               <input
                 id="budgetMax"
+                className="input-number"
                 name="crBudgetMax"
                 onChange={handleChange}
                 type="number"
@@ -156,7 +166,11 @@ const TenantCriteria = () => {
               />
             </label>
           </fieldset>
-          <input className="buttonprop" type="submit" value="Enregistrer" />
+          <div className="submit-container">
+            <SButton type="submit">
+              <p className="btn-text">Enregistrer</p>
+            </SButton>
+          </div>
         </form>
       </div>
     </STenantCriteria>

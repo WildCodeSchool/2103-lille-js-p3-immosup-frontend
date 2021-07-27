@@ -13,27 +13,26 @@ const STenantCriteria = styled.div`
   .pagestyle {
     box-shadow: 4px 4px 10px rgb(0 0 0 / 25%);
     border-radius: 20px;
+    padding: 30px;
   }
 
   .filterform {
     display: flex;
     flex-direction: column;
-    margin-left: 25px;
-    margin-top: 25px;
   }
 
   .titleCriteria {
     margin-top: 25px;
     margin-bottom: 20px;
-    font-size: 1.6em;
+    font-size: 60px;
     font-weight: bold;
   }
 
   .PhotoCriteria {
     width: 8vw;
     border-radius: 50%;
-    margin-top: 25px;
-    margin-left: 40%;
+    margin-left: 50%;
+    transform: translateX(-50%);
   }
 
   .selectprop {
@@ -43,21 +42,14 @@ const STenantCriteria = styled.div`
     margin-left: 7%;
   }
 
-  .SelectCity {
-    margin-bottom: 10px;
-    width: 150px;
-  }
-
-  .SelectPets {
-    margin-bottom: 10px;
-    width: 150px;
-  }
-
-  .SelectGender,
-  .SelectPets,
-  .SelectCity {
+  .select {
     display: flex;
     margin-top: 10px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #797979;
+    font-size: 20px;
+    width: 280px;
   }
 
   .numberprop {
@@ -76,18 +68,6 @@ const STenantCriteria = styled.div`
     font-weight: bold;
   }
 
-  #nbCotenantsMin,
-  #nbCotenantsMax,
-  #ageCotenantsMin,
-  #ageCotenantsMax {
-    width: 40px;
-  }
-
-  #budgetMin,
-  #budgetMax {
-    width: 50px;
-  }
-
   .buttonprop {
     width: 120px;
     align-self: center;
@@ -95,6 +75,22 @@ const STenantCriteria = styled.div`
     margin-bottom: 20px;
     background-color: #109fe6;
     border-radius: 10px;
+  }
+
+  .submit-container {
+    width: 100%;
+    padding-top: 30px;
+
+    button {
+      margin: 0 auto;
+    }
+  }
+
+  .input-number {
+    font-size: 20px;
+    width: 60px;
+    text-align: center;
+    margin-left: 5px;
   }
 `;
 
