@@ -52,7 +52,7 @@ export default function TenantDashboard() {
           <h3 className="h3Profil">Mon profile</h3>
         </Link>
 
-        <Link to="/tenant/dashboard" className="buttonCriteria">
+        <Link to="/tenant/criteria" className="buttonCriteria">
           <h3 className="h3Criteria">Mes critères</h3>
         </Link>
 

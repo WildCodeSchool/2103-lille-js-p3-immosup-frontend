@@ -11,6 +11,7 @@ import TenantDashboard from './components/Tenant/TenantDashboard';
 import LandlordDashboard from './components/Landlord/LandlordDashboard';
 import AddAnnonce from './components/AddAnnonce';
 import TenantProfil from './components/Tenant/TenantProfil';
+import TenantCriteria from './components/Tenant/TenantCriteria';
 import TenantMatch from './components/Tenant/TenantMatch';
 import AnnoncesList from './components/Accomodation/List';
 import SaveAd from './pages/SaveAd';
@@ -51,6 +52,7 @@ export default function App() {
           <Route path="/landlord/addannonce" component={AddAnnonce} />
           <Route path="/landlord/messages/:idReceiver" component={Messages} />
           <Route path="/tenant/profil" component={TenantProfil} />
+          <Route path="/tenant/criteria" component={TenantCriteria} />
           <Route path="/tenant/match" component={TenantMatch} />
           <Route path="/landlord/contacts" component={LandlordContacts} />
           <Route path="/test">
