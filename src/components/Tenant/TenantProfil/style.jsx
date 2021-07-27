@@ -5,6 +5,7 @@ const SProfil = styled.div`
   flex-wrap: wrap;
   width: 100vw;
   padding: 0 10vw;
+  margin-bottom: 50px;
 
   .title-page {
     font-weight: bold;

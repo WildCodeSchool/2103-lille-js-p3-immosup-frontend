@@ -65,7 +65,7 @@ export default function HomePage() {
         </section>
         <section className="info second">
           <h1 className="title">
-            Particulier ? Investisseurs locatifs ? Agences immobilières ?
+            Particulier ? Investisseurs locatifs ? <br /> Agences immobilières ?
           </h1>
           <article className="body">
             IMMO’SUP est la première plateforme dédiée à l’immobilier étudiant &
