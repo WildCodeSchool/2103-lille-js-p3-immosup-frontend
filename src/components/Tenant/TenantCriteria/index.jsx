@@ -28,17 +28,19 @@ const TenantCriteria = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    request({
-      method: 'put',
-      url: `/users/${userInfos.id}`,
-      data: form,
-    })
-      .then(() => {
-        toast('Update succesful !');
+    if (userInfos?.id) {
+      request({
+        method: 'put',
+        url: `/users/${userInfos.id}`,
+        data: form,
       })
-      .catch((err) => {
-        toast.warn(`Update failed : ${err}`);
-      });
+        .then(() => {
+          toast('Update succesful !');
+        })
+        .catch((err) => {
+          toast.warn(`Update failed : ${err}`);
+        });
+    }
   };
 
   return (
