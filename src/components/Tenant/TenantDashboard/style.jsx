@@ -24,7 +24,6 @@ const SProfil = styled.div`
 `;
 
 const STenantDashboard = styled.div`
-  margin-bottom: 50px;
   background-color: #ffffff;
   font-family: 'Roboto', serif;
   a {
@@ -34,6 +33,8 @@ const STenantDashboard = styled.div`
       color: #000000;
     }
   }
+
+  
 
   h2 {
     font-weight: bold;
@@ -173,6 +174,9 @@ const STenantDashboard = styled.div`
       @media (max-width: 1200px) {
         width: 90%;
       }
+
+        
+      }
     }
 
     .imgHunt {
@@ -189,46 +193,49 @@ const STenantDashboard = styled.div`
       &:hover {
         box-shadow: ${hoverBoxShadow};
       }
+      
     }
   }
+  
 
   // style of announcements ===================================
   .announcements {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: ${widthPage};
-    margin: auto;
-    padding-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: ${widthPage};
+  margin: auto;
+  padding-bottom: 50px;
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    width: 100%;
+    padding-top: 30px;
+  }
+  
+  .housing {
+    box-shadow: ${boxShadow};
+    border-radius: 20px;
+    width: 900px;
+    padding: 20px;
     @media (max-width: 1200px) {
-      flex-direction: column;
-      width: 100%;
-      padding-top: 30px;
+      width: 90%;
     }
+   
 
-    .housing {
-      box-shadow: ${boxShadow};
+  }
+  .search {
+    box-shadow: ${boxShadow};
+    padding: 40px;
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    @media (max-width: 1200px) {
+      margin-top: 20px;
+      width: 90vw;
       border-radius: 20px;
-      width: 900px;
-      padding: 20px;
-      @media (max-width: 1200px) {
-        width: 90%;
-      }
     }
-    .search {
-      box-shadow: ${boxShadow};
-      padding: 40px;
-      border-radius: 100%;
-      width: 150px;
-      height: 150px;
-      @media (max-width: 1200px) {
-        margin-top: 20px;
-        width: 90vw;
-        border-radius: 20px;
-      }
-      &:hover {
-        box-shadow: ${hoverBoxShadow};
-      }
+    &:hover {
+      box-shadow: ${hoverBoxShadow};
     }
   }
 `;

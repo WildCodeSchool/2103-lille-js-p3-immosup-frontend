@@ -10,9 +10,10 @@ const SPersonsGallery = styled.div`
 
   .Gallery {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
   }
 `;
 
