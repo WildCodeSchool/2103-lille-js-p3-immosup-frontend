@@ -53,12 +53,12 @@ const SHomePage = styled.div`
 
       &.tenant {
         text-align: left;
-        border-radius: 0px 10px 10px 0px;
+        border-radius: 0px 5px 5px 0px;
       }
 
       &.landlord {
         text-align: right;
-        border-radius: 10px 0px 0px 10px;
+        border-radius: 5px 0px 0px 5px;
       }
     }
   }
@@ -166,10 +166,12 @@ const SHomePage = styled.div`
 
         &.tenant {
           text-align: center;
+          border-radius: 5px;
         }
 
         &.landlord {
           text-align: center;
+          border-radius: 5px;
         }
       }
     }
@@ -191,9 +193,9 @@ const SHomePage = styled.div`
         .title {
           font-style: normal;
           font-weight: bold;
-          font-size: 40px;
-          text-align: center;
+          font-size: 24px;
           margin: 20px;
+          margin-left: 0;
         }
 
         .body {

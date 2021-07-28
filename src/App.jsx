@@ -26,6 +26,9 @@ export default function App() {
           <NavBar />
           <Switch>
             <Route exact path="/" component={HomePage} />
+            <Route path="/wip">
+              <WorkInProgressDisplay landlord />
+            </Route>
             <Route path="/" component={WorkInProgressDisplay} />
           </Switch>
         </UserInfos.Provider>

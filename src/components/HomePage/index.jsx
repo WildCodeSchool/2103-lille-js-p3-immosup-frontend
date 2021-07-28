@@ -36,7 +36,7 @@ export default function HomePage() {
           <Link to="/work-in-progress" className="link-dashboard tenant">
             Espace étudiants et jeunes dîplomés
           </Link>
-          <Link to="/work-in-progress" className="link-dashboard landlord">
+          <Link to="/wip" className="link-dashboard landlord">
             Espace déposeurs d&apos;annonces
           </Link>
         </div>
