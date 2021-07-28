@@ -1,14 +1,25 @@
+import PropTypes from 'prop-types';
 import SWorkInProgressDisplay from './style';
 import WorkInProgress from '../index';
 import HomePage from '../../HomePage';
 
-export default function WorkInProgressDisplay() {
+const WorkInProgressDisplay = ({ landlord }) => {
   return (
     <>
       <HomePage />
       <SWorkInProgressDisplay>
-        <WorkInProgress />
+        <WorkInProgress landlord={landlord} />
       </SWorkInProgressDisplay>
     </>
   );
-}
+};
+
+WorkInProgressDisplay.propTypes = {
+  landlord: PropTypes.bool,
+};
+
+WorkInProgressDisplay.defaultProps = {
+  landlord: false,
+};
+
+export default WorkInProgressDisplay;
