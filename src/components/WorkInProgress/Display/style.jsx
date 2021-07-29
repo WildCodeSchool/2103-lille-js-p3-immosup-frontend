@@ -7,7 +7,7 @@ const SWorkInProgressDisplay = styled.div`
   margin-top: -270px;
   margin-left: -300px;
   @media screen and (max-width: 650px) {
-    margin-top: -375px;
+    margin-top: -40vh;
     margin-left: -150px;
   }
 `;
